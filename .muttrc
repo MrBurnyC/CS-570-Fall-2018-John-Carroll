@@ -1,0 +1,17 @@
+set mbox_type=Maildir
+
+ set spoolfile="~/Maildir/"
+ set folder="~/Maildir/"
+ set mask=".*"    # the default mask hides dotfiles and maildirs are dotfiles now.
+ set record="+.Sent"
+ set postponed="+.Drafts"
+ 
+mailboxes ! + `\
+for file in ~/Maildir/.*; do \
+  box=$(basename "$file"); \
+  if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
+       -a ! "$box" = '.subscriptions' ]; then \
+       echo -n "\"+$box\" "; \
+  fi; \
+ done`
+

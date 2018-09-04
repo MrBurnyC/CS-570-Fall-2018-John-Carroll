@@ -1,0 +1,4 @@
+#
+echo If you see more than 3 or 4 processes below, log back in and kill the orphans...
+/usr/bin/ps -xuw
+sleep 3

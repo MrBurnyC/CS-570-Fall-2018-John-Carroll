@@ -1,0 +1,67 @@
+# ~/.tcshrc file
+# If your shell is tcsh, this ~/.tcshrc file is executed instead of ~/.cshrc
+# rather than repeat the relevant commands from .cshrc, we simply source
+# the .cshrc file, and then override any inappropriate entries below
+ source ~/.cshrc
+ if ($?prompt) then # only bother with the rest if this is an interactive shell
+# If you use tcsh, you get several advantages; both 'Backspace'
+# and 'Delete' will work as the character-erase command.  However,
+# word-erase has to be set a bit differently, i.e.:
+ bindkey ^W backward-delete-word ### fix word-erase
+# Alternately, you can use vi-style commands to edit the command line:
+#bindkey -v	##use vi-style if you don't like emacs-style editing commands
+# The above bind commands affect the 'history editing' enhancements of tcsh:
+# The up and down arrow keys on your keyboard move you through your history
+# list, and the left and right arrows move you back and forth in the current
+# command (which can be edited by just typing new characters, and the delete
+# and backspace keys will delete existing characters).  The enter
+# key then executes the newly-edited command.
+#
+# tcsh has a built-in ls command called ls-F, so:
+ alias ls	'ls-F'
+ unalias mroe	##not needed; correct=cmd will inquire about misspelled commands
+ set host = $HOST:r:r
+# the next prompt uses boldface, and prints two levels of your directory path:
+ set prompt = "%B$host %b%c2[\!]% "
+# the new prompt allows the following aliases to be simpler than in .cshrc:
+ alias cd        'set old=$cwd; chdir \!*'
+ alias pu        'set old=$cwd; pushd \!*'
+ alias po        'set old=$cwd; popd \!*'
+#(another prompt-customization available is %S/%s to start/stop 'standout' mode)
+#
+# tcsh allows you to execute some command (for example, like checking your mail)
+# every time you change directories.  We will use it to change the decorations
+# at the top of your xterm window.  This only makes sense for xterms, so we
+# wrap it in an 'if' statement to ensure that we don't blat out gibberish
+# when you are, say, using ssh from home to connect to campus...
+if ( $?TERM ) then
+    if ( "$TERM" =~ *xterm* || "$TERM" == "vs100" || "$TERM" == "vv") then
+	alias cwdcmd	'set noglob; set Dirs=`dirs`; echo -n ]2\;$host \ \ \ $#Dirs \ \ $Dirs[1] ; unset noglob'
+# NOTE: the above alias is all on one line, and it contains an escape character
+# (Control-[) and a bell character (Control-G); if you try to cut-and-paste
+# this line into another file using your mouse, those characters will get
+# mangled, and the alias won't work correctly...
+    endif
+endif
+# set various shell parameters to make tcsh behave nicely:
+ set ampm autocorrect autoexpand correct=cmd dextract
+ set dunique listlinks matchbeep=notunique recexact
+ unset autologout
+# To change your login shell permanently to tcsh, use the 'chsh' command
+# (on some UNIX systems, you would use 'passwd -s' instead of 'chsh').
+# When asked for the new shell, type '/bin/tcsh' (without the quotes).  Use
+#grep ^$USER\: /etc/passwd
+# ...to verify that the last field in your /etc/passwd entry is indeed /bin/tcsh
+# When tcsh is the login shell, the order of execution of the initialization
+# files is: /etc/.login, ~/.tcshrc (or ~/.cshrc if there is no ~/.tcshrc),
+# ~/.history, ~/.login, and finally ~/.cshdirs
+
+# Tcsh merely adds functionality to csh, so everything you know about csh
+# works the same way, WITH ONE (significant) EXCEPTION:
+# filename completion uses the TAB key rather than the ESCAPE key.
+# (and filename completion is much smarter; try typing !$ or !! followed by TAB)
+# Control-D lists the possible file completions as does csh, but it also
+# looks for *executables* if you use it while typing the first 'word', and it
+# can be used for deleting 'the next' character during command-history editing.
+# (whereas backspace deletes 'the previous' character during editing)
+ endif

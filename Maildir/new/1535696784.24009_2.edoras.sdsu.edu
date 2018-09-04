@@ -1,0 +1,252 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 7E9E26000049; Thu, 30 Aug 2018 23:26:24 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 7DFE06000048
+	for <cs570-01@edoras.sdsu.edu>; Thu, 30 Aug 2018 23:26:24 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: 8-30-18script : an explanation of what we covered in class today
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <23969.1535696784.1@edoras>
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 30 Aug 2018 23:26:24 -0700
+Message-Id: <20180831062624.7DFE06000048@edoras.sdsu.edu>
+
+CS570 folks:  The file ~cs570/8-30-18script is a transcript of what
+I typed at the keyboard in class today (along with the computer's
+responses).  I've edited it with explanations of the salient points of
+most of the steps, in case there were some nuances you missed during class=
+.
+
+IMPORTANT:
+Remember that, as per the README file in your home directory, you are
+supposed to change your shell to tcsh (this condition was left off the
+pink handout by mistake, but the autograder will definitely be checking
+that you did this).
+
+Cheers,
+jc
+
+ps -- for your convenience, I've also appended the contents of the script
+to this email; but a permanent copy will always be at ~cs570/8-30-18script=
+ .
+
+
+
+
+Below is a script of the session demonstrated in class on Thursday.
+But first, here are some comments about the points that were made today --
+the explanations below are keyed to the history numbers (the numbers in
+square brackets in the prompts) for the relevant commands that were typed.
+A good way to review this is to ssh to edoras a second time, then look
+at these comments in one window, and look at the script [further down
+in this file] in the second window as you read along.
+
+[29] Recall that '~cs570' meant "the home directory of the cs570 username"
+[30] !! would repeat the last command; !$ repeats the last word of the
+last command.  So !$/* became ~cs570/Data0/*
+If you want to know more about the 'more' command, type:
+man more
+...to see the man page.  Similarly, to find out about the ungetc() functio=
+n
+that you'll need in Program0/Program1/Program2/Program4, you'd do:
+man ungetc
+[31] Since input3 did not contain a newline, the next prompt (#30) came
+right after the word 'words'
+[32] The '^3^2^' pattern repeated the previous command, but with '2'
+substituted for the original '3'
+[33] wc is short for 'word count'; it shows the number of lines, words,
+and characters in the three files mentioned
+[34-35] mkdir creates a new directory 'Zero', which was not there before.
+[36] note the !$ trick again...
+[37] pwd is 'print working directory', where we verify the result of
+the cd command on line #36
+[38-40] The empty directory becomes populated after the 'ln' command
+[43] The '@' appended onto the file names indicates they are soft links
+[44] We used the inout2.c code as a basis for getword.c
+[46] 'make' immediately failed, since we did not yet have getword.h, which
+p0.c required to be #include'd
+[49] The compilation of getword.c and p0.c (the two -c lines) proceeded
+without complaint, but the linking step (of the two .o files) complained,
+for several reasons:  There was no getword() function (in the files nor
+in any library the linker could find), and we had two versions of main().
+[50] The .o files were created, but the linker could not assemble the p0 b=
+inary
+[52] After making more corrections, compilation [and now linking] was succ=
+essful
+[53] We can run the 'original' ls (via /bin/ls) if we don't want to see
+the @, /, and * appended to filenames
+[54] Our 'broken' getword() now just parrots back what was input.  We simu=
+late
+an EOF by typing control-D at the keyboard -- that didn't help here, since
+our code was never returning -255, so main() never halts.  So at the momen=
+t
+I needed control-C to kill the program.
+[55] make was smart enough (by checking the file timestamps) to know that
+the current p0 binary did not need to be recompiled -- because p0 had a mo=
+re
+recent modification date than the source files,
+[56] Rather than typing from the keyboard, we can use input redirection
+(via '<') to make p0 read from a file (input3 in this case).  This again
+caused a huge infinite loop until I killed the program with control-C.
+[58-60] Someone asked about the .forward file, so we created one 'on the f=
+ly'.
+The '-a' option to ls shows all the files, including the hidden ones (the
+ones starting with '.')
+
+Remember that, as per the README file in your home directory, you are supp=
+osed
+to change your shell to tcsh (this condition was left off the pink handout
+by mistake, but the autograder will definitely be checking that you did th=
+is).
+
+
+Script started on Thu Aug 30 12:28:32 2018
+edoras ~[29]% ls ~cs570/Data0
+/home/cs/faculty/cs570/Data0:
+input1  input2  input3  =
+
+edoras ~[30]% more !$/*
+more ~cs570/Data0/*
+::::::::::::::
+/home/cs/faculty/cs570/Data0/input1
+::::::::::::::
+no-brainer one ; =
+
+--More--(Next file: /home/cs/faculty/cs570/Data0/input2)::::::::::::::    =
+                                      =
+
+/home/cs/faculty/cs570/Data0/input2
+::::::::::::::
+  trickier;t$o  $master
+--More--(Next file: /home/cs/faculty/cs570/Data0/input3)::::::::::::::    =
+                                      =
+
+/home/cs/faculty/cs570/Data0/input3
+::::::::::::::
+  $$different $words
+edoras ~[31]% cat ~cs570/Data0/input3
+  $$different $wordsedoras ~[32]% ^3^2
+cat ~cs570/Data0/input2
+  trickier;t$o  $master
+edoras ~[33]% wc ~cs570/Data0/input*
+ 1  3 18 /home/cs/faculty/cs570/Data0/input1
+ 1  2 24 /home/cs/faculty/cs570/Data0/input2
+ 0  2 20 /home/cs/faculty/cs570/Data0/input3
+ 2  7 62 total
+edoras ~[34]% ls
+8-30-18     Maildir/    README      bin/        typescript  =
+
+edoras ~[35]% mkdir Zero
+edoras ~[36]% cd !$
+cd Zero
+edoras ~/Zero[37]% pwd
+/home/cs/carroll/cssc0100/Zero
+edoras ~/Zero[38]% ls
+edoras ~/Zero[39]% ln -s ~cs570/Zero/makefile
+edoras ~/Zero[40]% ls -l
+total 0
+lrwxrwxrwx 1 cssc0100 carroll 36 Aug 30 12:42 makefile -> /home/cs/faculty=
+/cs570/Zero/makefile
+edoras ~/Zero[41]% cat makefile
+# A Makefile for Program 0, CS570
+
+PROGRAM =3D p0
+CC =3D gcc
+CFLAGS =3D -g
+
+${PROGRAM}:     getword.o ${PROGRAM}.o
+                ${CC} -o ${PROGRAM} getword.o ${PROGRAM}.o
+
+${PROGRAM}.o:   getword.h
+
+getword.o:      getword.h
+
+clean:
+                rm -f *.o ${PROGRAM}
+edoras ~/Zero[42]% ln -s ~cs570/Zero/p0.c =
+
+edoras ~/Zero[43]% ls
+makefile@ p0.c@     =
+
+edoras ~/Zero[44]% cp ~masc0000/CbyDiscovery/ch2/inout2.c getword.c
+edoras ~/Zero[45]% ls
+getword.c  makefile@  p0.c@      =
+
+edoras ~/Zero[46]% make
+make: *** No rule to make target `getword.h', needed by `getword.o'.  Stop=
+.
+edoras ~/Zero[47]% ln -s ~cs570/Zero/getword.h .
+edoras ~/Zero[48]% ls
+getword.c  getword.h@ makefile@  p0.c@      =
+
+edoras ~/Zero[49]% make
+gcc -g   -c -o getword.o getword.c
+gcc -g   -c -o p0.o p0.c
+gcc -o p0 getword.o p0.o
+p0.o: In function `main':
+/home/cs/carroll/cssc0100/Zero/p0.c:9: multiple definition of `main'
+getword.o:/home/cs/carroll/cssc0100/Zero/getword.c:14: first defined here
+p0.o: In function `main':
+/home/cs/carroll/cssc0100/Zero/p0.c:14: undefined reference to `getword'
+collect2: error: ld returned 1 exit status
+make: *** [p0] Error 1
+edoras ~/Zero[50]% ls
+getword.c  getword.h@  getword.o  makefile@  p0.c@  p0.o
+edoras ~/Zero[51]% vi getword.c
+edoras ~/Zero[52]% make
+gcc -g   -c -o getword.o getword.c
+gcc -o p0 getword.o p0.o
+edoras ~/Zero[52]% ls -l
+total 24
+-rw-r--r-- 1 cssc0100 carroll   559 Aug 30 13:00 getword.c
+lrwxrwxrwx 1 cssc0100 carroll    37 Aug 30 12:58 getword.h -> /home/cs/fac=
+ulty/cs570/Zero/getword.h
+-rw------- 1 cssc0100 carroll  3304 Aug 30 13:00 getword.o
+lrwxrwxrwx 1 cssc0100 carroll    36 Aug 30 12:42 makefile -> /home/cs/facu=
+lty/cs570/Zero/makefile
+-rwx------ 1 cssc0100 carroll 10136 Aug 30 13:00 p0*
+lrwxrwxrwx 1 cssc0100 carroll    32 Aug 30 12:50 p0.c -> /home/cs/faculty/=
+cs570/Zero/p0.c
+-rw------- 1 cssc0100 carroll  3416 Aug 30 12:58 p0.o
+edoras ~/Zero[53]% /bin/ls =
+
+getword.c  getword.h  getword.o  makefile  p0  p0.c  p0.o
+edoras ~/Zero[54]% p0
+slkd shkdshks
+slkd shkdshks
+jkshj
+jkshj
+^D
+n=3D0, s=3D[]
+^C
+edoras ~/Zero[55]% make
+make: `p0' is up to date.
+edoras ~/Zero[56]% p0 < ~cs570/Data0/input3
+  $$different $wordsn=3D0, s=3D[]
+n=3D0, s=3D[]
+n=3D0, s=3D[]
+n=3D0, s=3D[]
+...
+^C
+edoras ~/Zero[57]% cd
+edoras ~[58]% ls -a
+./             .bashrc   .kshrc   .mozilla/  .xemacs/  Zero/
+../            .cshrc    .local/  .muttrc    .zshrc    bin/
+.bash_history  .emacs    .login   .tcshrc    8-30-18   typescript
+.bash_logout   .exrc     .logout  .viminfo   Maildir/
+.bash_profile  .history  .mailrc  .vimrc     README
+edoras ~[59]% vi .forward
+edoras ~[60]% ls -a
+./             .bashrc   .history  .mailrc    .vimrc    README
+../            .cshrc    .kshrc    .mozilla/  .xemacs/  Zero/
+.bash_history  .emacs    .local/   .muttrc    .zshrc    bin/
+.bash_logout   .exrc     .login    .tcshrc    8-30-18   typescript
+.bash_profile  .forward  .logout   .viminfo   Maildir/
+edoras ~[61]% exit
+Script done on Thu Aug 30 13:53:25 2018

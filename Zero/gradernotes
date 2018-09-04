@@ -1,0 +1,10 @@
+"I wrote this code myself but I used example inout2.c from C
+by Discovery by Foster. I also read the first couple of 
+chapters of this book to learn the C language. As errors 
+occured I often googled syntax and used websites like
+stackoverflow.com and various other that lead me to 
+fix my code."
+
+As of right now my code is finished, has no known bugs and 
+does produce the correct output which has been verified
+by the autograder. 

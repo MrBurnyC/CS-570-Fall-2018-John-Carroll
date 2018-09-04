@@ -1,0 +1,37 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id AB3666000049; Sun,  2 Sep 2018 11:31:56 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id A93076000048
+	for <cs570-01@edoras.sdsu.edu>; Sun,  2 Sep 2018 11:31:56 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: CS570: two more preliminary tests still yet to come
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <18537.1535913116.1@edoras>
+Date: Sun, 02 Sep 2018 11:31:56 -0700
+Message-Id: <20180902183156.A93076000048@edoras.sdsu.edu>
+
+Greetings (potential) CS570 students,
+A fair number of people have just been evaluated by the autograder
+as earning 8/8, so those students have demonstrated 'Knowledge of C'
+and can remain enrolled.
+
+(Note that that does not guarantee an 8/8 in my gradebook!  Once the
+deadline has passed, I may downgrade some scores for lack of documentation,
+deficiencies in the gradernotes file, etc. -- but you'll still remain
+enrolled in the class, as long as [at least] one of the autograder tests
+reported 8/8.)
+
+The autograder runs for the last time at 8pm on Wednesday; you must
+have your code working perfectly by then.  There will be two more
+autograder preliminary runs, at what you ought to regard as random times.
+But there is a high probability that the third run will be late
+tonight or early Monday morning.
+
+Cheers,
+jc

@@ -1,0 +1,68 @@
+#+1535824611
+where
+#+1535824646
+ps
+#+1535825148
+pwd
+#+1535825161
+nano gradernotes
+#+1535830553
+who
+#+1535864320
+cd Sandbox/
+#+1535864349
+nano output.c
+#+1535912603
+man printf
+#+1535919652
+nano getword.h
+#+1535925978
+nano Data0/input1
+#+1535926172
+amke
+#+1535926308
+clear
+#+1535926376
+nano p0.c
+#+1535927352
+n=32518, s=[]
+#+1535927352
+n=32518
+#+1535927855
+nano getword.c
+#+1535935264
+exec /home/cs/carroll/cssc0018/Zero/p0 Data0/input3
+#+1536032706
+cd ~cs570/
+#+1536032753
+nano README
+#+1536074487
+vim gradernotes
+#+1536074682
+l
+#+1536074686
+cd Maildir/
+#+1536074689
+cd ..
+#+1536074693
+cd calendar
+#+1536074698
+vim calendar
+#+1536074739
+cd Zero/
+#+1536074739
+ls
+#+1536074750
+p0 < Data0/input1
+#+1536075288
+vi getword.c
+#+1536075410
+make
+#+1536075432
+p0 < Data0/input3
+#+1536075435
+p0 < Data0/input2
+#+1536075597
+p0 < Data0/input4
+#+1536075605
+exit

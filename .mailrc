@@ -1,0 +1,19 @@
+cd
+set MAIL=Maildir
+set folder=mail
+set	ask askcc autoprint crt=23 dot hold
+
+ignore	Date-Received
+ignore	In-Reply-To
+ignore	Lines
+ignore	Message-Id
+ignore	Path
+ignore	Received
+ignore	Received:
+ignore	Via
+ignore	Status
+ignore	Organization
+ignore	Favorite-Saying
+ignore	Resent-Message-Id
+
+alias	jc	carroll@edoras.sdsu.edu

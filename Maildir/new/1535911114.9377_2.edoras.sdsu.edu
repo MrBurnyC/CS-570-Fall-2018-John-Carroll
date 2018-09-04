@@ -1,0 +1,418 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id 3FA876000048; Sun,  2 Sep 2018 10:58:34 -0700 (PDT)
+Date: Sun, 02 Sep 2018 10:58:34 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 0 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20180902175834.3FA876000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 0.
+
+Due dates for our programs can be found in the ~cs570/calendar file on edoras.
+
+Success on this assignment determines your competency in C, and whether or
+not you will be disenrolled from CS570 for lack of prerequisites.
+
+This message, which will appear to be mailed from your account, is intended to
+show you the checks that will be made on your assignment when the due date
+actually arrives.  This is NOT the actual version that will be graded,
+but only an attempt to give you early warning of any potential problems.
+Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/5      52  Sep  2 09:33 6196001753                (localhost:12.0)
+
+Checking Program 0:
+Test 0... checking for the proper directory:
+total 16
+drwx------ 5 cssc0018   52 Aug 30 23:26 Maildir/
+-rw------- 1 cssc0018 1733 Aug 31 18:01 README
+drwx------ 2 cssc0018   34 Sep  2 10:05 Sandbox/
+drwxr-xr-x 2 cssc0018  131 Sep  1 11:10 Zero/
+lrwxrwxrwx 1 cssc0018   31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018 9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018   31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+Good, Zero has been created.
+
+Test 1... did you change your finger info and password?
+Yes.
+
+Test 2... Checking the contents of your .forward file:
+head -20 ~cssc0018/.forward
+\cssc0018,
+brdcervantes@gmail.com
+One more point was possible here; your total is now 1/1
+
+Test 2... Did you use chsh to change your shell to tcsh?
+grep cssc0018 /etc/passwd
+cssc0018:x:1129:1007:Bernardo Cervantes,,,6196001753:/home/cs/carroll/cssc0018:/bin/tcsh
+Good.
+One more point was possible here; your total is now 2/2
+
+/bin/ls -loF ~cssc0018/Zero
+total 28
+-rw-r--r-- 1 cssc0018   645 Sep  1 11:05 getword.c
+lrwxrwxrwx 1 cssc0018    37 Aug 30 12:58 getword.h -> /home/cs/faculty/cs570/Zero/getword.h
+-rw------- 1 cssc0018  3304 Aug 31 21:14 getword.o
+-rw------- 1 cssc0018   381 Sep  1 11:10 gradernotes
+lrwxrwxrwx 1 cssc0018    36 Aug 30 12:42 makefile -> /home/cs/faculty/cs570/Zero/makefile
+-rwx------ 1 cssc0018 10136 Aug 31 21:14 p0*
+lrwxrwxrwx 1 cssc0018    32 Aug 30 12:50 p0.c -> /home/cs/faculty/cs570/Zero/p0.c
+-rw------- 1 cssc0018  3416 Aug 31 21:14 p0.o
+Test 3... testing will proceed only if you have created the proper file:
+ls -lo ~/Zero/getword.c
+-rw-r--r-- 1 cssc0018 645 Sep  1 11:05 /home/cs/carroll/cssc0018/Zero/getword.c
+
+1    /*             inout2.c
+2     * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
+3     *	       Due: 9/5/18 @ 8PM		 
+4     * Synopsis  - Takes input from the keyboard and echoes that
+5     *             input back to the terminal.
+6     *
+7     * Objective - Illustrates the use of an assignment statement
+8     *             as part of the test expression in a while loop.
+9     */
+10   
+11   /* Include Files */
+12   #include <stdio.h>
+13   
+14   int getword( char *w )
+15   {
+16       int iochar;                                           /* Note 1 */
+17   
+18       while ( ( iochar = getchar() ) != EOF )               /* Note 2 */
+19           putchar( iochar );                                /* Note 3 */
+20       return 0;
+21   }
+
+Test 4... is getword.c documented?
+(Your getword.c documentation does NOT have to repeat the specs in getword.h,
+but it should contain your name, instructor name [NOTE: 'Carroll' contains two
+'R's and two 'L's], class (that is, 'CS570'), due date, etc.)
+Your comments should help explain what the various parts of your code are doing.
+Normally, your comments would be reviewed by a human.  But for this simple
+assignment, the autograder merely checks for the class and instructor name.
+One point was possible here; your total is now 3/3
+
+Test 5... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+1:"I wrote this code myself but I used example inout2.c from C
+2:by Discovery by Foster. I also read the first couple of 
+3:chapters of this book to learn the C language. As errors 
+4:occured I often googled syntax and used websites like
+5:stackoverflow.com and various other that lead me to 
+6:fix my code."
+7:
+8:As of right now my code is not finished and 
+9:does not produce the correct output. 
+
+The autograder is not good at parsing English (no surprise there), so it
+will magnanimously award credit for the mere existence of the file -- but note
+that there are _two_ MANDATORY statements you MUST include in this file.
+Are you SURE you did that?
+
+One more point was possible here; your total is now 4/4
+
+Test 6: Checking all the soft links (calendar, p0 files):
+Is the calendar soft link in place?
+lrwxrwxrwx 1 cssc0018 carroll 31 Aug 30 10:16 /home/cs/carroll/cssc0018/calendar -> /home/cs/faculty/cs570/calendar
+Yes.
+Is the getword.h soft link in place?
+ls -l ~cssc0018/Zero/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 37 Aug 30 12:58 /home/cs/carroll/cssc0018/Zero/getword.h -> /home/cs/faculty/cs570/Zero/getword.h
+Yes.
+Is the makefile soft link in place?
+ls -l ~cssc0018/Zero/makefile
+lrwxrwxrwx 1 cssc0018 carroll 36 Aug 30 12:42 /home/cs/carroll/cssc0018/Zero/makefile -> /home/cs/faculty/cs570/Zero/makefile
+Yes.
+Is the p0.c soft link in place?
+ls -l ~cssc0018/Zero/p0.c
+lrwxrwxrwx 1 cssc0018 carroll 32 Aug 30 12:50 /home/cs/carroll/cssc0018/Zero/p0.c -> /home/cs/faculty/cs570/Zero/p0.c
+Yes.
+Unless ALL these are right, you could LOSE a point here; your total is now 4/4
+
+Likewise, your code should compile cleanly, without any serious warning messages
+from the compiler:
+Test 7... does your program compile?
+make clean; make
+rm -f *.o p0
+gcc -g   -c -o getword.o getword.c
+gcc -g   -c -o p0.o p0.c
+gcc -o p0 getword.o p0.o
+[1] 9298
+
+Test 8... does your program handle the simplest situtations?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input1 :
+
+Your output was:
+no-brainer one ; 
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+
+The correct output is:
+n=10, s=[no-brainer]
+n=3, s=[one]
+n=0, s=[]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+1,2c1,98
+< n=10, s=[no-brainer]
+< n=3, s=[one]
+---
+> no-brainer one ; 
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+
+                                              ERROR    ERROR    ERROR    ERROR
+
+To make any differences easy to see, the actual diff command I used was:
+diff -a myoutput youroutput | cat -vt
+
+One more point was possible here; your total is now 4/5
+
+Test 9... does your program handle leading spaces and no trailing spaces?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input2 :
+
+Your output was:
+  trickier;t$o  $master
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+
+The correct output is:
+n=8, s=[trickier]
+n=0, s=[]
+n=3, s=[t$o]
+n=-6, s=[master]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+1c1,98
+< n=8, s=[trickier]
+---
+>   trickier;t$o  $master
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+
+                                              ERROR    ERROR    ERROR    ERROR
+
+One more point was possible here; your total is now 4/6
+
+Test 10... how does your program react to a premature EOF?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input3 :
+
+Your output was:
+  $$different $wordsn=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+
+The correct output is:
+n=-10, s=[$different]
+n=-5, s=[words]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+1,3c1,100
+< n=-10, s=[$different]
+< n=-5, s=[words]
+< n=-255, s=[]
+---
+>   $$different $wordsn=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+
+                                              ERROR    ERROR    ERROR    ERROR
+Here is a word-count (wc) comparison:
+wc your.output4 data4right
+wc: your.output4: No such file or directory
+  9  18 123 data4right
+
+One more point was possible here; your total is now 4/7
+
+Test 11... does your program handle weird cases? (NOTE: negative 0 is still 0)
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input4 :
+
+Your output was:
+  $; $
+$expect 0,0,0,0,-6,22,0,0,-255
+$n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+
+The correct output is:
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=-6, s=[expect]
+n=22, s=[0,0,0,0,-6,22,0,0,-255]
+n=0, s=[]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+0a1,94
+>   $; $
+> $expect 0,0,0,0,-6,22,0,0,-255
+> $n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+> n=0, s=[]
+
+                                              ERROR    ERROR    ERROR    ERROR
+
+One more point was possible here; your total is now 4/8
+
+Your grade for this assignment may be adjusted by a (human) grader at the
+due date.  Your grade could be as much as three points lower, depending on what
+you have put in gradernotes, the presense of 'serious' compiler warnings, and
+the quality of your getword.c documentation.
+NOTE: Even if you get subsequent downgrades for things like documentation, that
+does NOT put you at risk of disenrollment.  If this autograder score is
+8/8, you will NOT be dropped.
+Success on this assignment determines your competency in C, and whether or
+not you will be disenrolled from CS570 for lack of prerequisites.  You
+must have a PERFECT (autograder) score on this assignment to remain enrolled.
+
+             ------
+Total Points | 4  |  for cssc0018 - Bernardo Cervantes,,,6196001753 for Program 0
+             |----|
+             | 8  |
+             ------
