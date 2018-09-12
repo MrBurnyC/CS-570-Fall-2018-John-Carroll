@@ -2,7 +2,7 @@
  *	       of Program 0.
  *
  * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
- *	       Due: 9/5/18 @ 8PM
+ *	       Due: 9/17/18 @ 8PM
  *		 
  * Synopsis  - Takes input from the keyboard (stdin) or from
  * 	       Data0/input# and writes to the Storage array 
@@ -17,14 +17,20 @@
 
 /* Include Files */
 #include <stdio.h>
+#include <stdlib.h>
 #include "getword.h"
 
 
 int getword(char *w){
 	int wordCount = 0; //Must initalize to zero or else you get garbage.
 	int iochar = 0;
+	int size = 0;      //Size of string	
 	int true = 0;      //bool for checking '$'
-
+	const char *name = "HOME";
+ 	char *value = getenv(name); //Sets home directory to value ; 
+	
+	char *x = value;	//Points to beginning string of value.
+ 	
 	/* Stores intital char */
 
 	iochar = getchar(); 
@@ -81,9 +87,34 @@ int getword(char *w){
 		true = 1;
 		iochar = getchar();
 		if(iochar == EOF){
+			*w = '\0';
 			return 0;
 		}
+	} 
+
+	if(iochar == '~'){
+		iochar = getchar();
+		
+		if(iochar == EOF  || iochar == '\n'){
+			*w++ = '~';
+			*w = '\0';	
+			ungetc(iochar , stdin);
+			return -1;	
+			//true = 1;		
+		}
+
+		else{
+
+
+			while(*x != '\0'){
+				*w = *x;
+				w++;
+				x++;
+				wordCount++;
+			}
+		}	
 	}
+	
 
 	/*
 	 * Infinite for loop is used to get any remaining.  
@@ -98,8 +129,20 @@ int getword(char *w){
 
 	for(;;){
 
+		/*
+ 		* Checks to see if wordCount is greater than Storage (255).
+		 * If so then it terminates the string and returns its
+		 * current word count.
+ 		*/
+
+		if(wordCount == STORAGE-1){
+			iochar = ungetc(iochar, stdin);
+			*w = '\0';
+			return wordCount; 
+		}
+
 		/* Checks for EOF. If wordCount is anything but zero. It returns
-		 * the word count. If not it returns -255. 
+		 * th word count. If not it returns -255. 
 		 */
 	
 		if(iochar == EOF){
@@ -136,7 +179,7 @@ int getword(char *w){
 		}
 
 
-		/* Writes current iochar to array.
+		/* Writes Current Iochar To Array.
 		 * Increments pointer to next array index. 
 		 */
 
