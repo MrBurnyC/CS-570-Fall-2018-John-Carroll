@@ -91,10 +91,17 @@ int getword(char *w){
 			return 0;
 		}
 	} 
+	
+	/* Checks if the first char is ~. If it is then it 
+	*  writes to the STORAGE array with w* with the value:
+	*  home path directory which is dynamically generated with getenv().
+	*  *x points to the char array that contains the home directory 
+	*  and is used to write to w* which points to STORAGE array.
+	*/
 
-	if(iochar == '~'){
+	if(iochar == '~' && true == 0){
 		iochar = getchar();
-		
+		/*	
 		if(iochar == EOF  || iochar == '\n'){
 			*w++ = '~';
 			*w = '\0';	
@@ -102,18 +109,59 @@ int getword(char *w){
 			return -1;	
 			//true = 1;		
 		}
+		*/
 
-		else{
-
+		//else{
 
 			while(*x != '\0'){
 				*w = *x;
 				w++;
 				x++;
 				wordCount++;
-			}
+		//	}
 		}	
 	}
+
+/*
+ *Checking for meta characters.
+ */	
+	if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
+
+		
+		if(iochar == '<'){
+			*w = iochar;
+			w++;	
+			wordCount++;
+			iochar = getchar();	
+			
+			if(iochar == '<'){
+			      *w = iochar;      		
+                               w++;
+			       wordCount++;
+                               *w = '\0';
+			       return wordCount;
+			}
+			else{
+				iochar = ungetc(iochar , stdin);
+				*w = '\0';
+				return wordCount;
+			}		
+			
+			
+			
+		}
+		
+		*w = iochar;
+		w++;
+		wordCount++;
+		*w = '\0';
+		return wordCount;
+			
+
+
+	}
+	
+	
 	
 
 	/*
@@ -129,54 +177,93 @@ int getword(char *w){
 
 	for(;;){
 
-		/*
- 		* Checks to see if wordCount is greater than Storage (255).
+
+
+
+
+	
+
+		
+ 		/* Checks to see if wordCount is greater than Storage (255).
 		 * If so then it terminates the string and returns its
 		 * current word count.
  		*/
 
-		if(wordCount == STORAGE-1){
+		if(wordCount == STORAGE - 1){
 			iochar = ungetc(iochar, stdin);
 			*w = '\0';
 			return wordCount; 
 		}
+		
 
 		/* Checks for EOF. If wordCount is anything but zero. It returns
 		 * th word count. If not it returns -255. 
 		 */
 	
 		if(iochar == EOF){
-			if(wordCount < 0 || wordCount > 0){
-				iochar = ungetc(iochar,stdin);
+				if(wordCount < 0 || wordCount > 0){
+					iochar = ungetc(iochar,stdin);
+					*w = '\0';
+					return wordCount;
+				}
+
+				return -255; 
+			}
+
+			/* Checks for space. If found, write null char to 
+			 * array and 
+			 * return wordCount.
+			 */
+
+			if(iochar == ' '){
 				*w = '\0';
 				return wordCount;
 			}
 
-			return -255; 
+
+			/* Checks for newline or semicolon. 
+			 * If found, write null char to 
+			 * array and 
+			 * return wordCount.
+			 */
+
+			if(iochar == '\n'|| iochar == ';'){
+				iochar = ungetc(iochar,stdin);
+				*w = '\0';
+				return wordCount;
+			}
+	
+	
+			
+	if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
+
+		ungetc(iochar, stdin);
+		*w = '\0';
+		return wordCount;
+	}
+
+		/*
+		 *Checks for backslahes in input. Have to put two 
+		* two backslashes because C has one backslashs as a 
+		* special keyword.
+		*/
+
+		if(iochar  == '\\'){ 
+			iochar = getchar();
+
+			if(iochar == '\n' || iochar == EOF){
+				ungetc(iochar ,stdin);
+				//iochar = getchar();
+				*w = '\0';
+				w++;
+				return wordCount;
+
+			}
+
 		}
 
-		/* Checks for space. If found, write null char to 
-		 * array and 
-		 * return wordCount.
-		 */
+		
 
-		if(iochar == ' '){
-			*w = '\0';
-			return wordCount;
-		}
-
-
-		/* Checks for newline or semicolon. 
-		 * If found, write null char to 
-		 * array and 
-		 * return wordCount.
-		 */
-
-		if(iochar == '\n'|| iochar == ';'){
-			iochar = ungetc(iochar,stdin);
-			*w = '\0';
-			return wordCount;
-		}
 
 
 		/* Writes Current Iochar To Array.
