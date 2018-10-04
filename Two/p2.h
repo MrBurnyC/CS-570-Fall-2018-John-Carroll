@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include "getword.h"
+#include <fcntl.h>
+#include <signal.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+
+
+#define EOF -255
+#define ZERO_COMMANDS 0
+#define FAIL 1
+#define SUCCESS 0
+#define STRING_EQUALS 0 
+#define TRUE 1
+#define FALSE 0
+
+#define PERMISSION_DENIED -21
+#define DIRECTORY_OPEN_ERROR -20
+#define INPUT_FILE_OPEN_ERROR -19
+#define INPUT_REDIRECTION_FAILED -18
+#define OUTPUT_REDIRECTION_FAILED -17
+#define OUTPUT_FILE_OPEN_ERROR -16
+#define REDIRECTION_FILE_EXISTS -15
+#define REDIRECTION_ERROR -14
+#define AMBIGUOUS_INPUT_REDIRECTION -13
+#define AMBIGOUS_OUT_REDIRECTION -12
+#define PARSE_ERROR -2
+
+#define MAXITEM 100 /* max number of words */
+#define MAXSIZE (STORAGE*MAXITEM) /*Max amount of characetr per commandline */
+
+
+char *prompt = ":570: "; //shell prompt
+int background_flag = 0; //flag for the & metachar
+int pipe_flag = 0; // flag for the | meta char
+int new_argv_size = 0; // holds the amount of arguments to be executed
+int *outfile = NULL; //holds the name for outputfile
+int *infile = NULL; //holds the name for the  input file.
+int redirection_flag = 0; //Flag for any type of redirection
+
+extern int backslash_flag; // a global flag for getword.c and p2.c to see if a backslash occured
+extern int background_flag_from_getword;// a global flag for getword.c and p2.c to see if a apersand is at the end of a line.
+
+int parse(char **commands, char *line);
+void execute_command(char *command, char **args);
+void run_child_command(char *command, char **args);
+void sighandler();
+void clear_flags();
+int file_exists(const char *file_name){
+	return access(file_name, F_OK);
+}
