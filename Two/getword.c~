@@ -1,4 +1,5 @@
-/*getword.c  - is a lexical analyzer that meets the requirements
+/*getword.c
+ * - is a lexical analyzer that meets the requirements
  *	       of Program 0.
  *
  * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
@@ -41,6 +42,7 @@ int getword(char *w){
 	char *value = getenv(name); //Sets home directory to value ; 
 	char *x = value;
 
+
 	/* Stores intital char from STDIN/file */
 
 	iochar = getchar(); 
@@ -48,7 +50,12 @@ int getword(char *w){
 	/* Skipping leading spaces. */
 
 	while(iochar == ' '){
-		iochar = getchar();	
+		iochar = getchar();
+		//if(iochar = '\n' && backslash_flag == TRUE && wordCount == 0 ){
+		//iochar = getchar();
+		//	backslash_flag = FALSE;
+		//	continue;
+		//}	
 	}
 
 	/* Check if EOF signal is in the beginning
@@ -68,8 +75,8 @@ int getword(char *w){
 	 */
 
 	if(iochar == '\n'){
-		*w = '\0';
-		return 0;
+			*w = '\0';
+			return 0;
 	}
 
 	/*
@@ -155,23 +162,23 @@ int getword(char *w){
 
 
 
-	 /* Checking if & is at the EOF to set background_flag_from_getword
-	  * to set the background_flag in p2.c 
-	  * I know the code is the same in the if statments as the code
-	  * 
-          *		*w = iochar;
-          *		w++;
-	  *		wordCount++;
-	  * after the if but doesn't work otherwise. 
-	  * 
-	  */
+		/* Checking if & is at the EOF to set background_flag_from_getword
+		 * to set the background_flag in p2.c 
+		 * I know the code is the same in the if statments as the code
+		 * 
+		 *		*w = iochar;
+		 *		w++;
+		 *		wordCount++;
+		 * after the if but doesn't work otherwise. 
+		 * 
+		 */
 
 		if(iochar == '&'){
 			*w = iochar;
 			w++;
 			wordCount++;
 			iochar = getchar();
-			if(iochar == '\n'){
+			if(iochar == '\n' || iochar == EOF){
 				ungetc(iochar, stdin);
 				*w = '\0';
 				background_flag_from_getword = TRUE;
@@ -267,7 +274,7 @@ int getword(char *w){
 		 */
 
 		if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
-			
+
 			ungetc(iochar, stdin);
 
 			*w = '\0';
@@ -286,12 +293,7 @@ int getword(char *w){
 
 			//if(iochar == '\n' || iochar == EOF){
 			if(iochar == '\n'){
-				//ungetc(iochar ,stdin);
-				//iochar = getchar();
-				*w = '\0';
-				iochar = ' ';
-				w++;
-				return wordCount;
+				iochar = getchar(); // newline is treated as a space for p2.c
 
 			}
 

@@ -1,1 +1,2 @@
-echo hi &
+echo hi \
+part
