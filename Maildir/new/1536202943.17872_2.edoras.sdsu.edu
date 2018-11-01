@@ -1,0 +1,393 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id F0B156000048; Wed,  5 Sep 2018 20:02:23 -0700 (PDT)
+Date: Wed, 05 Sep 2018 20:02:23 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 0 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20180906030223.F0B156000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+The following is nearly identical to what the (human) grader will be given
+for review.  FULL CREDIT (8/8) on this assignment determines your competency
+in C, and whether or not you will be disenrolled for lack of prerequisites.
+Any score other than 8/8 means disenrollment (very soon if you are already
+enrolled, or immediately after I let everyone in from the wait list).
+
+CAVEAT: if you scored 8/8 on a previous run, email me RIGHT
+AWAY if you somehow got a lower score this time, so that I don't disenroll
+you by mistake!
+
+Now that this project has been collected:
+DO NOT CHANGE OR MOVE ANY FILES OR DIRECTORIES ASSOCIATED WITH THIS PROJECT
+if you might want your grade to be reevaluated.  Instead, COPY getword.c
+to a different directory if you want to continue to play around with it.
+(Indeed, ~/One/getword.c would be a good choice, but remember to set up all
+the soft links again -- this time pointing at the stuff under ~cs570/One .)
+
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes    *     *  No logins    6196001753
+
+Checking Program 0:
+Test 0... checking for the proper directory:
+total 20
+drwx------ 5 cssc0018   52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  100 Sep  4 08:54 One/
+-rw------- 1 cssc0018 1733 Aug 31 18:01 README
+drwx------ 2 cssc0018   34 Sep  2 10:05 Sandbox/
+drwxr-xr-x 2 cssc0018 4096 Sep  5 01:29 Zero/
+lrwxrwxrwx 1 cssc0018   31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018 9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018   31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+Good, Zero has been created.
+
+Test 1... did you change your finger info and password?
+Yes.
+
+Test 2... Checking the contents of your .forward file:
+head -20 ~cssc0018/.forward
+\cssc0018,
+brdcervantes@gmail.com
+One more point was possible here; your total is now 1/1
+
+Test 2... Did you use chsh to change your shell to tcsh?
+grep cssc0018 /etc/passwd
+cssc0018:x:1129:1007:Bernardo Cervantes,,,6196001753:/home/cs/carroll/cssc0018:/bin/tcsh
+Good.
+One more point was possible here; your total is now 2/2
+
+/bin/ls -loF ~cssc0018/Zero
+total 48
+lrwxrwxrwx 1 cssc0018    29 Sep  2 14:04 Data0 -> /home/cs/faculty/cs570/Data0//
+-rw------- 1 cssc0018  1075 Sep  4 09:40 LICENSE
+-rw-r--r-- 1 cssc0018  3434 Sep  4 08:36 getword.c
+-rw-r--r-- 1 cssc0018  1640 Sep  4 06:57 getword.c.save
+lrwxrwxrwx 1 cssc0018    37 Aug 30 12:58 getword.h -> /home/cs/faculty/cs570/Zero/getword.h
+-rw------- 1 cssc0018  6008 Sep  5 01:29 getword.o
+-rw------- 1 cssc0018   434 Sep  4 08:24 gradernotes
+-rw------- 1 cssc0018     8 Sep  2 11:35 input.txt
+lrwxrwxrwx 1 cssc0018    36 Aug 30 12:42 makefile -> /home/cs/faculty/cs570/Zero/makefile
+-rwx------ 1 cssc0018 11432 Sep  5 01:29 p0*
+lrwxrwxrwx 1 cssc0018    32 Aug 30 12:50 p0.c -> /home/cs/faculty/cs570/Zero/p0.c
+-rw------- 1 cssc0018  3416 Sep  5 01:29 p0.o
+-rw-r--r-- 1 cssc0018  1649 Sep  2 21:08 workingcopy.c
+ls -lo ~/Zero/getword.c
+-rw-r--r-- 1 cssc0018 3434 Sep  4 08:36 /home/cs/carroll/cssc0018/Zero/getword.c
+
+1    /*getword.c  - is a lexical analyzer that meets the requirements
+2     *	       of Program 0.
+3     *
+4     * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
+5     *	       Due: 9/5/18 @ 8PM
+6     *		 
+7     * Synopsis  - Takes input from the keyboard (stdin) or from
+8     * 	       Data0/input# and writes to the Storage array 
+9     *	       and returns a int back to p0.
+10    *
+11    * Objective - Returns the correct input back to p0 so that 
+12    *             p0 will print out the correct int and string
+13    *	       that is identical to the same output in the 
+14    *	       p0 prompt and the what autograder produces.
+15    *             
+16    */
+17   
+18   /* Include Files */
+19   #include <stdio.h>
+20   #include "getword.h"
+21   
+22   
+23   int getword(char *w){
+24   	int wordCount = 0; //Must initalize to zero or else you get garbage.
+25   	int iochar = 0;
+26   	int true = 0;      //bool for checking '$'
+27   
+28   	/* Stores intital char */
+29   
+30   	iochar = getchar(); 
+31   
+32   	/* Skipping leading spaces. */
+33   
+34   	while(iochar == ' '){
+35   		iochar = getchar();	
+36   	}
+37   
+38   	/* Check if EOF signal is in the beginning
+39   	 * and puts null char in array (storage) to print
+40   	 * an empty string. 
+41   	 * Returns -255
+42   	 */
+43   
+44   	if(iochar == EOF){
+45   		*w = '\0';    
+46   		return -255;
+47   	}
+48   
+49   	/* Checks if newline is in the beginning of the input.
+50   	 * Puts null char in array to print empty string.
+51   	 * Returns 0
+52   	 */
+53   
+54   	if(iochar == '\n'){
+55   		*w = '\0';
+56   		return 0;
+57   	}
+58   
+59   	/*
+60   	 * Checks if ";" is first char  
+61   	 * in input. Puts null char in array to print
+62   	 * null empty string.
+63   	 * Return 0 
+64   	 */ 
+65   
+66   	if(iochar == ';'){
+67   		*w = '\0';
+68   		return 0;
+69   	}
+70   
+71   
+72   	/*
+73   	 * Checks if "$" is first char  
+74   	 * in input. Puts null char in array to print
+75   	 * null empty string. Gets next char and checks 
+76   	 * if it is EOF. Sets boolean true to 1 or true.
+77   	 * Return 0 
+78   	 */ 
+79   
+80   	if(iochar == '$'){
+81   		true = 1;
+82   		iochar = getchar();
+83   		if(iochar == EOF){
+84   			return 0;
+85   		}
+86   	}
+87   
+88   	/*
+89   	 * Infinite for loop is used to get any remaining.  
+90   	 * characters with exception chars accounted for such as
+91   	 * EOF spaces, newlines and semicolons which are the same
+92   	 * as the first checks but this time we return wordCount since
+93   	 * these characters are not the first char in the words anymore.
+94            * when the word is processed the storage array has been written
+95   	 * with the word or an empty string based on some execptions
+96   	 * and the wordcount is returned which stops the for loop.    
+97   	 */ 
+98   
+99   	for(;;){
+100  
+101  		/* Checks for EOF. If wordCount is anything but zero. It returns
+102  		 * the word count. If not it returns -255. 
+103  		 */
+104  	
+105  		if(iochar == EOF){
+106  			if(wordCount < 0 || wordCount > 0){
+107  				iochar = ungetc(iochar,stdin);
+108  				*w = '\0';
+109  				return wordCount;
+110  			}
+111  
+112  			return -255; 
+113  		}
+114  
+115  		/* Checks for space. If found, write null char to 
+116  		 * array and 
+117  		 * return wordCount.
+118  		 */
+119  
+120  		if(iochar == ' '){
+121  			*w = '\0';
+122  			return wordCount;
+123  		}
+124  
+125  
+126  		/* Checks for newline or semicolon. 
+127  		 * If found, write null char to 
+128  		 * array and 
+129  		 * return wordCount.
+130  		 */
+131  
+132  		if(iochar == '\n'|| iochar == ';'){
+133  			iochar = ungetc(iochar,stdin);
+134  			*w = '\0';
+135  			return wordCount;
+136  		}
+137  
+138  
+139  		/* Writes current iochar to array.
+140  		 * Increments pointer to next array index. 
+141  		 */
+142  
+143  		*w = iochar;
+144  		w++;
+145  
+146  		/* Check if $ was at the beginning of a word.
+147  		 * If true then wordCount is decremented 
+148  		 *  and is negative. If not then the wordCount 
+149  		 *  is incremented and is postive. 
+150  		 */
+151  
+152  		if(true == 1){
+153  			wordCount--;
+154  		}
+155  
+156  		else{
+157  			wordCount++;
+158  		}
+159  		/*Gets next char and repeats loop. */
+160  
+161  		iochar = getchar();
+162  
+163  
+164  	}
+165  
+166  }
+
+Test 4... is getword.c documented?
+(Your getword.c documentation does NOT have to repeat the specs in getword.h,
+but it should contain your name, instructor name [NOTE: 'Carroll' contains two
+'R's and two 'L's], class (that is, 'CS570'), due date, etc.)
+Your comments should help explain what the various parts of your code are doing.
+Normally, your comments would be reviewed by a human.  But for this simple
+assignment, the autograder merely checks for the class and instructor name.
+One point was possible here; your total is now 3/3
+
+Test 5... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+1:"I wrote this code myself but I used example inout2.c from C
+2:by Discovery by Foster. I also read the first couple of 
+3:chapters of this book to learn the C language. As errors 
+4:occured I often googled syntax and used websites like
+5:stackoverflow.com and various other that lead me to 
+6:fix my code."
+7:
+8:As of right now my code is finished, has no known bugs and 
+9:does produce the correct output which has been verified
+10:by the autograder. 
+
+The autograder is not good at parsing English (no surprise there), so it
+will magnanimously award credit for the mere existence of the file -- but note
+that there are _two_ MANDATORY statements you MUST include in this file.
+Are you SURE you did that?
+
+One more point was possible here; your total is now 4/4
+
+Test 6: Checking all the soft links (calendar, p0 files):
+Is the calendar soft link in place?
+lrwxrwxrwx 1 cssc0018 carroll 31 Aug 30 10:16 /home/cs/carroll/cssc0018/calendar -> /home/cs/faculty/cs570/calendar
+Yes.
+Is the getword.h soft link in place?
+ls -l ~cssc0018/Zero/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 37 Aug 30 12:58 /home/cs/carroll/cssc0018/Zero/getword.h -> /home/cs/faculty/cs570/Zero/getword.h
+Yes.
+Is the makefile soft link in place?
+ls -l ~cssc0018/Zero/makefile
+lrwxrwxrwx 1 cssc0018 carroll 36 Aug 30 12:42 /home/cs/carroll/cssc0018/Zero/makefile -> /home/cs/faculty/cs570/Zero/makefile
+Yes.
+Is the p0.c soft link in place?
+ls -l ~cssc0018/Zero/p0.c
+lrwxrwxrwx 1 cssc0018 carroll 32 Aug 30 12:50 /home/cs/carroll/cssc0018/Zero/p0.c -> /home/cs/faculty/cs570/Zero/p0.c
+Yes.
+Unless ALL these are right, you could LOSE a point here; your total is now 4/4
+
+Likewise, your code should compile cleanly, without any serious warning messages
+from the compiler:
+Test 7... does your program compile?
+make clean; make
+rm -f *.o p0
+gcc -g   -c -o getword.o getword.c
+gcc -g   -c -o p0.o p0.c
+gcc -o p0 getword.o p0.o
+[1] 17825
+
+Test 8... does your program handle the simplest situtations?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input1 :
+
+Your output was:
+n=10, s=[no-brainer]
+n=3, s=[one]
+n=0, s=[]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+To make any differences easy to see, the actual diff command I used was:
+diff -a myoutput youroutput | cat -vt
+
+One more point was possible here; your total is now 5/5
+
+Test 9... does your program handle leading spaces and no trailing spaces?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input2 :
+
+Your output was:
+n=8, s=[trickier]
+n=0, s=[]
+n=3, s=[t$o]
+n=-6, s=[master]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+One more point was possible here; your total is now 6/6
+
+Test 10... how does your program react to a premature EOF?
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input3 :
+
+Your output was:
+n=-10, s=[$different]
+n=-5, s=[words]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+One more point was possible here; your total is now 7/7
+
+Test 11... does your program handle weird cases? (NOTE: negative 0 is still 0)
+Here is the result of ~cssc0018/Zero/p0 < ~cs570/Data0/input4 :
+
+Your output was:
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=-6, s=[expect]
+n=22, s=[0,0,0,0,-6,22,0,0,-255]
+n=0, s=[]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+One more point was possible here; your total is now 8/8
+
+Your grade for this assignment may be adjusted by a (human) grader at the
+due date.  Your grade could be as much as three points lower, depending on what
+you have put in gradernotes, the presense of 'serious' compiler warnings, and
+the quality of your getword.c documentation.
+NOTE: Even if you get subsequent downgrades for things like documentation, that
+does NOT put you at risk of disenrollment.  If this autograder score is
+8/8, you will NOT be dropped.
+Success on this assignment determines your competency in C, and whether or
+not you will be disenrolled from CS570 for lack of prerequisites.  You
+must have a PERFECT (autograder) score on this assignment to remain enrolled.
+
+             ------
+Total Points | 8  |  for cssc0018 - Bernardo Cervantes,,,6196001753 for Program 0
+             |----|
+             | 8  |
+             ------
+Congrats, you have 8/8; you will remain enrolled (unless YOU decide to drop!}
+A human might adjust your score downward if your documenation is insufficient,
+but any such downgrade will not affect your enrollment status.  You're in.

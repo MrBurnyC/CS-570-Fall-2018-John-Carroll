@@ -1,0 +1,780 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id 24DA66000048; Mon,  1 Oct 2018 19:40:04 -0700 (PDT)
+Date: Mon, 01 Oct 2018 19:40:04 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 2 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181002024004.24DA66000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 2.
+
+This message, which will appear to be mailed from your account, is intended to
+show you some (but not necessarily all) of the checks that will be made on your
+assignment when the due date actually arrives.  This is NOT the actual version
+that will be graded, but only an attempt to give you early warning of any
+potential problems.  Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/30      *  Oct  1 17:30 6196001753                (99.71.222.118)
+
+Checking Program 2:
+
+Remember, the GradeEarly file will be used to decide if you are FINISHED.
+If the GradeEarly file is present at the extra-credit deadline,
+your program will be considered 'submitted', with NO further chance for
+modifications.  Checking if the GradeEarly file exists:
+ls -l ~cssc0018/Two/GradeEarly
+/bin/ls: cannot access /home/cs/carroll/cssc0018/Two/GradeEarly: No such file or directory
+This indicates you are NOT currently applying for extra credit.
+Your solution would then be collected (for normal credit) the following week.
+total 64
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Oct  1 10:24 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018  4096 Oct  1 18:19 Sandbox/
+drwx------ 2 cssc0018  4096 Oct  1 17:43 Two/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+-rw------- 1 cssc0018    50 Sep 23 16:27 bar
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 68
+lrwxrwxrwx 1 cssc0018    28 Sep 25 19:36 Data2 -> /home/cs/faculty/cs570/Data2/
+lrwxrwxrwx 1 cssc0018    39 Sep 18 09:15 getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+lrwxrwxrwx 1 cssc0018    36 Sep 29 18:40 getword.h -> /home/cs/faculty/cs570/One/getword.h
+-rw------- 1 cssc0018  7160 Sep 30 18:50 getword.o
+-rw------- 1 cssc0018   500 Sep 18 09:09 gradernotes
+lrwxrwxrwx 1 cssc0018    35 Sep 18 08:58 makefile -> /home/cs/faculty/cs570/Two/makefile
+-rwx------ 1 cssc0018 18616 Oct  1 17:43 p2*
+-rw------- 1 cssc0018  3583 Oct  1 17:43 p2.c
+-rw------- 1 cssc0018  3795 Oct  1 17:37 p2.c~
+-rw------- 1 cssc0018   838 Oct  1 12:24 p2.h
+-rw------- 1 cssc0018   817 Oct  1 12:16 p2.h~
+-rw------- 1 cssc0018 10440 Oct  1 17:43 p2.o
+-rw------- 1 cssc0018     5 Sep 30 22:46 test
+-rw------- 1 cssc0018   421 Oct  1 11:00 working.c
+Test 1... testing will proceed only if you have created the proper files:
+ls -lo ~/Two/p2.c ~/Two/getword.c
+lrwxrwxrwx 1 cssc0018   39 Sep 18 09:15 /home/cs/carroll/cssc0018/Two/getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+-rw------- 1 cssc0018 3583 Oct  1 17:43 /home/cs/carroll/cssc0018/Two/p2.c
+
+
+
+
+Test 2... Checking program structure with cflow:
+cflow ~cssc0018/Two/p2.c ~cssc0018/Two/getword.c
+main() <int main () at /home/cs/carroll/cssc0018/Two/p2.c:4>:
+    setpgid()
+    signal()
+    sighandler() <void sighandler () at /home/cs/carroll/cssc0018/Two/p2.c:155>
+    printf()
+    parse() <int parse (char **commands, char *line) at /home/cs/carroll/cssc0018/Two/p2.c:40>:
+        getword() <int getword (char *w) at /home/cs/carroll/cssc0018/Two/getword.c:33>:
+            getenv()
+            getchar()
+            ungetc()
+        strcmp()
+    fflush()
+    exec_command() <void exec_command (char *command, char **args) at /home/cs/carroll/cssc0018/Two/p2.c:101>:
+        fflush()
+        fork()
+        perror()
+        run_child_command() <void run_child_command (char *command, char **args) at /home/cs/carroll/cssc0018/Two/p2.c:134>:
+            fflush()
+            execvp()
+            perror()
+            exit()
+        wait()
+        printf()
+    clear_flags() <void clear_flags () at /home/cs/carroll/cssc0018/Two/p2.c:150>:
+    killpg()
+    getpgrp()
+
+Test 3... Checking for some prescribed/proscribed features;
+a human will have to look over the output from the grep commands...
+----------------------------------------------------------------------STORAGE
+Are you defining a character buffer large enough to handle MANY 'long' words?
+egrep -n '#define|STORAGE' p2.h p2.c
+p2.h:12:#define EOF -255
+p2.h:13:#define ZERO_COMMANDS 0
+p2.h:14:#define FAIL 1
+p2.h:15:#define SUCCESS 0
+p2.h:16:#define STRING_EQUALS 0 
+p2.h:17:#define TRUE 1
+p2.h:18:#define FALSE 0
+p2.h:21:#define MAXITEM 100 /* max number of words */
+p2.h:22:#define MAXSIZE (STORAGE*MAXITEM) /*Max amount of characetr per commandline */
+----------------------------------------------------------------------SIG
+Are children being terminated with the correct signal?
+egrep -n 'SIG|setp|signal|terminated' p2.c
+6:	setpgid(0,0); // Sets current process and children to its own process group
+7:	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+31:	killpg(getpgrp(),SIGTERM);
+32:	printf("p2 terminated.\n");
+----------------------------------------------------------------------wait
+Is the parent waiting for a child?  ...For the CORRECT child?
+egrep -n 'wait|while' p2.c
+8:	while(TRUE){
+87:	} while (word_size != EOF && word_size != ZERO_COMMANDS); // read until a line terminator is encountered
+103:	int wait_status;
+119:				wait_status = wait(NULL);
+121:			}while(wait_status != child_pid);
+135:	int wait_status;
+----------------------------------------------------------------------void
+grep -n void p2.c
+7:	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+101:void exec_command(char *command, char **args){
+134:void run_child_command(char *command, char **args){
+150:void clear_flags(){
+155:void sighandler(){
+----------------------------------------------------------------------null
+Are you ensuring that background children don't compete for keyboard input?
+grep -n /dev/null p2.c
+----------------------------------------------------------------------fflush
+Are you ensuring that children inherit only empty buffers?
+egrep -n 'fork|fflush' p2.c
+17:			fflush(stdout);
+104:	fflush(stdout);
+105:	fflush(stderr);
+107:	if((child_pid = fork()) == FAIL){
+138:	fflush(stdout);
+139:	fflush(stderr);
+----------------------------------------------------------------------exit
+Do all children exit() upon failure?
+egrep -n 'execvp|exit|dup2|open|CHK|perror' p2.c
+5:	//int exit_code;
+108:		perror("Forked failed");
+142:	if(execvp(command, args) == FAIL){
+144:		perror("Exec failed");
+145:		exit(1);
+NOTE: sometimes _exit() can be preferable to exit()
+----------------------------------------------------------------------parse
+What (if anything) are you passing to parse?
+grep -n parse( p2.c
+10:		new_argv_size = parse(new_argv, line);
+40:int parse(char **commands , char *line){ 
+----------------------------------------------------------------------system
+Calls to system() are NOT being used, right?:
+grep -n system p2.c
+
+Test 4... is p2.c documented?
+(Your p2.c documentation does NOT have to repeat all the specs for p2,
+but it should list your name, instructor name [NOTE: 'Carroll' contains
+two 'R's and two 'L's], class [that is, 'CS570'], due date, etc.)
+A brief synopsis and guidance at decision points / tricky issues will suffice.
+                                              ERROR    ERROR    ERROR    ERROR
+Make sure you have the required documentation data in p2.c.
+You may LOSE a point here if keywords are missing; your total is now -1/0
+(Many more points depend on your documentation, but a human will have to
+assign the remaining documentation points.)
+
+Test 5... how is the syntax?
+make splint
+splint -warnposix +trytorecover -weak getword.c p2.c
+Splint 3.1.2 --- 11 Oct 2015
+
+p2.c: (in function main)
+p2.c:22:4: Unrecognized identifier: exec_command
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+p2.c:31:2: Unrecognized identifier: killpg
+p2.c: (in function run_child_command)
+p2.c:135:6: Variable wait_status declared but not used
+  A variable is declared but never used. Use /*@unused@*/ in front of
+  declaration to suppress message. (Use -varuse to inhibit warning)
+p2.c:136:8: Variable child_pid declared but not used
+
+Finished checking --- 4 code warnings
+make: *** [splint] Error 1
+
+NOTE: not everything that 'splint' comments about is necessarily a bad thing;
+for example, splint may complain if you don't save the value that printf()
+returns (even if this may be a perfectly reasonable thing to ignore).
+
+Test 6... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+
+1:"I wrote this code myself but I used the p2.c outline 
+2: in the lecture notes to jump start my p2.c 
+3: As errors occured I often googled syntax and used websites like
+4: stackoverflow.com and various other that lead me to 
+5: fix my code." I also emailed Dr. Caroll for help and hints on this program and 
+6: he has given me very good help that has lead me to finish it. 
+7:
+8:As of right now my code is finished, has no known bugs and 
+9:does produce the correct output which has been verified
+10:by the autograder.
+
+You may LOSE a point here if it doesn't exist; your total is now -1/0
+(Note that TWO required statements belong in this file; also list your design
+decisions here [see the 'checklist' below for samples of what to include .]
+A human grader will check this later, and perhaps adjust your score.)
+
+Test 7... are the makefile and getword.h soft links in place?
+ls -l ~cssc0018/Two/makefile ~cssc0018/Two/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 36 Sep 29 18:40 /home/cs/carroll/cssc0018/Two/getword.h -> /home/cs/faculty/cs570/One/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 35 Sep 18 08:58 /home/cs/carroll/cssc0018/Two/makefile -> /home/cs/faculty/cs570/Two/makefile
+makefile is correctly linked.
+getword.h is correctly linked.
+If you don't have the right setup, you could LOSE a point here;
+                                       Your total is now -1/0
+
+Test 8... are the proper .h files included in your source code?
+One more point was possible here; your total is now 0/1
+(If you are failing this test, just #include all the .h files for the system
+calls recommended for program2, even if you are not yet using all those calls.)
+There are (at least) 8 header files that you will need.
+And of course, if you're using non-recommended calls, make sure you have the
+proper .h files for those, too.
+
+NOTE: Review the earlier splint output; if some function names are tagged as
+"Unrecognized identifier", this is a pretty big hint about what you are missing.
+
+Test 9... does your program compile?
+make clean; make
+rm -f *.o p2 your.output*
+gcc -g   -c -o p2.o p2.c
+In file included from p2.c:1:0:
+p2.h:12:0: warning: "EOF" redefined [enabled by default]
+ #define EOF -255
+ ^
+In file included from /usr/include/stdio.h:74:0,
+                 from p2.h:1,
+                 from p2.c:1:
+/usr/include/libio.h:63:0: note: this is the location of the previous definition
+ # define EOF (-1)
+ ^
+p2.c:101:6: warning: conflicting types for 'exec_command' [enabled by default]
+ void exec_command(char *command, char **args){
+      ^
+p2.c:22:4: note: previous implicit declaration of 'exec_command' was here
+    exec_command(new_argv[0], new_argv);
+    ^
+gcc -g   -c -o getword.o getword.c
+gcc p2.o getword.o -o p2
+[1] 26079
+
+Test 10... does your program ignore '&' as a command separator if it is in
+the middle of the line, and handle '\;' correctly?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input1 :
+
+Your output was:
+cs570:echo [26083]
+cs570:cs570:p2 terminated.
+cs570:p2 terminated.
+
+The correct output should be something like:
+Null & ; echo Void
+:570: :570: p2 terminated.
+
+Your output might be ordered differently, and that's OK, as long as the
+child output and the number of prompts (2 of them) is correct.
+
+A diff of the correct output with your output shows:
+1,2c1,3
+< Null & ; echo Void
+< :570: :570: p2 terminated.
+---
+> cs570:echo [26083]
+> cs570:cs570:p2 terminated.
+> cs570:p2 terminated.
+
+                                              ERROR    ERROR    ERROR    ERROR
+
+Three more points were possible here; your total is now 1/4
+
+Some notes about the [odd-looking] correct output:
+Your shell was run using: ~cssc0018/Two/p2 < ~cs570/Data2/input1
+Due to the above redirection, we do not see any input commands, we only
+see what your process outputs.  If you are following the specs, p2 should print
+the prompt three times, followed by 'p2 terminated.', so
+':570: :570: :570: p2 terminated.' is correct.
+The child finishes first and therefore flushes his output buffer first, so the
+child output will (usually) appear before the shell prompts in these tests.
+...but this is NOT the order you should see when testing your p2 interactively.
+NOTE: If your ':570: ' prompt prints the proper NUMBER of times, but is intermixed
+with the other output, the autograder should still give you full credit; if not,
+the most common reason is inexact punctuation (6 colons AND a period).
+
+Test 11... does your program honor the 'cd' command?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input2 :
+
+/bin/ls: cannot access |: No such file or directory
+/bin/ls: cannot access tr: No such file or directory
+/bin/ls: cannot access a-z: No such file or directory
+/bin/ls: cannot access A-Z: No such file or directory
+Your output was:
+cs570:cs570:.:
+total 68
+lrwxrwxrwx 1 cssc0018 carroll    28 Sep 25 19:36 Data2 -> 
+/home/cs/faculty/cs570/Data2
+lrwxrwxrwx 1 cssc0018 carroll    39 Sep 18 09:15 getword.c -> 
+/home/cs/carroll/cssc0018/One/getword.c
+lrwxrwxrwx 1 cssc0018 carroll    36 Sep 29 18:40 getword.h -> 
+/home/cs/faculty/cs570/One/getword.h
+-rw------- 1 cssc0018 carroll  7160 Oct  1 19:39 getword.o
+-rw------- 1 cssc0018 carroll   500 Sep 18 09:09 gradernotes
+lrwxrwxrwx 1 cssc0018 carroll    35 Sep 18 08:58 makefile -> 
+/home/cs/faculty/cs570/Two/makefile
+-rwx------ 1 cssc0018 carroll 18616 Oct  1 19:39 p2
+-rw------- 1 cssc0018 carroll  3583 Oct  1 17:43 p2.c
+-rw------- 1 cssc0018 carroll  3795 Oct  1 17:37 p2.c~
+-rw------- 1 cssc0018 carroll   838 Oct  1 12:24 p2.h
+-rw------- 1 cssc0018 carroll   817 Oct  1 12:16 p2.h~
+-rw------- 1 cssc0018 carroll 10440 Oct  1 19:39 p2.o
+-rw------- 1 cssc0018 carroll     5 Sep 30 22:46 test
+-rw------- 1 cssc0018 carroll   421 Oct  1 11:00 working.c
+
+                                              ERROR    ERROR    ERROR    ERROR
+If 'cd' had worked, your program should have launched 'ls' from a new directory,
+...and the pipe to 'tr' should have changed to upper-case letters.
+
+Two more points were possible here; your total is now 1/6
+
+Test 12... does 'cd' with no arguments work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input3 :
+
+Your output was:
+cs570:cs570:/etc
+cs570:p2 terminated.
+
+The correct output is:
+/usr/local/bin
+:570: :570: :570: p2 terminated.
+(You can get full credit, even with parent and child output interleaved.)
+
+                                              ERROR    ERROR    ERROR    ERROR
+(I randomly set the HOME variable, so don't expect ~cssc0018 in the output.)
+If 'cd' had worked, 'pwd' should have reported whatever directory was currently
+specified by the environment variable HOME.
+
+Two more points were possible here; your total is now 1/8
+
+Test 13... does backgrounding work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input4 :
+
+Your output was:
+cs570:Mon Oct  1 19:39:52 PDT 2018
+cs570:/home/cs/faculty/cs570/jabbersleepy [26126]
+cs570:cs570:Mon Oct  1 19:39:52 PDT 2018
+cs570:child =26126= begins sleep
+child =26126= ends sleep
+cs570:p2 terminated.
+
+Did you print the process name, a space, and '[' ? (i.e., '.../jabbersleepy [')
+             /home/cs/faculty/cs570/jabbersleepy was printed -- CONGRATULATIONS
+
+/tmp/carroll23493/extractpid: Permission denied.
+Did your shell print the correct child process ID, within '[' and ']' ?
+                                              ERROR    ERROR    ERROR    ERROR
+Your shell should report the PID of the jabbersleepy process.
+Did the two 'date' commands get executed within the same second?
+                                              ERROR    ERROR    ERROR    ERROR
+Your shell must NOT wait for background processes.
+
+Three more points were possible here; your total is now 2/11
+
+Test 14... do backgrounded zombies get reaped quickly?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input88 :
+
+Your output was:
+cs570:sleep [26147]
+cs570:cs570:sleep [26148]
+cs570:cs570:sleep [26149]
+cs570:cs570:cs570:foreground jobs should clear out all zombies...if you use 
+wait() correctly.
+cs570:USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+cssc0018 25975  0.2  0.0  15684  1472 pts/21   S+   19:39   0:00 sg
+cssc0018 25998  0.6  0.0  15680  1476 pts/21   S+   19:39   0:00 csh 
+/tmp/carroll23493/studscript
+cssc0018 26079  0.0  0.0  15680   580 pts/21   S    19:39   0:00 csh 
+/tmp/carroll23493/studscript
+cssc0018 26080  0.0  0.0   4360   352 pts/21   S    19:39   0:00 sleep 20
+cssc0018 26145  0.0  0.0   4372   348 pts/21   S+   19:39   0:00 head -100
+cssc0018 26146  0.0  0.0   4244   496 pts/21   S    19:39   0:00 
+/home/cs/carroll/cssc0018/Two/p2
+cssc0018 26161  0.0  0.0  51708  1728 pts/21   R    19:39   0:00 /bin/ps -xu
+cs570:p2 terminated.
+
+           No zombie '<defunct>' processes were found by ps  -- CONGRATULATIONS
+
+You LOSE a point here if zombies remain (or ps fails); your total is now 2/11
+
+Test 15... do backgrounded processes get killed when the shell exits?
+NOTE: The following test does NOT work when I run it from a script
+(such as my grading script) :-(
+This is one of the tests I'll have to run 'by hand' after the due date.
+YOU can check if you will pass the test by trying:
+
+ ~cssc0018/Two/p2 < ~cs570/Data2/input5
+
+If you have done things right, you should see jabbersleepy print 'begins sleep'
+but it should get killed (by the exiting p2 shell) BEFORE it gets around to
+announcing the 'ends sleep' message.
+If this happens when you test this, then you're killing background processes OK.
+
+When you do the input5 test 'by hand', pay attention to whether tcsh
+reports 'Terminated' (with a capital 'T'); if so, this indicates you do
+NOT have the signal-catching stuff working correctly yet.
+
+Since this test has to be run 'by hand', all this script can check is
+whether you MIGHT be using killpg() properly:
+grep -n 'killpg(' ~/Two/p2.c
+31:	killpg(getpgrp(),SIGTERM);
+In file included from /home/cs/carroll/cssc0018/Two/p2.c:1:0:
+/home/cs/carroll/cssc0018/Two/p2.h:12:0: warning: "EOF" redefined [enabled by default]
+ #define EOF -255
+ ^
+In file included from /usr/include/stdio.h:74:0,
+                 from /home/cs/carroll/cssc0018/Two/p2.h:1,
+                 from /home/cs/carroll/cssc0018/Two/p2.c:1:
+/usr/include/libio.h:63:0: note: this is the location of the previous definition
+ # define EOF (-1)
+ ^
+One more point was possible here; your total is now 3/12
+
+Test 16... does the shell wait for foreground children?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input6 :
+
+Your output was:
+cs570:/bin/date [26174]
+cs570:cs570:Mon Oct  1 19:39:58 PDT 2018
+child =26175= begins sleep
+child =26175= ends sleep
+cs570:Mon Oct  1 19:40:00 PDT 2018
+cs570:p2 terminated.
+
+Did two seconds pass between the two 'date' commands?
+          Good, your shell waited for the foreground process -- CONGRATULATIONS
+
+One more point was possible here; your total is now 4/13
+
+Test 17... does your program redirect standard output?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input7 :
+
+Your stdout contents (only ':570: :570: :570: p2 terminated.' should appear here) was:
+cs570:cs570:/bin/uname: extra operand '>'
+Try '/bin/uname --help' for more information.
+cs570:p2 terminated.
+A diff of the correct prompts with yours shows:
+1c1,3
+< :570: :570: :570: p2 terminated.
+---
+> cs570:cs570:/bin/uname: extra operand '>'
+> Try '/bin/uname --help' for more information.
+> cs570:p2 terminated.
+                                              ERROR    ERROR    ERROR    ERROR
+Checking for the specified file (your.outputO)...
+ls -l your.outputO
+/bin/ls: cannot access your.outputO: No such file or directory
+The data in the specified file (your.outputO) was:
+cat: your.outputO: No such file or directory
+
+A diff of the correct output with the contents of your.outputO shows:
+diff: your.outputO: No such file or directory
+
+                                              ERROR    ERROR    ERROR    ERROR
+The output file did not exist/contain the proper output (or was not readable).
+
+Three more points were possible here; your total is now 4/16
+
+Test 18... do pipelines and input/output redirection all work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input11 :
+
+The contents of stdout/stderr was:
+cs570:cs570:p2 terminated.
+cs570:p2 terminated.
+
+The results of the redirected pipeline (in your.outputc) was:
+cat: your.outputc: No such file or directory
+
+The proper file contents should be:
+cat: /tmp/carroll23493/data11right: No such file or directory
+
+                                              ERROR    ERROR    ERROR    ERROR
+
+Three more points were possible here; your total is now 4/19
+
+Test 19... does your program guard against buffer overruns?
+(Note that every one of the strings you put in your argv[] array could
+potentially contain 254 characters, so p2 needs a LARGE character buffer...
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input8 :
+
+What was sent to stdout was (with 'extra' newlines inserted at column 80,
+so that the results don't display in a misleading way):
+cs570:abcde 123456789a123456789b123456789c123456789d123456789e123456789f12345678
+9g123456789h123456789i123456789j123456789k123456789l123456789m123456789n12345678
+9o123456789p123456789q123456789r123456789s123456789t123456789u123456789v12345678
+9w123456789x123456789y1234 56789z123456789A123456789B123456789C123456789D1234567
+89E123456789F123456789G123456789H123456789I123456789J123456789K123456789L1234567
+89M123456789N123456789O123456789P123456789Q123456789R123456789S123456789T1234567
+89U123456789V123456789W123456789X12345678 9Y123456789Z
+cs570:7829+7919 | bc
+cs570:p2 terminated.
+
+The first line of correct output (with extraneous newlines in column 80,
+to wrap the lines and make them fit on the screen) are:
+abcde 123456789a123456789b123456789c123456789d123456789e123456789f123456789g1234
+56789h123456789i123456789j123456789k123456789l123456789m123456789n123456789o1234
+56789p123456789q123456789r123456789s123456789t123456789u123456789v123456789w1234
+56789x123456789y1234 56789z123456789A123456789B123456789C123456789D123456789E123
+456789F123456789G123456789H123456789I123456789J123456789K123456789L123456789M123
+456789N123456789O123456789P123456789Q123456789R123456789S123456789T123456789U123
+456789V123456789W123456789X12345678 9Y123456789Z
+Your shell did not seem to process the echo-bc pipeline correctly.
+                                              ERROR    ERROR    ERROR    ERROR
+
+    Your shell found the first truncation location correctly -- CONGRATULATIONS
+
+Good, your shell found the second truncation point correctly -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 6/22
+
+Test 20... does your program avoid overwriting existing files?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input99 :
+
+Your stdout contents were:
+cs570:cs570:cs570:this overwriting should be REFUSED > your.outputO
+cs570:p2 terminated.
+NOTE: examine your error messages below carefully; if you see repeated
+messages that you did not expect, this is likely because the parent still had
+the error message in its buffer, the forked child inherited this data, and then
+both the parent and the child printed it.  You may have trouble reproducing
+this effect in your own experiments, but fflush() is what you need to fix it.
+**********************************************************************
+*             STDERR MESSAGES FROM input99                           *
+**********************************************************************
+Your stderr contents were:
+/bin/uname: extra operand '>'
+Try '/bin/uname --help' for more information.
+   If you complained about not overwriting existing files, then CONGRATULATIONS
+may be appropriate.
+Checking for the specified file (your.outputO)...
+ls -l your.outputO
+/bin/ls: cannot access your.outputO: No such file or directory
+The data in the specified file (your.outputO) was:
+cat: your.outputO: No such file or directory
+
+The output of the uname command should be in this file (not the echo output)
+                                              ERROR    ERROR    ERROR    ERROR
+The output file did not exist/contain the proper output (or was not readable).
+
+Two more points were possible here; your total is now 7/24
+
+Test 21... do foreground/background input/output redirection all work?
+NOTE: in this test, your HOME directory was set to /home/cs/faculty/cs570
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input9 :
+
+The contents of stdout/stderr was:
+cs570:< [26330]
+cs570:cs570:cs570:cs570:cs570:cs570:/home/cs/faculty/cs570 cs570:p2 terminated.
+cs570:cs570:p2 terminated.
+cs570:/home/cs/faculty/cs570 /home/cs/faculty/cs570 cs570:p2 terminated.
+cs570:p2 terminated.
+
+The results of the foreground command (in your.outputf) was:
+cat: your.outputf: No such file or directory
+
+The proper file contents should be:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+                                              ERROR    ERROR    ERROR    ERROR
+
+The results of the background command (in your.outputb) was:
+cat: your.outputb: No such file or directory
+
+The proper file contents should be:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+                                              ERROR    ERROR    ERROR    ERROR
+
+Three more points were possible here; your total is now 7/27
+
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input12 :
+
+The contents of stdout was:
+cs570:AB~CD /usr/local/binABCD
+cs570:echo [26351]
+cs570:cs570:cs570:is [26352]
+cs570:p2 terminated.
+cs570:p2 terminated.
+
+Your prompts might be interleaved differently, but stdout should look like:
+AB~CD /usr/local/binABCD /bin/tcsh ~ echo still part of previous line $SHELL &
+:570: :570: p2 terminated.
+                                              ERROR    ERROR    ERROR    ERROR
+
+**********************************************************************
+*             STDERR MESSAGES FROM input12                           *
+**********************************************************************
+What was sent to stderr was:
+
+Nothing was sent to stderr; a complaint about '&' not being an executable
+binary should be sent to stderr, so that's an ERROR    ERROR    ERROR    ERROR
+(Don't expect ~cssc0018 in the output, since I randomly set the HOME variable.)
+
+Two more points were possible here; your total is now 7/29
+
+Test 22... does your program handle badly-constructed commands?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input10 :
+
+What was sent to stdout was:
+cs570:cs570:cs570:cs570:cs570:cs570:SHOULD_not_EXEC |
+cs570:< [26372]
+cs570:cs570:cs570:cs570:This echo and the next cd SHOULD be executed by your 
+shell and NOT cause errors
+This echo and the next cd SHOULD be executed by your shell and NOT cause errors
+cs570:cd [26375]
+cs570:cs570:cs570:cd [26377]
+cs570:cs570:/etc/X11
+/etc/X11
+cs570:p2 terminated.
+cs570:p2 terminated.
+cs570:cs570:SHOULD_not_EXEC |
+cs570:< [26381]
+cs570:cs570:cs570:cs570:This echo and the next cd SHOULD be executed by your 
+shell and NOT cause errors
+cs570:cd [26384]
+cs570:cs570:This echo and the next cd SHOULD be executed by your shell and NOT 
+cause errors
+cs570:cd [26386]
+cs570:cs570:/etc/X11
+
+    Good, your shell continued to process the valid commands -- CONGRATULATIONS
+
+**********************************************************************
+*             STDERR MESSAGES FROM input10                           *
+**********************************************************************
+What was sent to stderr was:
+sort: cannot read: <: No such file or directory
+/usr/bin/uname: extra operand '>'
+Try '/usr/bin/uname --help' for more information.
+/usr/bin/uname: extra operand '>'
+Try '/usr/bin/uname --help' for more information.
+sort: cannot read: <: No such file or directory
+/usr/bin/uname: extra operand '>'
+Try '/usr/bin/uname --help' for more information.
+/usr/bin/uname: extra operand '>'
+Try '/usr/bin/uname --help' for more information.
+
+If your stderr message complained about confusing options, then CONGRATULATIONS
+may be appropriate.
+
+Of course, a human will have to judge the quality of your error/warning messages
+
+Three more points were possible here; your total is now 10/32
+The assignment will be worth 35 points (after a human grades it).
+
+Test 23... no points, just a way of checking if vertical piping is implemented.
+If you have pipelines working, the results of a ps command should be displayed.
+Examine the output of the ps command below carefully.  If you are doing vertical
+piping correctly, the parent of the 'sleep' process (shown in the PPID coumn)
+should be the 'vertical' process, NOT the parent 'p2' process.
+If p2, vertical, and sleep report 3 different numbers in the PPID column,
+relax -- you're doing things right.
+
+But if both children report p2 as their parent, this is horizontal piping.
+The autograder is too dumb to check this effectively, so it may be reporting a
+MUCH higher score than is warranted.
+
+If you fail to do vertical piping, it [negatively] affects your grade.  A human
+(me) will have to sadly demolish your piping points when I grade the printouts.
+
+One of the 3 processes reported should be the child doing the 'sleep' command.
+If you see only two processes in the ps output, perhaps you are [inadvisably]
+having one child wait until the grandchild finishes.  Don't do that...
+
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input16 :
+
+sleep: invalid time interval '|'
+sleep: invalid time interval '/home/cs/faculty/cs570/vertical'
+Try 'sleep --help' for more information.
+cs570:cs570:cs570:p2 terminated.
+NOTE: if you are not seeing any output, this [may] mean that you are INCORRECTLY
+having the child wait() for the grandchild.  You should NOT do this --
+Only the original parent should be doing any wait()ing.
+
+Your grade for this assignment will be determined by a (human) grader
+at the due date.
+The automation currently only tests 32 out of the total 35 points;
+a human will determine whether you have earned the remaining 3 points,
+and if you miss too much stuff on the checklist below, you'll LOSE some points.
+(On the automated part, you scored 10/32.)
+See the extensive checklist to get an idea of what I will be looking for.
+             ------
+Total Points |10+?|  for cssc0018 cssc0018 - Bernardo Cervantes,,,61960017 for Program 2
+             |----|
+             | 35 |
+             ------
+The file /home/cs/carroll/cssc0018/Two/GradeEarly does not exist;
+IF this had been the extra-credit deadline,
+your project would have been collected later, for no extra credit.
+Program 2 gradesheet
+
+a PARTIAL checklist of things the grader may judge:
+
+Quality of documentation & header info          constants, etc. documented?
+                                        ___/    name, class, instructor, date?
+getword.c documentation?                        algorithm explained?
+                                        ___/
+Appropriate bad-syntax error messages           (to stderr, of course)
+                                        ___/
+NO inappropriate duplicate output lines
+(neither stderr nor stdout)             ___/    Research fflush()
+Correct foreground child wait()ed for?
+                                        ___/    2 statements, and also:
+MULTIPLE required items in gradernotes?         E.g., what do you do if you see:
+                                        ___/    echo hi>& ?   Document your
+Documentation of individual choices             choices *in gradernotes*, so
+                                        ___/    that I can find it!
+Background processes dup2 on /dev/null?
+                                        ___/    Are background zombies reaped
+Background processes terminate correctly        as soon as possible?
+                                        ___/
+Do you exit upon execvp failure?                Same for pipe, dup2, open, etc.?
+                                        ___/
+NO ONE should wait() for grandchild!            ...this can cause deadlock!
+                                        ___/
+Does a child create grandchild in pipes?        IMPORTANT!!! You will LOSE *ALL*
+                                        ___/    the pipeline points if you did
+Is your character array long enough?            not use 'vertical' pipelining.
+                                        ___/
+"p2 terminated" printf comes AFTER killpg       (This is how I check if your
+                                        ___/    signal handler is working...)
+Unexpected behavior (if any) documented
+in gradernotes file                     ___/    SAY what isn't working!
+                                       ______
+                                      |      |
+                                      |______|
+                                      |  35  |
+                                      |______|

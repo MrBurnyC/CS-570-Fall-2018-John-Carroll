@@ -1,0 +1,30 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id C57936000049; Sun,  9 Sep 2018 13:26:16 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id C37A66000048
+	for <cs570-01@edoras.sdsu.edu>; Sun,  9 Sep 2018 13:26:16 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: misprints on page 89 of CS570 notes
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <15806.1536524776.1@edoras>
+Date: Sun, 09 Sep 2018 13:26:16 -0700
+Message-Id: <20180909202616.C37A66000048@edoras.sdsu.edu>
+
+The program1 specification on page 89 of the xeroxed notes illustrates a
+bogus example -- it's using the specs from last spring, rather than the
+rules for this semester.  So just ignore that example.  I've updated
+~cs570/program1 to accurately reflect the requirements for this
+semester.  (The full specs of getword() is in ~cs570/One/getword.h,
+not in ~cs570/program1.)
+
+Sorry for any confusion,
+jc
+
+ps -- I've started populating ~cs570/Data1 with input files.  I should
+have at least some p1 autograder results to mail out by tonight.

@@ -1,0 +1,51 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id 512006000048; Wed, 31 Oct 2018 10:32:57 -0700 (PDT)
+Date: Wed, 31 Oct 2018 10:32:57 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181031173257.512006000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+Below are the grade totals for the midterm exam (in the far right column,
+labelled "E1").  The midterm score is NOT combined with the totals for the
+assignments, and is NOT reflected in the percent (%) column, since a point
+on the midterm is not quite worth the same as a point on an assignment.
+The % column is just the average of your program scores, which now
+incorporates p2.  At the end of the course, scores will be adjusted
+to reflect the 30%/25%/45% split advertised in the syllabus for the
+assignments/midterm/final weights.  The final is already worth 45% of your
+grade, but if you do SIGNIFICANTLY better on the final than on the midterm,
+I'll weight the final even more heavily, to help boost your grade.  Start
+studying NOW, and remember that you need to concentrate on understanding,
+not just memorization.
+
+The average on the exam was 37/50 (74%) on the exam, despite some extremely
+low scores, which may be an historic high -- so either this was an easy
+exam, or you folks are REALLY good.
+
+Getting more than 100% on the programs can help make up for any points you
+might have missed on the midterm or final.  It's important to strive for
+the 125% deadline for P4 (which will be worth a lot [about 50 points],
+and will build on P2 -- so be thinking about how to fix anything that
+still doesn't work in P2).  You're likely to be very busy at the end of
+the semester, so getting P4 out of the way early can help in your other
+classes, too -- and you get extra credit, to boot, WITHOUT extra work.
+Pay attention to the P3 deadlines as well, and score some extra points there.
+The quicker you finish P3, the quicker you can get started on P4.
+
+The lines below show the class average, maximum achieved, maximum possible,
+and your score.  If you requested a regrade on some exam problem[s], you
+should see any such modifications reported below.
+
+logname P0 P1 P2   CS570 Fall 2018            Total % E1
+logname  7 14 26    --averages--               47  82 37
+logname  8 15 39      -maximum-                62 107 49
+masc0000 8 15 35 Aardvark, Aaron               58 100 50 <Perfect Score
+cssc0018 7 14 39 Cervantes, Bernardo           60 103 31

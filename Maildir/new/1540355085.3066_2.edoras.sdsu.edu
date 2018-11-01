@@ -1,0 +1,35 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 498AF6000049; Tue, 23 Oct 2018 21:24:45 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 472D06000048
+	for <cs570-01@edoras.sdsu.edu>; Tue, 23 Oct 2018 21:24:45 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: CS570 midterm clarification
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <3034.1540355085.1@edoras>
+Date: Tue, 23 Oct 2018 21:24:45 -0700
+Message-Id: <20181024042445.472D06000048@edoras.sdsu.edu>
+
+A few people have asked for clarification about how much of a
+'cheat sheet' you are allowed to bring to the CS570 midterm on
+Thursday.  It's making me wonder if I at some point mis-spoke in
+class one day.  Officially, you may bring exactly what it says in
+the ~cs570/midterm_advice file (which has the same content as
+the mailing I broadcast about the exam):
+
+
+The exam will be closed-book, but you may bring to the exam ONE
+8.5x11-inch page of notes (you can write/xerox/doodle on both sides
+of the page).
+
+
+So, that's the 'official' word.
+
+Cheers,
+jc

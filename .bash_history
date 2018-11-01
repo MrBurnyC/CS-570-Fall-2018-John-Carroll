@@ -176,3 +176,11 @@ chsh /bin/tcsh .
 chsh -l
 chsh -s /bin/tcsh
 exit
+ps
+man exec
+exec csh
+man execvp(3)
+man execvp(3)
+man execvp (3)
+ps
+tcsh

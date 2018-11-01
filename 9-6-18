@@ -1,0 +1,197 @@
+Script started on Thu Sep  6 12:39:28 2018
+[1medoras [0m~[57]% ls > nf
+[1medoras [0m~[58]% cat nf
+2ndfile 
+9-6-18 
+Maildir/
+One/
+README 
+Sandbox/
+Zero/
+calendar@
+errors*
+errors.c@
+newfile 
+nf 
+[1medoras [0m~[59]% ls | sort-r > sorted
+sort-r: Command not found.
+[1medoras [0m~[60]% ls | sort-r > sorted[P
+sorted: File exists.
+[1medoras [0m~[61]% gre=[K[K[K[Kcat sorted 
+[1medoras [0m~[62]% cat sorted[15G[10@ls | sort-r >[35G[15G[P[P[P[P[P[P[P[P[P[P[P[P[P[P[P[Pted[Ked[Kd[K[Kls
+2ndfile   Maildir/  README    Zero/     errors*   newfile   sorted    
+9-6-18    One/      Sandbox/  calendar@ errors.c@ nf        
+[1medoras [0m~[63]% cat sorted 
+[1medoras [0m~[64]% ls | sorted[K[K -r >sorted
+sorted: File exists.
+[1medoras [0m~[65]% grep foo README 
+[1medoras [0m~[66]% echo $status
+1
+[1medoras [0m~[67]% grep 2 README 
+line [01;31m[K2[m[K.  For example, if I had assigned you cssc1[01;31m[K2[m[K34 and you receive mail
+\cssc1[01;31m[K2[m[K34,
+[1medoras [0m~[68]% !e
+echo $status
+0
+[1medoras [0m~[69]% greo 2 bibexustebtfuke[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knonexistentfile
+
+CORRECT>grep 2 nonexistentfile (y|n|e|a)? yes
+grep: nonexistentfile: No such file or directory
+[1medoras [0m~[70]% 
+[1medoras [0m~[70]% !e
+echo $status
+2
+[1medoras [0m~[71]% ls ~cs
+cs237    cssc0128 cssc0261 cssc0394 cssc0527 cssc0660 cssc0793 cssc1089
+cs320    cssc0129 cssc0262 cssc0395 cssc0528 cssc0661 cssc0794 cssc1090
+cs470    cssc0130 cssc0263 cssc0396 cssc0529 cssc0662 cssc0795 cssc1091
+cs566    cssc0131 cssc0264 cssc0397 cssc0530 cssc0663 cssc0796 cssc1092
+cs570    cssc0132 cssc0265 cssc0398 cssc0531 cssc0664 cssc0797 cssc1093
+cssc0000 cssc0133 cssc0266 cssc0399 cssc0532 cssc0665 cssc0798 cssc1094
+cssc0001 cssc0134 cssc0267 cssc0400 cssc0533 cssc0666 cssc0799 cssc1095
+cssc0002 cssc0135 cssc0268 cssc0401 cssc0534 cssc0667 cssc0800 cssc1096
+cssc0003 cssc0136 cssc0269 cssc0402 cssc0535 cssc0668 cssc0801 cssc1097
+cssc0004 cssc0137 cssc0270 cssc0403 cssc0536 cssc0669 cssc0802 cssc1098
+cssc0005 cssc0138 cssc0271 cssc0404 cssc0537 cssc0670 cssc0803 cssc1099
+cssc0006 cssc0139 cssc0272 cssc0405 cssc0538 cssc0671 cssc0804 cssc1100
+cssc0007 cssc0140 cssc0273 cssc0406 cssc0539 cssc0672 cssc0805 cssc1101
+cssc0008 cssc0141 cssc0274 cssc0407 cssc0540 cssc0673 cssc0806 cssc1102
+cssc0009 cssc0142 cssc0275 cssc0408 cssc0541 cssc0674 cssc0807 cssc1103
+cssc0010 cssc0143 cssc0276 cssc0409 cssc0542 cssc0675 cssc0808 cssc1104
+cssc0011 cssc0144 cssc0277 cssc0410 cssc0543 cssc0676 cssc0809 cssc1105
+cssc0012 cssc0145 cssc0278 cssc0411 cssc0544 cssc0677 cssc0810 cssc1106
+cssc0013 cssc0146 cssc0279 cssc0412 cssc0545 cssc0678 cssc0811 cssc1107
+cssc0014 cssc0147 cssc0280 cssc0413 cssc0546 cssc0679 cssc0812 cssc1108
+cssc0015 cssc0148 cssc0281 cssc0414 cssc0547 cssc0680 cssc0813 cssc1109
+cssc0016 cssc0149 cssc0282 cssc0415 cssc0548 cssc0681 cssc0814 cssc1110
+cssc0017 cssc0150 cssc0283 cssc0416 cssc0549 cssc0682 cssc0815 cssc1111
+cssc0018 cssc0151 cssc0284 cssc0417 cssc0550 cssc0683 cssc0816 cssc1112
+cssc0019 cssc0152 cssc0285 cssc0418 cssc0551 cssc0684 cssc0817 cssc1113
+cssc0020 cssc0153 cssc0286 cssc0419 cssc0552 cssc0685 cssc0818 cssc1114
+cssc0021 cssc0154 cssc0287 cssc0420 cssc0553 cssc0686 cssc0819 cssc1115
+cssc0022 cssc0155 cssc0288 cssc0421 cssc0554 cssc0687 cssc0820 cssc1116
+cssc0023 cssc0156 cssc0289 cssc0422 cssc0555 cssc0688 cssc0821 cssc1117
+cssc0024 cssc0157 cssc0290 cssc0423 cssc0556 cssc0689 cssc0822 cssc1118
+cssc0025 cssc0158 cssc0291 cssc0424 cssc0557 cssc0690 cssc0823 cssc1119
+cssc0026 cssc0159 cssc0292 cssc0425 cssc0558 cssc0691 cssc0824 cssc1120
+cssc0027 cssc0160 cssc0293 cssc0426 cssc0559 cssc0692 cssc0825 cssc1121
+cssc0028 cssc0161 cssc0294 cssc0427 cssc0560 cssc0693 cssc0826 cssc1122
+cssc0029 cssc0162 cssc0295 cssc0428 cssc0561 cssc0694 cssc0827 cssc1123
+cssc0030 cssc0163 cssc0296 cssc0429 cssc0562 cssc0695 cssc0828 cssc1124
+cssc0031 cssc0164 cssc0297 cssc0430 cssc0563 cssc0696 cssc0829 cssc1125
+cssc0032 cssc0165 cssc0298 cssc0431 cssc0564 cssc0697 cssc0830 cssc1126
+cssc0033 cssc0166 cssc0299 cssc0432 cssc0565 cssc0698 cssc0831 cssc1127
+cssc0034 cssc0167 cssc0300 cssc0433 cssc0566 cssc0699 cssc0832 cssc1128
+cssc0035 cssc0168 cssc0301 cssc0434 cssc0567 cssc0700 cssc0833 cssc1129
+cssc0036 cssc0169 cssc0302 cssc0435 cssc0568 cssc0701 cssc0834 cssc1130
+cssc0037 cssc0170 cssc0303 cssc0436 cssc0569 cssc0702 cssc0835 cssc1131
+cssc0038 cssc0171 cssc0304 cssc0437 cssc0570 cssc0703 cssc0836 cssc1132
+cssc0039 cssc0172 cssc0305 cssc0438 cssc0571 cssc0704 cssc0837 cssc1133
+cssc0040 cssc0173 cssc0306 cssc0439 cssc0572 cssc0705 cssc0838 cssc1134
+cssc0041 cssc0174 cssc0307 cssc0440 cssc0573 cssc0706 cssc0839 cssc1135
+cssc0042 cssc0175 cssc0308 cssc0441 cssc0574 cssc0707 cssc0840 cssc1136
+cssc0043 cssc0176 cssc0309 cssc0442 cssc0575 cssc0708 cssc0841 cssc1137
+cssc0044 cssc0177 cssc0310 cssc0443 cssc0576 cssc0709 cssc0842 cssc1138
+cssc0045 cssc0178 cssc0311 cssc0444 cssc0577 cssc0710 cssc0843 cssc1139
+cssc0046 cssc0179 cssc0312 cssc0445 cssc0578 cssc0711 cssc0844 cssc1140
+cssc0047 cssc0180 cssc0313 cssc0446 cssc0579 cssc0712 cssc0845 cssc1141
+cssc0048 cssc0181 cssc0314 cssc0447 cssc0580 cssc0713 cssc0846 cssc1142
+cssc0049 cssc0182 cssc0315 cssc0448 cssc0581 cssc0714 cssc0847 cssc1143
+cssc0050 cssc0183 cssc0316 cssc0449 cssc0582 cssc0715 cssc0848 cssc1144
+cssc0051 cssc0184 cssc0317 cssc0450 cssc0583 cssc0716 cssc0849 cssc1145
+cssc0052 cssc0185 cssc0318 cssc0451 cssc0584 cssc0717 cssc0850 cssc1146
+cssc0053 cssc0186 cssc0319 cssc0452 cssc0585 cssc0718 cssc0851 cssc1147
+cssc0054 cssc0187 cssc0320 cssc0453 cssc0586 cssc0719 cssc0852 cssc1148
+cssc0055 cssc0188 cssc0321 cssc0454 cssc0587 cssc0720 cssc0853 cssc1149
+cssc0056 cssc0189 cssc0322 cssc0455 cssc0588 cssc0721 cssc0854 cssc1150
+cssc0057 cssc0190 cssc0323 cssc0456 cssc0589 cssc0722 cssc0855 cssc1151
+cssc0058 cssc0191 cssc0324 cssc0457 cssc0590 cssc0723 cssc0856 cssc1152
+cssc0059 cssc0192 cssc0325 cssc0458 cssc0591 cssc0724 cssc0857 cssc1153
+cssc0060 cssc0193 cssc0326 cssc0459 cssc0592 cssc0725 cssc0858 cssc1154
+cssc0061 cssc0194 cssc0327 cssc0460 cssc0593 cssc0726 cssc0859 cssc1155
+cssc0062 cssc0195 cssc0328 cssc0461 cssc0594 cssc0727 cssc0860 cssc1156
+cssc0063 cssc0196 cssc0329 cssc0462 cssc0595 cssc0728 cssc0861 cssc1157
+cssc0064 cssc0197 cssc0330 cssc0463 cssc0596 cssc0729 cssc0862 cssc1158
+cssc0065 cssc0198 cssc0331 cssc0464 cssc0597 cssc0730 cssc0863 cssc1159
+cssc0066 cssc0199 cssc0332 cssc0465 cssc0598 cssc0731 cssc0864 cssc1160
+cssc0067 cssc0200 cssc0333 cssc0466 cssc0599 cssc0732 cssc0865 cssc1161
+cssc0068 cssc0201 cssc0334 cssc0467 cssc0600 cssc0733 cssc0866 cssc1162
+cssc0069 cssc0202 cssc0335 cssc0468 cssc0601 cssc0734 cssc0867 cssc1163
+cssc0070 cssc0203 cssc0336 cssc0469 cssc0602 cssc0735 cssc0868 cssc1164
+cssc0071 cssc0204 cssc0337 cssc0470 cssc0603 cssc0736 cssc0869 cssc1165
+cssc0072 cssc0205 cssc0338 cssc0471 cssc0604 cssc0737 cssc0870 cssc1166
+cssc0073 cssc0206 cssc0339 cssc0472 cssc0605 cssc0738 cssc0871 cssc1167
+cssc0074 cssc0207 cssc0340 cssc0473 cssc0606 cssc0739 cssc0872 cssc1168
+cssc0075 cssc0208 cssc0341 cssc0474 cssc0607 cssc0740 cssc0873 cssc1169
+cssc0076 cssc0209 cssc0342 cssc0475 cssc0608 cssc0741 cssc0874 cssc1170
+cssc0077 cssc0210 cssc0343 cssc0476 cssc0609 cssc0742 cssc0875 cssc1171
+cssc0078 cssc0211 cssc0344 cssc0477 cssc0610 cssc0743 cssc0876 cssc1172
+cssc0079 cssc0212 cssc0345 cssc0478 cssc0611 cssc0744 cssc0877 cssc1173
+cssc0080 cssc0213 cssc0346 cssc0479 cssc0612 cssc0745 cssc0878 cssc1174
+cssc0081 cssc0214 cssc0347 cssc0480 cssc0613 cssc0746 cssc0879 cssc1175
+cssc0082 cssc0215 cssc0348 cssc0481 cssc0614 cssc0747 cssc0880 cssc1176
+cssc0083 cssc0216 cssc0349 cssc0482 cssc0615 cssc0748 cssc0881 cssc1177
+cssc0084 cssc0217 cssc0350 cssc0483 cssc0616 cssc0749 cssc0882 cssc1178
+cssc0085 cssc0218 cssc0351 cssc0484 cssc0617 cssc0750 cssc0883 cssc1179
+cssc0086 cssc0219 cssc0352 cssc0485 cssc0618 cssc0751 cssc0884 cssc1180
+cssc0087 cssc0220 cssc0353 cssc0486 cssc0619 cssc0752 cssc0885 cssc1181
+cssc0088 cssc0221 cssc0354 cssc0487 cssc0620 cssc0753 cssc0886 cssc1182
+cssc0089 cssc0222 cssc0355 cssc0488 cssc0621 cssc0754 cssc0887 cssc1183
+cssc0090 cssc0223 cssc0356 cssc0489 cssc0622 cssc0755 cssc0888 cssc1184
+cssc0091 cssc0224 cssc0357 cssc0490 cssc0623 cssc0756 cssc0889 cssc1185
+cssc0092 cssc0225 cssc0358 cssc0491 cssc0624 cssc0757 cssc0890 cssc1186
+cssc0093 cssc0226 cssc0359 cssc0492 cssc0625 cssc0758 cssc1054 cssc1187
+cssc0094 cssc0227 cssc0360 cssc0493 cssc0626 cssc0759 cssc1055 cssc1188
+cssc0095 cssc0228 cssc0361 cssc0494 cssc0627 cssc0760 cssc1056 cssc1189
+cssc0096 cssc0229 cssc0362 cssc0495 cssc0628 cssc0761 cssc1057 cssc1190
+cssc0097 cssc0230 cssc0363 cssc0496 cssc0629 cssc0762 cssc1058 cssc1191
+cssc0098 cssc0231 cssc0364 cssc0497 cssc0630 cssc0763 cssc1059 cssc1192
+cssc0099 cssc0232 cssc0365 cssc0498 cssc0631 cssc0764 cssc1060 cssc1193
+cssc0100 cssc0233 cssc0366 cssc0499 cssc0632 cssc0765 cssc1061 cssc1194
+cssc0101 cssc0234 cssc0367 cssc0500 cssc0633 cssc0766 cssc1062 cssc1195
+cssc0102 cssc0235 cssc0368 cssc0501 cssc0634 cssc0767 cssc1063 cssc1196
+cssc0103 cssc0236 cssc0369 cssc0502 cssc0635 cssc0768 cssc1064 cssc1197
+cssc0104 cssc0237 cssc0370 cssc0503 cssc0636 cssc0769 cssc1065 cssc1198
+cssc0105 cssc0238 cssc0371 cssc0504 cssc0637 cssc0770 cssc1066 cssc1199
+cssc0106 cssc0239 cssc0372 cssc0505 cssc0638 cssc0771 cssc1067 cssc1200
+cssc0107 cssc0240 cssc0373 cssc0506 cssc0639 cssc0772 cssc1068 cssc1201
+cssc0108 cssc0241 cssc0374 cssc0507 cssc0640 cssc0773 cssc1069 cssc1202
+cssc0109 cssc0242 cssc0375 cssc0508 cssc0641 cssc0774 cssc1070 cssc1203
+cssc0110 cssc0243 cssc0376 cssc0509 cssc0642 cssc0775 cssc1071 cssc1204
+cssc0111 cssc0244 cssc0377 cssc0510 cssc0643 cssc0776 cssc1072 cssc1205
+cssc0112 cssc0245 cssc0378 cssc0511 cssc0644 cssc0777 cssc1073 cssc1206
+cssc0113 cssc0246 cssc0379 cssc0512 cssc0645 cssc0778 cssc1074 cssc1207
+cssc0114 cssc0247 cssc0380 cssc0513 cssc0646 cssc0779 cssc1075 cssc1208
+cssc0115 cssc0248 cssc0381 cssc0514 cssc0647 cssc0780 cssc1076 cssc1209
+cssc0116 cssc0249 cssc0382 cssc0515 cssc0648 cssc0781 cssc1077 cssc1210
+cssc0117 cssc0250 cssc0383 cssc0516 cssc0649 cssc0782 cssc1078 cssc1211
+cssc0118 cssc0251 cssc0384 cssc0517 cssc0650 cssc0783 cssc1079 cssc1212
+cssc0119 cssc0252 cssc0385 cssc0518 cssc0651 cssc0784 cssc1080 cssc1213
+cssc0120 cssc0253 cssc0386 cssc0519 cssc0652 cssc0785 cssc1081 cssc1214
+cssc0121 cssc0254 cssc0387 cssc0520 cssc0653 cssc0786 cssc1082 cssc1215
+cssc0122 cssc0255 cssc0388 cssc0521 cssc0654 cssc0787 cssc1083 cssc1216
+cssc0123 cssc0256 cssc0389 cssc0522 cssc0655 cssc0788 cssc1084 cssc1217
+cssc0124 cssc0257 cssc0390 cssc0523 cssc0656 cssc0789 cssc1085 cssc1218
+cssc0125 cssc0258 cssc0391 cssc0524 cssc0657 cssc0790 cssc1086 
+cssc0126 cssc0259 cssc0392 cssc0525 cssc0658 cssc0791 cssc1087 
+cssc0127 cssc0260 cssc0393 cssc0526 cssc0659 cssc0792 cssc1088 
+[1medoras [0m~[71]% ls ~cs570/
+/home/cs/faculty/cs570:
+8-30-18script           dir.c                   phil.c 
+Binmh/                  dup.c                   pipe.c 
+CHK.h                   dup2.c                  program0 
+Data0/                  environ.c               ptrex.c 
+Maildir/                errors.c                semex.c 
+Old/                    exec1.c                 sig.c 
+One/                    filetypes.c             sighandler.c 
+RCS/                    fork1.c                 stat.c 
+README                  fork2.c                 vertical*
+Three/                  freq*                   vertical.c 
+UNIX_pipes              gdb_tutorial            vi-vim-cheat-sheet.gif 
+Zero/                   jabbersleepy*           vi_commands 
+arg.c                   jabbersleepy.c          
+calendar                p1.c                    
+[1medoras [0m~[72]% cd[K[Kls ~cs570.[K/on[K[KO
+Old/ One/ 
+[1medoras [0m~[72]% ls ~cs570/One
+/home/cs/faculty/cs57

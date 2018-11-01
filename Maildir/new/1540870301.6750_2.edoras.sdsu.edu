@@ -1,0 +1,330 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id B72996000048; Mon, 29 Oct 2018 20:31:41 -0700 (PDT)
+Date: Mon, 29 Oct 2018 20:31:41 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 3 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181030033141.B72996000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 3.
+
+This message, which will appear to be mailed from your account, is intended to
+show you some (but not necessarily all) of the checks that will be made on your
+assignment when the due date actually arrives.  This is NOT the actual version
+that will be graded, but only an attempt to give you early warning of any
+potential problems.  Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/11      *  Oct 29 10:49 6196001753                (10.130.154.60)
+
+Checking Program 3:
+Checking Program 3:
+Remember, the GradeEarly file will be used to decide if you are FINISHED.
+If the GradeEarly file is present at the extra-credit deadline,
+your program will be considered 'submitted', with NO further chance for
+modifications.  Checking if the GradeEarly file exists:
+ls -l ~cssc0018/Three/GradeEarly
+/bin/ls: cannot access /home/cs/carroll/cssc0018/Three/GradeEarly: No such file or directory
+This indicates you are NOT currently applying for extra credit.
+Your solution would then be collected (for normal credit) the following week.
+
+NOTE: Make sure your p3helper.c documentation EXPLAINS your solution strategy.
+Remember that you are to try to provide FAIRNESS TO WRITERS (via p3 1 [seed] ),
+in addition to avoiding 'breaking the rules'-- so describe how that is achieved.
+Also, p3 0 [seed] should instead be programmed to give priority to writers.
+
+total 64
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Oct  5 20:52 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018   138 Oct 18 10:22 Sandbox/
+drwx------ 2 cssc0018  4096 Oct 29 10:22 Three/
+drwx------ 2 cssc0018  4096 Oct 25 11:08 Two/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+-rw------- 1 cssc0018    50 Sep 23 16:27 bar
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 60
+lrwxrwxrwx 1 cssc0018    34 Oct 16 13:03 CHK.h -> /home/cs/faculty/cs570/Three/CHK.h
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 makefile -> /home/cs/faculty/cs570/Three/makefile
+-rwx------ 1 cssc0018 22712 Oct 29 10:19 p3*
+lrwxrwxrwx 1 cssc0018    33 Oct 16 13:03 p3.h -> /home/cs/faculty/cs570/Three/p3.h
+-rw-r--r-- 1 cssc0018   641 Oct 29 10:19 p3helper.c
+-rw-r--r-- 1 cssc0018   608 Oct 28 20:32 p3helper.c~
+-rw------- 1 cssc0018  4064 Oct 29 10:19 p3helper.o
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 p3main.c -> /home/cs/faculty/cs570/Three/p3main.c
+-rw------- 1 cssc0018 22208 Oct 16 13:03 p3main.o
+Test 1... testing will proceed only if you have MODIFIED the proper file:
+ls -lo ~/Three/; cat ~cssc0018/Three/p3helper.c
+total 60
+lrwxrwxrwx 1 cssc0018    34 Oct 16 13:03 CHK.h -> /home/cs/faculty/cs570/Three/CHK.h
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 makefile -> /home/cs/faculty/cs570/Three/makefile
+-rwx------ 1 cssc0018 22712 Oct 29 10:19 p3
+lrwxrwxrwx 1 cssc0018    33 Oct 16 13:03 p3.h -> /home/cs/faculty/cs570/Three/p3.h
+-rw-r--r-- 1 cssc0018   641 Oct 29 10:19 p3helper.c
+-rw-r--r-- 1 cssc0018   608 Oct 28 20:32 p3helper.c~
+-rw------- 1 cssc0018  4064 Oct 29 10:19 p3helper.o
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 p3main.c -> /home/cs/faculty/cs570/Three/p3main.c
+-rw------- 1 cssc0018 22208 Oct 16 13:03 p3main.o
+/* p3helper.c
+ * <YOUR NAME HERE>
+ * Program 3
+ * CS570
+ * <INSTRUCTOR NAME HERE>
+ * SDSU
+ * <DATE HERE>
+ *
+ * This is the only file you may change. (In fact, the other files should
+ * be symbolic links to:
+ *   ~cs570/Three/p3main.c
+ *   ~cs570/Three/p3.h
+ *   ~cs570/Three/Makefile
+ *   ~cs570/Three/CHK.h    )
+ *
+ */
+#include "p3.h"
+
+/* You may put any semaphore (or other global) declarations/definitions here: */
+
+static sem_t mutex, access_pool;
+
+
+/* General documentation for the following functions is in p3.h
+ * Here you supply the code:
+ */
+void initstudentstuff(void) {
+
+}
+
+void prolog(int kind) {
+}
+
+void epilog(int kind) {
+}  
+
+Test 2... testing will proceed only if you have the proper SOFT links:
+FOUR files should be soft links; yours are:
+lrwxrwxrwx 1 cssc0018 37 Oct 16 13:03 makefile -> /home/cs/faculty/cs570/Three/makefile
+lrwxrwxrwx 1 cssc0018 34 Oct 16 13:03 CHK.h -> /home/cs/faculty/cs570/Three/CHK.h
+lrwxrwxrwx 1 cssc0018 33 Oct 16 13:03 p3.h -> /home/cs/faculty/cs570/Three/p3.h
+lrwxrwxrwx 1 cssc0018 37 Oct 16 13:03 p3main.c -> /home/cs/faculty/cs570/Three/p3main.c
+
+Test 3... does your program compile?
+make clean; make p3
+rm -f p3 p3main.o p3helper.o 
+gcc -g -o -Wall -Wpointer-arith -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -D_REENTRANT   -c -o p3main.o p3main.c
+gcc -g -o -Wall -Wpointer-arith -Wcast-qual -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -D_REENTRANT   -c -o p3helper.o p3helper.c
+gcc -o p3 p3main.o p3helper.o -lpthread -pthread
+[1] 6566
+
+Test 4... running (just) one test this time...
+Here is the result of /bin/time -f elapsed_time=%E ~cssc0018/Three/p3 89
+
+Your output was:
+p3 is now running (pid = 6570).
+10 customers today: 4 joggers, 6 shooters
+S5 [1/4]. Just after entering: 0 joggers and 1 SHOOTERS
+S5 [1/4]. Just after leaving: 0 joggers and 0 SHOOTERS
+S5 [2/4]. Just after entering: 0 joggers and 1 SHOOTERS
+J1 [1/5]. Just after entering: 1 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+S5 [2/4]. Just after leaving: 1 joggers and 0 SHOOTERS
+S4 [1/6]. Just after entering: 1 joggers and 1 SHOOTERS
+J4 [1/4]. Just after entering: 2 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+J1 [1/5]. Just after leaving: 1 JOGGERS and 1 shooters
+S5 [3/4]. Just after entering: 1 joggers and 2 SHOOTERS
+S4 [1/6]. Just after leaving: 1 joggers and 1 SHOOTERS
+J4 [1/4]. Just after leaving: 0 JOGGERS and 1 shooters
+J1 [2/5]. Just after entering: 1 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+S5 [3/4]. Just after leaving: 1 joggers and 0 SHOOTERS
+J4 [2/4]. Just after entering: 2 JOGGERS and 0 shooters
+J1 [2/5]. Just after leaving: 1 JOGGERS and 0 shooters
+S4 [2/6]. Just after entering: 1 joggers and 1 SHOOTERS
+J4 [2/4]. Just after leaving: 0 JOGGERS and 1 shooters
+J1 [3/5]. Just after entering: 1 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+S5 [4/4]. Just after entering: 1 joggers and 2 SHOOTERS
+S4 [2/6]. Just after leaving: 1 joggers and 1 SHOOTERS
+J1 [3/5]. Just after leaving: 0 JOGGERS and 1 shooters
+S5 [4/4]. Just after leaving: 0 joggers and 0 SHOOTERS
+S3 [1/8]. Just after entering: 0 joggers and 1 SHOOTERS
+J4 [3/4]. Just after entering: 1 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+J1 [4/5]. Just after entering: 2 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+S3 [1/8]. Just after leaving: 2 joggers and 0 SHOOTERS
+S4 [3/6]. Just after entering: 2 joggers and 1 SHOOTERS
+S5 all done
+S2 [1/9]. Just after entering: 2 joggers and 2 SHOOTERS
+J4 [3/4]. Just after leaving: 1 JOGGERS and 2 shooters
+S4 [3/6]. Just after leaving: 1 joggers and 1 SHOOTERS
+J1 [4/5]. Just after leaving: 0 JOGGERS and 1 shooters
+S3 [2/8]. Just after entering: 0 joggers and 2 SHOOTERS
+S2 [1/9]. Just after leaving: 0 joggers and 1 SHOOTERS
+S3 [2/8]. Just after leaving: 0 joggers and 0 SHOOTERS
+J2 [1/9]. Just after entering: 1 JOGGERS and 0 shooters
+J4 [4/4]. Just after entering: 2 JOGGERS and 0 shooters
+J1 [5/5]. Just after entering: 3 JOGGERS and 0 shooters
+J3 [1/2]. Just after entering: 4 JOGGERS and 0 shooters
+J2 [1/9]. Just after leaving: 3 JOGGERS and 0 shooters
+S2 [2/9]. Just after entering: 3 joggers and 1 SHOOTERS
+S4 [4/6]. Just after entering: 3 joggers and 2 SHOOTERS
+J4 [4/4]. Just after leaving: 2 JOGGERS and 2 shooters
+S1 [1/4]. Just after entering: 2 joggers and 3 SHOOTERS
+S6 [1/5]. Just after entering: 2 joggers and 4 SHOOTERS
+J3 [1/2]. Just after leaving: 1 JOGGERS and 4 shooters
+S3 [3/8]. Just after entering: 1 joggers and 5 SHOOTERS
+J1 [5/5]. Just after leaving: 0 JOGGERS and 5 shooters
+S1 [1/4]. Just after leaving: 0 joggers and 4 SHOOTERS
+S6 [1/5]. Just after leaving: 0 joggers and 3 SHOOTERS
+S2 [2/9]. Just after leaving: 0 joggers and 2 SHOOTERS
+S3 [3/8]. Just after leaving: 0 joggers and 1 SHOOTERS
+S4 [4/6]. Just after leaving: 0 joggers and 0 SHOOTERS
+J4 all done
+J2 [2/9]. Just after entering: 1 JOGGERS and 0 shooters
+J3 [2/2]. Just after entering: 2 JOGGERS and 0 shooters
+S6 [2/5]. Just after entering: 2 joggers and 1 SHOOTERS
+S1 [2/4]. Just after entering: 2 joggers and 2 SHOOTERS
+J3 [2/2]. Just after leaving: 1 JOGGERS and 2 shooters
+J2 [2/9]. Just after leaving: 0 JOGGERS and 2 shooters
+S3 [4/8]. Just after entering: 0 joggers and 3 SHOOTERS
+S4 [5/6]. Just after entering: 0 joggers and 4 SHOOTERS
+J1 all done
+S6 [2/5]. Just after leaving: 0 joggers and 3 SHOOTERS
+S2 [3/9]. Just after entering: 0 joggers and 4 SHOOTERS
+S4 [5/6]. Just after leaving: 0 joggers and 3 SHOOTERS
+S1 [2/4]. Just after leaving: 0 joggers and 2 SHOOTERS
+S3 [4/8]. Just after leaving: 0 joggers and 1 SHOOTERS
+J3 all done
+J2 [3/9]. Just after entering: 1 JOGGERS and 1 shooters
+ERROR! Both types of customers are present in the gym!
+S6 [3/5]. Just after entering: 1 joggers and 2 SHOOTERS
+S2 [3/9]. Just after leaving: 1 joggers and 1 SHOOTERS
+S6 [3/5]. Just after leaving: 1 joggers and 0 SHOOTERS
+S3 [5/8]. Just after entering: 1 joggers and 1 SHOOTERS
+S1 [3/4]. Just after entering: 1 joggers and 2 SHOOTERS
+J2 [3/9]. Just after leaving: 0 JOGGERS and 2 shooters
+S2 [4/9]. Just after entering: 0 joggers and 3 SHOOTERS
+S4 [6/6]. Just after entering: 0 joggers and 4 SHOOTERS
+S3 [5/8]. Just after leaving: 0 joggers and 3 SHOOTERS
+S4 [6/6]. Just after leaving: 0 joggers and 2 SHOOTERS
+S1 [3/4]. Just after leaving: 0 joggers and 1 SHOOTERS
+S6 [4/5]. Just after entering: 0 joggers and 2 SHOOTERS
+S2 [4/9]. Just after leaving: 0 joggers and 1 SHOOTERS
+S6 [4/5]. Just after leaving: 0 joggers and 0 SHOOTERS
+S4 all done
+J2 [4/9]. Just after entering: 1 JOGGERS and 0 shooters
+S1 [4/4]. Just after entering: 1 joggers and 1 SHOOTERS
+J2 [4/9]. Just after leaving: 0 JOGGERS and 1 shooters
+S6 [5/5]. Just after entering: 0 joggers and 2 SHOOTERS
+S2 [5/9]. Just after entering: 0 joggers and 3 SHOOTERS
+S3 [6/8]. Just after entering: 0 joggers and 4 SHOOTERS
+S6 [5/5]. Just after leaving: 0 joggers and 3 SHOOTERS
+S1 [4/4]. Just after leaving: 0 joggers and 2 SHOOTERS
+J2 [5/9]. Just after entering: 1 JOGGERS and 2 shooters
+ERROR! Both types of customers are present in the gym!
+S2 [5/9]. Just after leaving: 1 joggers and 1 SHOOTERS
+S3 [6/8]. Just after leaving: 1 joggers and 0 SHOOTERS
+J2 [5/9]. Just after leaving: 0 JOGGERS and 0 shooters
+S6 all done
+S1 all done
+J2 [6/9]. Just after entering: 1 JOGGERS and 0 shooters
+S2 [6/9]. Just after entering: 1 joggers and 1 SHOOTERS
+J2 [6/9]. Just after leaving: 0 JOGGERS and 1 shooters
+S3 [7/8]. Just after entering: 0 joggers and 2 SHOOTERS
+S2 [6/9]. Just after leaving: 0 joggers and 1 SHOOTERS
+S3 [7/8]. Just after leaving: 0 joggers and 0 SHOOTERS
+J2 [7/9]. Just after entering: 1 JOGGERS and 0 shooters
+S2 [7/9]. Just after entering: 1 joggers and 1 SHOOTERS
+J2 [7/9]. Just after leaving: 0 JOGGERS and 1 shooters
+S3 [8/8]. Just after entering: 0 joggers and 2 SHOOTERS
+S2 [7/9]. Just after leaving: 0 joggers and 1 SHOOTERS
+S3 [8/8]. Just after leaving: 0 joggers and 0 SHOOTERS
+J2 [8/9]. Just after entering: 1 JOGGERS and 0 shooters
+J2 [8/9]. Just after leaving: 0 JOGGERS and 0 shooters
+S2 [8/9]. Just after entering: 0 joggers and 1 SHOOTERS
+S3 all done
+S2 [8/9]. Just after leaving: 0 joggers and 0 SHOOTERS
+J2 [9/9]. Just after entering: 1 JOGGERS and 0 shooters
+J2 [9/9]. Just after leaving: 0 JOGGERS and 0 shooters
+S2 [9/9]. Just after entering: 0 joggers and 1 SHOOTERS
+S2 [9/9]. Just after leaving: 0 joggers and 0 SHOOTERS
+J2 all done
+S2 all done
+alldone -- THE GYM IS NOW CLOSED
+DAILY REPORT:
+Total number of different customers:
+Number of joggers:4; Number of shooters:6
+People still in the gym (better be 0 for each kind!):
+Number of joggers left: 0; Number of shooters left: 0
+Maximum of =8= instances of protocol failure for cssc0018!
+Maximum simultaneous jogger occupancy was @4@ for cssc0018
+Maximum simultaneous shooter occupancy was @5@ for cssc0018
+
+End of tests.
+Check carefully that you allowed more than one shooter at a time,
+more than one jogger at a time, and that there were ZERO protocol failures.
+
+The /bin/time command can report things like the amount of [wall clock] time.
+In this run of p3, it was: elapsed_time=1:04.00
+
+Your grade for this assignment will be determined by a (human) grader
+at the due date.
+The automation did not attempt to assign any points.
+All 20 points will be assigned by a human.
+             ------
+Total Points | ?  |  for cssc0018 - Bernardo Cervantes,,,61960017 for Program 3
+             |----|
+             | 20 |
+             ------
+Program 3 gradesheet
+
+a PARTIAL checklist of things the grader may judge:
+
+Quality of documentation & header info          constants, etc. documented?
+                                        ___/    name, class, date?
+Program logic and correctness                   algorithm explained?
+                                        ___/
+3 REQUIRED items in gradernotes file            Don't forget to include your
+                                        ___/    algorithm explanation!
+NO sleep() calls in p3helper.c                  sleep() masks some problems,
+                                        ___/    but could cause others...
+Only 'approved' sem_* system calls?
+                                        ___/    If there are *logical* race
+No *POTENTIAL* race conditions                  conditions, this is very bad,
+                                        ___/    even if your code appears to
+No extraneous files left behind                 give right answers.  Check this!
+                                        ___/
+Unexpected behavior (if any) documented
+in gradernotes file                     ___/     SAY what isn't working!
+                                       ______
+                                      |      |
+                                      |______|
+                                      |  20  |
+                                      |______|

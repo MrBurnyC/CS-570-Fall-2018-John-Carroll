@@ -1,0 +1,101 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id 50B0F6000048; Fri, 14 Sep 2018 22:56:40 -0700 (PDT)
+Date: Fri, 14 Sep 2018 22:56:40 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20180915055640.50B0F6000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+You might want to peek ahead and find out how your documentation affected
+your grade on p0, but then come back and read WHY you might no longer
+have a score of 8/8.
+
+This grading announcement contains common information sent to all students,
+with ONE exception:  [only] the last line of this message is individualized;
+make sure YOUR name appears below.  If your name is not on the last line of
+this message, notify me immediately; it means I have incorrect records.
+
+This is also a good time to remind you that I've updated the ~cs570/calendar
+file with all the program1 and program2 deadlines:
+
+CS570 Program1	Monday, September 17  (the standard 11pm deadline)
+CS570 Program2	Friday, October 5     (11pm 115% deadline)
+CS570 Program2	Wednesday, October 10 (11pm 100% deadline
+
+There are several lines below, and as assignments are recorded, the first
+few lines will track the class averages and the high scores, to help you
+judge how you are doing.  The entry for account masc0000, ostensibly owned by
+Aaron Aardvark (the first name in computing...), will be used to record the
+maximum possible points for a given assignment.  That line should appear just
+above the line with your name on it.
+
+Below are the grade totals for Program 0.  At the moment, the 'Total'
+column is rather uninteresting, since we are only adding up the p0 score.
+The '%' column translates this into a percentage (based on the "Perfect
+Score" point total shown).  What you see below is what I have recorded in my
+gradebook (i.e., it is the score that counts).  Check with me (in my office)
+if you think it is wrong.
+
+Since the p0 autograder had to award you 100% (8/8) on p0 to remain
+registered in the course, the class average for the survivors is quite high.
+...but not 100%; you could be docked as many as 3 points.  [But remember,
+losing points *now* does NOT affect your enrollment in CS570; the fact
+that you are reading this means that you did not get dropped!]
+
+To adjust your p0 score, I checked the autograder output for 3 things.
+
+[1] I checked whether you had BOTH of the required statements ('wrote it
+myself' and 'no bugs') in gradernotes, and
+
+[2] I also checked your documentation.  Ideally, you should have a
+paragraph synopsis at the top of each function explaining the point
+of the function.  A few people had something misleading (e.g.,
+"getword() reads words until it finds EOF" -- that might be a good
+description of p0.c, but you're describing what getword() does, not
+what p0 does).
+
+[3] You should also have some comments scattered through the code,
+especially at decision points.  For the 'scattered comments', I simply did
+ONE spot-check: Did you say WHY you needed to use ungetc()?  (A comment
+saying merely that you put it back is useless; a reader of you code might
+wonder WHY it needed to be read a second time, so this should have been
+explained.  Saying merely that you put it back is like commenting
+z++ with "Increment z" -- that is already clear from the code, the
+issue is WHY z needed to be incremented.)
+
+(If you are still unsure why you were docked points after reviewing
+Thursday's output, definitely check with me -- perhaps I made a mistake
+in grading...)  [To save paper, I'll likely have a similar grading regimen
+for p1, but for our more complicated projects (p2, p3, and p4), I'll be
+printing out the ENTIRE autograder output, marking it up, and handing it
+back with extensive comments.]
+
+When I check documentation in Program1, I will likely use very similar
+criteria to determine your documentation points.
+
+Some observations which might help in future documentation:  A comment for
+        if (count == 0)
+should NOT be something like: //check if count is zero
+since that's obvious and uninformative.  Say WHY you're checking, e.g.,
+       // See if we have a leading or trailing space
+
+Note that for p1, our One/getword.h contains extensive specs, so there's no
+need to repeat allllll that stuff; except for a short synopsis at the top,
+your getword.c comments should be indicating *how* you implemented those
+specs rather than regurgitating them all again.
+
+The lines below the header line show the class average, maximum achieved,
+maximum possible, and your score.
+
+logname P0   CS570 Fall 2018               Total  %
+logname  7    --averages--                   7   88
+logname  8      -maximum-                    8  100
+masc0000 8 Aardvark, Aaron                   8 <Perfect Score  
+cssc0018 7 Cervantes, Bernardo               7   87

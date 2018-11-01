@@ -1,0 +1,80 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id 91CB46000048; Sat, 22 Sep 2018 21:47:15 -0700 (PDT)
+Date: Sat, 22 Sep 2018 21:47:15 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20180923044715.91CB46000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+Below are the grade totals for the first two programming assignments
+(p0 and p1).  Your score you see below for p1 will be the same or one
+point lower than what the autograder mailed out; this time, no one
+managed to lose more than one point for documentation.
+
+And this time, if you lost a point, it was definitely for failing to be clear
+WHY you used ungetc().  (WHY, not WHAT: that is, "put the character back"
+is already obvious and uninformative; you need to say WHY you want to
+read it a second time [e.g., "we just used the character to end a word,
+but it might be a word in it's own right, so it must remain available
+to the next call to getword()].)
+
+I didn't worry about your short synopsis at the beginning of getword.c,
+because the getword.h I gave you already had painstakingly detailed
+specifications.  (You're welcome.)
+
+...But if you wanted to be complete, two sentences could suffice here:
+say WHAT you were returning, and mention the side effect (of stuffing a
+word from stdin into the indicated location).
+
+From now on, you'll get much more extensive feedback from me.  When I grade
+p2 (and p3 and p4), I'll be printing the autograder results in their
+entirety, which will include a checklist of things I will be looking at
+'by hand'.  In that printed format, you'll be able to seem my specific
+comments about documentation when I hand back my printouts to you, so
+I'll devote perhaps 4 points to your programming style and comments.
+
+The checklist will appear at the bottom of new autograder mailings.
+Note that one of the things on the p2 checklist involves your getword.c
+documentation -- so if you AGAIN lost a documentation point in p1, you
+can expect that it will bite you a third time if you don't fix that up.
+
+The class average is currently 91%, but that will drop drastically once we
+incorporate program 2 grades.  Be careful not to underestimate the amount of
+work required for p2!  [The ~cs570/Data2/input* files will gradually appear,
+and the autograder may to get fancier and incorporate more tests over the
+course of the next week.  The due dates are in the ~cs570/calendar file.]
+
+Our midterm will be  toward the end of October, after I hand back the
+graded program2 printouts.  We'll take a vote in class regarding the most
+preferred day once we get a bit closer, and then I'll publish a study
+guide (note that the Exercises on pages 78-88 are already a good study
+guide, since they are principally old exam questions).  The class average
+typically takes another nose dive once I grade the midterms, at which
+point students panic and resolve to hit the extra credit deadlines for p3
+and p4.  Your best strategy is to already pretend the midterm was a disaster,
+and prioritize p2 this next week to get the free points available at the
+early extra credit deadline.  On the midterm, I'll be asking technical
+questions about how you programmed your shell (e.g, questions 3, 4, 5 on
+Page 80 of my notes) -- so mastery of p2 will also improve your midterm
+score.
+
+Pay particular attention to the 'checklist' that will be mailed with every
+p2 autograder pre-test.  Go over that and make sure you can tick off every
+category [since I will be doing exactly that when I grade your printouts].
+If you're unsure what is required for any of those categories, ask!
+
+The lines below show the class average, maximum achieved, maximum possible,
+and your score.
+
+logname P0 P1   CS570 Fall 2018               Total  %
+logname  7 14    --averages--                  21   91
+logname  8 15      -maximum-                   23  100
+masc0000 8 15 Aardvark, Aaron                  23 <Perfect Score
+cssc0018 7 14 Cervantes, Bernardo              21   91

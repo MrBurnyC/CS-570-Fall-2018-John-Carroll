@@ -1,0 +1,1770 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id D4A7A6000048; Fri,  5 Oct 2018 23:11:02 -0700 (PDT)
+Date: Fri, 05 Oct 2018 23:11:02 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 2 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181006061102.D4A7A6000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is the extra credit test of your upcoming Program 2.  Remember,
+regular credit submissions can be turned in later. (next week)
+
+If your GradeEarly file is in place now, you will see the results of
+an extensive test of your code.  Otherwise, you'll only see an announcement
+that GradeEarly does not exist, and that testing is bypassed (this time only).
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/8       *  Oct  5 21:42 6196001753                (99.71.222.118)
+
+Checking Program 2:
+
+Remember, the GradeEarly file will be used to decide if you are FINISHED.
+If the GradeEarly file is present at the extra-credit deadline,
+your program will be considered 'submitted', with NO further chance for
+modifications.  Checking if the GradeEarly file exists:
+ls -l ~cssc0018/Two/GradeEarly
+-rw------- 1 cssc0018 carroll 11 Oct  5 12:37 /home/cs/carroll/cssc0018/Two/GradeEarly
+The GradeEarly file exists, so the following WILL be graded now.
+Good.
+total 60
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Oct  5 20:52 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018  4096 Oct  5 21:41 Two/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+-rw------- 1 cssc0018    50 Sep 23 16:27 bar
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 124
+lrwxrwxrwx 1 cssc0018    28 Sep 25 19:36 Data2 -> /home/cs/faculty/cs570/Data2/
+-rw------- 1 cssc0018    11 Oct  5 12:37 GradeEarly
+lrwxrwxrwx 1 cssc0018    39 Sep 18 09:15 getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+-rw-r--r-- 1 cssc0018  7076 Oct  5 19:55 getword.c~
+lrwxrwxrwx 1 cssc0018    36 Oct  2 10:23 getword.h -> /home/cs/faculty/cs570/One/getword.h
+-rw------- 1 cssc0018  6752 Oct  2 10:08 getword.h~
+-rw------- 1 cssc0018  7776 Oct  5 21:09 getword.o
+-rw------- 1 cssc0018  2503 Oct  5 21:40 gradernotes
+-rw------- 1 cssc0018  2311 Oct  5 21:31 gradernotes~
+lrwxrwxrwx 1 cssc0018    35 Sep 18 08:58 makefile -> /home/cs/faculty/cs570/Two/makefile
+-rwx------ 1 cssc0018 24152 Oct  5 21:09 p2*
+-rw------- 1 cssc0018  9893 Oct  5 21:00 p2.c
+-rw------- 1 cssc0018 10539 Oct  5 18:29 p2.c~
+-rw------- 1 cssc0018  3407 Oct  5 20:39 p2.h
+-rw------- 1 cssc0018  3409 Oct  5 20:37 p2.h~
+-rw------- 1 cssc0018 19368 Oct  5 21:09 p2.o
+-rw------- 1 cssc0018     4 Oct  4 21:54 test
+-rw------- 1 cssc0018    15 Oct  4 20:11 test~
+-rw------- 1 cssc0018   421 Oct  1 11:00 working.c
+ls -lo ~/Two/p2.c ~/Two/getword.c
+lrwxrwxrwx 1 cssc0018   39 Sep 18 09:15 /home/cs/carroll/cssc0018/Two/getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+-rw------- 1 cssc0018 9893 Oct  5 21:00 /home/cs/carroll/cssc0018/Two/p2.c
+
+1    /*getword.c
+2     * - is a lexical analyzer that meets the requirements
+3     *	       of Program 0.
+4     *
+5     * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
+6     *	       Due: 9/17/18 @ 8PM
+7     *		 
+8     * Synopsis  - Takes input from the keyboard (stdin) or from
+9     * 	       Data1/input# and writes to the Storage array 
+10    *	       and returns a int back to p0.
+11    *
+12    * Objective - Returns the correct input back to p0 so that 
+13    *             p0 will print out the correct int and string
+14    *	       that is identical to the same output in the 
+15    *	       p0 prompt and the what autograder produces.
+16    *             
+17    */
+18   
+19   /* Include Files */
+20   #include <stdio.h>
+21   #include <stdlib.h>
+22   #include "getword.h"
+23   #define TRUE 1
+24   #define FALSE 0 
+25   /*
+26    * Getword is the principal method of getword.c
+27    * Takes in a char pointer that points to the STORAGE 
+28    * array to write chars to it based on the p1 prompt 
+29    * criteria. It return at int back to p1 that is the 
+30    * size of the string. p1 prints out the word which is the
+31    * STORAGE array and its size.
+32    *
+33    * 
+34    */
+35   
+36   int backslash_flag ; //helps p2.c decipher metacharaceters from regular 
+chars
+37   int background_flag_from_getword ; //flag for & in p2.c
+38   int getword(char *w){
+39   	int wordCount = 0; //Must initalize to zero or else you get garbage.
+40   	int iochar = 0;
+41   	int true = 0;      //bool for checking '$'
+42   	const char *name = "HOME";
+43   	char *value = getenv(name); //Sets home directory to value ; 
+44   	char *x = value;
+45   
+46   
+47   	/* Stores intital char from STDIN/file */
+48   
+49   	iochar = getchar(); 
+50   
+51   	/* Skipping leading spaces. */
+52   
+53   	while(iochar == ' '){
+54   		iochar = getchar();
+55   	}
+56   
+57   	/* Check if EOF signal is in the beginning
+58   	 * and puts null char in array (storage) to print
+59   	 * an empty string. 
+60   	 * Returns -255
+61   	 */
+62   
+63   	if(iochar == EOF){
+64   		*w = '\0';    
+65   		return -255;
+66   	}
+67   
+68   	/* Checks if newline is in the beginning of the input.
+69   	 * Puts null char in array to print empty string.
+70   	 * Returns 0
+71   	 */
+72   
+73   	if(iochar == '\n'){
+74   			*w = '\0';
+75   			return 0;
+76   	}
+77   
+78   	/*
+79   	 * Checks if ";" is first char  
+80   	 * in input. Puts null char in array to print
+81   	 * null empty string.
+82   	 * Return 0 
+83   	 */ 
+84   
+85   	if(iochar == ';'){
+86   		*w = '\0';
+87   		return 0;
+88   	}
+89   
+90   
+91   	/*
+92   	 * Checks if "$" is first char  
+93   	 * in input. Puts null char in array to print
+94   	 * null empty string. Gets next char and checks 
+95   	 * if it is EOF. Sets boolean true to 1 or true.
+96   	 * Return 0 
+97   	 */ 
+98   
+99   	if(iochar == '$'){
+100  		true = 1;
+101  		iochar = getchar();
+102  		if(iochar == EOF){
+103  			*w = '\0';
+104  			return 0;
+105  		}
+106  	} 
+107  
+108  	/* Checks if the first char is ~. If it is then it 
+109  	 *  writes to the STORAGE array with w* with the value:
+110  	 *  home path directory which is dynamically generated with getenv().
+111  	 *  *x points to the char array that contains the home directory 
+112  	 *  and is used to write to w* which points to STORAGE array.
+113  	 */
+114  
+115  	if(iochar == '~' && true == 0){
+116  		iochar = getchar();
+117  
+118  		while(*x != '\0'){
+119  			*w = *x;
+120  			w++;
+121  			x++;
+122  			wordCount++;
+123  		}	
+124  	}
+125  
+126  	/*
+127  	 *Checking for meta characters '<', '>','|. and '&'
+128  	 * Special if statement case if next two char
+129  	 * together are '<<'. If so it puts it in the STORAGE array
+130  	 * and returns the size. Otherwise it does the same 
+131  	 * for other single metacharacter.
+132  	 *
+133  	 * Using the system call ungetc to place the char back into stdin
+134  	 * we do this because we find out that the char is not an additonal <
+135  	 * to make << so we treat it as a single on the next call fo getword.
+136  	 *
+137  	 * 
+138  	 */	
+139  	if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
+140  
+141  
+142  		if(iochar == '<'){
+143  			*w = iochar;
+144  			w++;	
+145  			wordCount++;
+146  			iochar = getchar();	
+147  
+148  			if(iochar == '<'){
+149  				*w = iochar;      		
+150  				w++;
+151  				wordCount++;
+152  				*w = '\0';
+153  				return wordCount;
+154  			}
+155  			else{
+156  				iochar = ungetc(iochar , stdin);
+157  				*w = '\0';
+158  				return wordCount;
+159  			}
+160  		}
+161  
+162  
+163  
+164  
+165  		/* Checking if & is at the EOF to set 
+background_flag_from_getword
+166  		 * to set the background_flag in p2.c 
+167  		 * I know the code is the same in the if statments as the code
+168  		 * 
+169  		 *		*w = iochar;
+170  		 *		w++;
+171  		 *		wordCount++;
+172  		 * after the if but doesn't work otherwise. 
+173  		 * 
+174  		 */
+175  
+176  		if(iochar == '&'){
+177  			*w = iochar;
+178  			w++;
+179  			wordCount++;
+180  			iochar = getchar();
+181  			if(iochar == '\n' || iochar == EOF){
+182  				ungetc(iochar, stdin);
+183  				*w = '\0';
+184  				background_flag_from_getword = TRUE;
+185  				return wordCount;
+186  			}
+187  			else {
+188  				ungetc(iochar, stdin);
+189  				*w = '\0';
+190  				return wordCount;
+191  			}
+192  
+193  		}		
+194  		*w = iochar;
+195  		w++;
+196  		wordCount++;
+197  		*w = '\0';
+198  		return wordCount;
+199  	}
+200  
+201  
+202  
+203  
+204  	/*
+205  	 * Infinite for loop is used to get any remaining.  
+206  	 * characters with exception chars accounted for such as
+207  	 * EOF spaces, newlines and semicolons which are the same
+208  	 * as the first checks but this time we return wordCount since
+209  	 * these characters are not the first char in the words anymore.
+210  	 * when the word is processed the storage array has been written
+211  	 * with the word or an empty string based on some execptions
+212  	 * and the wordcount is returned which stops the for loop.    
+213  	 */ 
+214  
+215  	for(;;){
+216  
+217  
+218  		/* Checks to see if wordCount is greater than Storage (255).
+219  		 * If so then it terminates the string and returns its
+220  		 * current word count.
+221  		 */
+222  
+223  		if(wordCount == STORAGE - 1){
+224  			iochar = ungetc(iochar, stdin);
+225  			*w = '\0';
+226  			return wordCount; 
+227  		}
+228  
+229  
+230  		/* Checks for EOF. If wordCount is anything but zero. It returns
+231  		 * th word count. If not it returns -255. 
+232  		 */
+233  
+234  		if(iochar == EOF){
+235  			if(wordCount < 0 || wordCount > 0){
+236  				iochar = ungetc(iochar,stdin);
+237  				*w = '\0';
+238  				return wordCount;
+239  			}
+240  
+241  			return -255; 
+242  		}
+243  
+244  		/* Checks for space. If found, write null char to 
+245  		 * array and 
+246  		 * return wordCount.
+247  		 */
+248  
+249  		if(iochar == ' '){
+250  			*w = '\0';
+251  			return wordCount;
+252  		}
+253  
+254  
+255  		/* Checks for newline or semicolon. 
+256  		 * If found, write null char to 
+257  		 * array and 
+258  		 * return wordCount.
+259  		 */
+260  
+261  		if(iochar == '\n'|| iochar == ';'){
+262  			iochar = ungetc(iochar,stdin);
+263  			*w = '\0';
+264  			return wordCount;
+265  		}
+266  
+267  		/*
+268  		 * Checks metacharacter again in but this time it for 
+269  		 * chars not in the front. However it is handled the same 
+270  		 * way. It puts the char back into stdin adds null char to the
+271  		 * STORAGE array, and then returns the word size so the meta 
+character 
+272  		 * will be deal with the next program run.  
+273  		 *
+274  		 */
+275  
+276  		if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == 
+'&'){
+277  
+278  			ungetc(iochar, stdin);
+279  
+280  			*w = '\0';
+281  			return wordCount;
+282  		}
+283  
+284  		/*
+285  		 *Checks for backslahes in input. Have to put two 
+286  		 * two backslashes because C has one backslashs as a 
+287  		 * special keyword.
+288  		 */
+289  
+290  		if(iochar  == '\\'){ 
+291  			iochar = getchar();
+292  			backslash_flag = TRUE;
+293  
+294  			//if(iochar == '\n' || iochar == EOF){
+295  			if(iochar == '\n'){
+296  				iochar = getchar(); // newline is treated as a 
+space for p2.c
+297  
+298  			}
+299  
+300  		}
+301  
+302  
+303  
+304  
+305  
+306  
+307  
+308  
+309  		/* Writes Current Iochar To Array.
+310  		 * Increments pointer to next array index. 
+311  		 */
+312  
+313  		*w = iochar;
+314  		w++;
+315  
+316  		/* Check if $ was at the beginning of a word.
+317  		 * If true then wordCount is decremented 
+318  		 *  and is negative. If not then the wordCount 
+319  		 *  is incremented and is postive. 
+320  		 */
+321  
+322  		if(true == 1){
+323  			wordCount--;
+324  		}
+325  
+326  		else{
+327  			wordCount++;
+328  		}
+329  		/*Gets next char and repeats loop. */
+330  
+331  		iochar = getchar();
+332  
+333  
+334  		}
+335  
+336  	}
+
+1    #include <stdio.h>
+2    #include "getword.h"
+3    #include <fcntl.h>
+4    #include <signal.h>
+5    #include <sys/stat.h>
+6    #include <unistd.h>
+7    #include <sys/types.h>
+8    #include <sys/wait.h>
+9    #include <stdlib.h>
+10   
+11   
+12   /* Definitions that are used in p2.c */
+13   #define EOF -255
+14   #define ZERO_COMMANDS 0
+15   #define FAIL -1
+16   #define SUCCESS 0
+17   #define STRING_EQUALS 0 
+18   #define TRUE 1
+19   #define FALSE 0
+20   #define PARSE_ERROR -2
+21   
+22   /* Constants in p2.h */
+23   #define MAXITEM 100 /* max number of words */
+24   #define MAXSIZE (STORAGE*MAXITEM) /*Max amount of characetr per 
+commandline */
+25   
+26   
+27   char *prompt = ":570: "; //shell prompt
+28   int background_flag = 0; //flag for the & metachar
+29   int pipe_flag = 0; // flag for the | meta char
+30   int new_argv_size = 0; // holds the amount of arguments to be executed
+31   int *outfile = NULL; //holds the name for outputfile
+32   int *infile = NULL; //holds the name for the input file.
+33   int redirection_flag = 0; //Flag for any type of redirection
+34   
+35   extern int backslash_flag; // a global flag for getword.c and p2.c to see 
+if a backslash occured
+36   extern int background_flag_from_getword;// a global flag for getword.c and 
+p2.c to see if a apersand is at the end of a line.
+37   
+38   /*	
+39    * Parses the the input from stdin using getword to be organize into a 
+char array to set
+40    * it up so it can be executed with an exevp.
+41    *
+42    * parameters:
+43    * 	commands: string array that holds the address fo the parsed 
+commands.
+44    * 	line: hodls the the unparsed commadns from stdin from getword.c
+45    * return:
+46    * 	program returns the number of words that are in the command. 
+This helps with 
+47    * 	piping later on.
+48    *
+49    */
+50   
+51   int parse(char **commands, char *line);
+52   
+53   /*
+54    * Executes the commands after a fork with the child process. 
+55    * parameters: command: a string array with the name of the executable.
+56    *	       args: a string array with the arugments or flags for the given 
+for the command
+57    * Forks a child to execute the command which is handled in 
+run_child_command.
+58    * Gives an eror to sterr if failed.
+59    * Also if it is a parent it waits on it's children to finish but if a 
+background_flag is set
+60    * then it doesn't.
+61    *
+62    *
+63    */
+64   void exec_command(char *command, char **args);
+65   
+66   /*
+67    * Executes the command in the child forked from exec_command.
+68    * The method also calls the redirection
+69    * method called set_up_redirection if the redirection flag is set. 
+Similarly if the pipe_flag is set
+70    * it forks another child and the grandchild reads/writes to it. Otherwise 
+it just does an execvp
+71    * and executes the regualr command. 
+72    * input: command: a string with the name of the start of the executable
+73    * 	args: a string array wiht the argument/flags for the executable
+74    * output: The command is executed and it sent to stdout or a file.
+75    * exits if a error occurs on system call. 
+76    */
+77   
+78   void run_child_command(char *command, char **args);
+79   /*
+80    * Sets up input and out files using dup2() to uplicate the 
+81    * file descriptors of 0 and 1 or stdin and stdout respectively.
+82    * returns: an integer that is the file descriptor of the last file 
+opened. 
+83    *
+84    */
+85   int set__up_redirection();
+86   /*
+87    * Handles the SIGTERM on program termination so that the autograder 
+doesn't die.
+88    *
+89    */
+90   void sighandler();
+91   
+92   /*
+93    * Clears all the flags p2.c to FALSE
+94    *
+95    */
+96   void clear_flags();
+97   
+98   /*
+99    * Check for a file's existance by using access()
+100   * return:
+101   * 	  SUCCESS: if the file exists
+102   * 	  FAIL: if the file doesn't exist
+103   */
+104  int file_exists(const char *file_name){
+105  	return access(file_name, F_OK);
+106  }
+
+1    #include "p2.h"
+2    
+3    /*
+4     * Class Info - Program #2 Bernardo Cervantes, John Carroll, CS570 program 
+2
+5     * 		Due : 10/5/18 for extra credit and 10/10/18 for regular 
+deadline
+6     * Synopsis   - Program acts as a simple unix shell. It reads from stdin 
+and parses
+7     * 		the line and returns the corresponding command output. 
+It handles 
+8     * 		the metacharacters {'&','<','>','|','\' and EOF. Only 
+hands single pipes
+9     * 		for input & output redirection.
+10    * 			- Program uses getword.c to get STDIN and parse 
+it into a string array.
+11    * 			- Array is a parsed and then passed to evecvp 
+to execute the commands.
+12    * 			- To handle execution we use system calls like 
+dup2, execvp, fork, and pipe, etc.
+13    *
+14    */
+15   char *new_argv[MAXITEM];// Holds addressed to parsed commands to be 
+executed by the shell.
+16   char line[MAXSIZE]; // Holds the unparsed line from stidn
+17   int main(){
+18   	//int exit_code;
+19   	setpgid(0,0); // Sets current process and children to its own process 
+group
+20   	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+21   	while(TRUE){
+22   		printf("%s", prompt);
+23   		new_argv_size = parse(new_argv, line);
+24   
+25   		if(new_argv_size == EOF){
+26   			break;
+27   
+28   		}
+29   		else if(new_argv_size == ZERO_COMMANDS){
+30   			fflush(stdout);
+31   			continue;
+32   		}
+33   
+34   		else if(new_argv_size < PARSE_ERROR){
+35   			fflush(stdout);
+36   			perror("Parse error");
+37   			fflush(stderr);
+38   			continue;	
+39   		}
+40   		/* Handing cd for the shell since you cannot
+41   		 * use execvp to execute cd.
+42   		 *
+43   		 */
+44   		else if(strcmp(new_argv[0], "cd") == STRING_EQUALS){
+45   			if(new_argv_size == 1){
+46   
+47   				if(chdir(getenv("HOME")) == FAIL){
+48   					perror("cd command failed to go HOME");	
+49   				}
+50   				else{
+51   					clear_flags();
+52   				}
+53   			}
+54   
+55   			/* Case for two arguments to change directory*/
+56   			else if(new_argv_size == 2){
+57   				if(chdir(new_argv[1]) == FAIL){
+58   					perror("Failed to cd into directory");	
+	
+59   				}
+60   				else{
+61   					clear_flags();
+62   				}	
+63   			}
+64   			else {
+65   				perror("cd has an invalid number of arguments");
+66   			}
+67   
+68   
+69   
+70   		}
+71   
+72   
+73   		else {
+74   			exec_command(new_argv[0], new_argv);
+75   			clear_flags();
+76   
+77   
+78   		}
+79   
+80   
+81   	}
+82   
+83   	killpg(getpgrp(),SIGTERM);
+84   	printf("p2 terminated.\n");
+85   	return 0;
+86   }
+87   
+88   /* Parameters:Takes a pointer to a char pointer array which is new_argv, 
+89    * and pointer to a char array line which is line
+90    */
+91   
+92   int parse(char **commands , char *line){ 
+93   	int word_count = 0;
+94   	int word_size = 0;
+95   	int output_redirection = FALSE;
+96   	int input_redirection = FALSE;
+97   
+98   	do {
+99   		if(word_size = getword(line)) { 
+100  			if(strcmp(line, "&") == STRING_EQUALS && backslash_flag 
+== FALSE && background_flag_from_getword == TRUE){
+101  				background_flag = TRUE;
+102  				break;
+103  			}
+104  
+105  
+106  			else if (strcmp(line, "|") == STRING_EQUALS) {
+107  				/* if statement executes if pipe_flag is 
+anything but 0. 
+108  				 * Case preventing more than one pipe which 
+will be handled in p4.c according to class lecture.	
+109  				 */
+110  				if (pipe_flag) { 
+111  					perror("Cannot have multiple pipes");	
+	
+112  					return -1;
+113  				}
+114  				if (word_count == ZERO_COMMANDS) { // case 
+where pipe is the only arguement on line/STDIN 
+115  					perror("Need to an argument to pipe 
+to.");
+116  					return -1;
+117  				} else {
+118  					pipe_flag = word_count; // setting 
+pipe_flag to address of pipeline char
+119  				}
+120  				*commands++ = NULL; // set the argument at the 
+pipeflag to be null to split the 1st process from
+121  				// the second.a
+122  
+123  			}
+124  			else if (strcmp(line, ">") == STRING_EQUALS) { // if 
+the symbol is '>' set up output redirection
+125  				if (output_redirection) { // if more than one 
+'>' symbol is found set error flag to clear the stream.
+126  					perror("Ambiguous redirection output. 
+Cannot execute");
+127  					return -1;
+128  				}
+129  				redirection_flag = TRUE;
+130  				output_redirection = TRUE;
+131  
+132  			} else if (strcmp(line, "<") == STRING_EQUALS) { // if 
+the symbol is '<' set up input redirection
+133  				if (input_redirection) {// if more than one '<' 
+symbol is found set error flag to clear the stream.
+134  					perror("Ambiguous redirection. Cannot 
+execute.");
+135  					return -1;
+136  				}
+137  				redirection_flag = TRUE;
+138  				input_redirection = TRUE;
+139  
+140  				/* Checking for a valid out/input file. Using 
+NULL instead of 0 to check 
+141  				 * since 0 and NULL are equivalent
+142  				 * Setting address pointer to coresponding file 
+and incrementing line
+143  				 * which is the stdin.
+144  				 */
+145  			} else if (output_redirection && outfile == NULL) {
+146  				outfile = line;
+147  				line += word_size + 1;
+148  			} else if (input_redirection && infile == NULL) {
+149  				infile = line;
+150  				line += word_size + 1;
+151  			}
+152  			else { // add the commands to the commands array and 
+increment line to point to the new word.
+153  				word_count++;
+154  				*commands++ = line;
+155  				line += abs(word_size) + 1;// Using abs because 
+of the negative sign from $  
+156  			}
+157  
+158  		}
+159  	} while (word_size != EOF && word_size != ZERO_COMMANDS); // read until 
+a line terminator is encountered
+160  
+161  	if(word_size == EOF){
+162  		word_count = EOF;
+163  
+164  	}
+165  	if(background_flag && word_count == ZERO_COMMANDS){
+166  		perror("Background char '&' is in the wrong format or 
+location");
+167  		return -1;
+168  	}
+169  	if(output_redirection && outfile == NULL){
+170  		perror("Redirection cannot output to a file.");
+171  		return -1;
+172  	}
+173  
+174  	if(input_redirection && infile == NULL){
+175  		perror("Redirection coudln't get input from input file.");
+176  		return -1;
+177  	}
+178  
+179  	if(infile != NULL && word_count == 0){
+180  		perror("No executable commands after the redirectioni from 
+input file");
+181  		return -1;
+182  
+183  	}
+184  	if(outfile != NULL && word_count == 0){
+185  		perror("No executable commands after redirection to output 
+file");
+186  		return -1;
+187  	}
+188  	if(pipe_flag && pipe_flag >= word_count){
+189  		perror("No process or executable commands after the pipeline");
+190  		return -1;
+191  
+192  	}	
+193  
+194  	*commands = NULL; //null terminate string array of commands
+195  	return word_count;
+196  }
+197  
+198  void exec_command(char *command, char **args){
+199  	pid_t child_pid;
+200  	int wait_status;
+201  	fflush(stdout);// Flushing before a fork to ensure stdout & stdout 
+buffers are clear for the child.
+202  	fflush(stderr);
+203  
+204  	if((child_pid = fork()) == FAIL){
+205  		perror("Forked failed");
+206  		return;	
+207  	}
+208  	/* Executes the child command */
+209  	else if(child_pid == SUCCESS){
+210  		run_child_command(command, args);
+211  	}
+212  
+213  	else {
+214  		/* if background flag is not set then the shell waits
+215  		 * for its childrne to die and any leftover zombies.
+216  		 */
+217  		if(!background_flag){
+218  			do{
+219  				wait_status = wait(NULL);
+220  
+221  			}while(wait_status != child_pid);
+222  
+223  		}
+224  		else{
+225  			printf("%s [%d]\n", command, child_pid);
+226  			background_flag = FALSE;
+227  
+228  		}
+229  
+230  	}	
+231  
+232  }
+233  
+234  void run_child_command(char *command, char **args){
+235  	int wait_status;
+236  	pid_t child_pid;
+237  	int redirection_return;	
+238  
+239  	if(redirection_flag){
+240  
+241  		if(redirection_return = set_up_redirection() < 0){
+242  			perror("Redirection error");
+243  			exit(-10);
+244  		}
+245  	}
+246  
+247  	if(pipe_flag){
+248  		int fds[2]; //file descriptors
+249  		if(pipe(fds) == FAIL){
+250  			perror("Pipe failed");
+251  			exit(-11);
+252  		}
+253  		fflush(stdout); //Flush before fork everything.
+254  		fflush(stderr);
+255  		if((child_pid =fork()) == FAIL){
+256  			perror("Fork failed inside of pipe code");
+257  			exit(-12);	
+258  		}
+259  
+260  		/* The grandchild handles the redirection to the output to the 
+of the pipe
+261  		 * or write end of the pipe. One can think of it has the stdout 
+of the pipe.
+262  		 */
+263  		else if(child_pid == SUCCESS){
+264  			if(dup2(fds[1], STDOUT_FILENO) == FAIL){
+265  				perror("Pipe output redirection failed using 
+dup2");
+266  				exit(-13);
+267  			}
+268  
+269  			close(fds[1]);
+270  			close(fds[0]);
+271  			if(execvp(command,args) == FAIL){
+272  				perror("Execvp failed inside of pipeline code");
+273  				exit(-14);
+274  			}
+275  		}
+276  		else{
+277  			if(!background_flag){
+278  				do{
+279  					wait_status = wait(NULL);
+280  				}while(wait_status != child_pid);
+281  				/*Redirecting child input to the output end of 
+the pipe*/
+282  
+283  				if(dup2(fds[0], STDIN_FILENO) == FAIL){
+284  					perror("Pipe redirection failed from 
+child's input to end of pipe");
+285  					exit(-15);
+286  				}
+287  
+288  				close(fds[0]);
+289  				close(fds[1]);
+290  
+291  				if(execvp(args[pipe_flag + 1],args + (pipe_flag 
++ 1)) == FAIL){
+292  					perror("Exec failed with pipes");
+293  					exit(-15);
+294  				}	
+295  
+296  			}
+297  			else{
+298  				printf("%s [%d]\n", command, child_pid);
+299  				if(dup2(fds[0], STDIN_FILENO) == FAIL){
+300  					perror("Pipe input redirection failed 
+with background flag");
+301  					exit(-16);
+302  				}
+303  				close(fds[0]);
+304  				close(fds[1]);
+305  				if(execvp(args[pipe_flag + 1], args  
++(pipe_flag + 1)) == FAIL){
+306  					perror("Execvp failed for pipes with 
+background flag");
+307  					exit(-16);
+308  				}
+309  
+310  			}	
+311  
+312  
+313  		}
+314  
+315  
+316  	}
+317  	else{
+318  
+319  		if(execvp(command, args) == FAIL){
+320  			perror("execvp failed");	
+321  			exit(-1);
+322  		}
+323  	}
+324  
+325  }
+326  
+327  int set_up_redirection(){
+328  	int file_descriptor = 0;
+329  	if(outfile != NULL){
+330  		/*Open file for write only if it doesn't exists. It creates a 
+file with
+331  		 * read and write permissions as indicated b the flags passed 
+to open
+332  		 */
+333  		if(file_exists(outfile) == SUCCESS){
+334  			perror("File exists");
+335  			return 	-1;
+336  
+337  		}
+338  		file_descriptor = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, 
+S_IRUSR, S_IWUSR);
+339  
+340  		if(file_descriptor < SUCCESS){
+341  			perror("Cannot open overwrite file");
+342  			exit(-3);
+343  
+344  		}
+345  		/* Redirecting output from stdout to the open file*/
+346  
+347  		if(dup2(file_descriptor, STDOUT_FILENO) < SUCCESS){
+348  			perror("Output redirection with dup2 failed");
+349  			exit(-4);
+350  		}
+351  
+352  		close(file_descriptor);
+353  
+354  
+355  	}
+356  
+357  	if(infile != NULL){
+358  		file_descriptor = open(infile, O_RDONLY); //Only reading file
+359  		if(file_descriptor < SUCCESS){
+360  			perror("Cannot read input file");
+361  			exit(-5);
+362  		}
+363  		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){
+364  			perror("Input file overwritten");
+365  			exit(-6);
+366  		}
+367  		close(file_descriptor);
+368  	}
+369  
+370  	if(infile == NULL && background_flag){
+371  		file_descriptor = open("/dev/null", O_RDONLY);
+372  		if(file_descriptor < SUCCESS){
+373  			perror("Cannot open file with background flag ");
+374  			exit(-7);
+375  		}
+376  		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){
+377  			perror("input redirection failed with background flag");
+378  			exit(-9);
+379  		}
+380  		close(file_descriptor);
+381  	}
+382  	return file_descriptor;
+383  
+384  }
+385  
+386  void clear_flags(){
+387  	if(background_flag)
+388  		background_flag = FALSE;
+389  	if(outfile != NULL){
+390  		outfile = NULL;
+391  	}
+392  	if(pipe_flag){
+393  		pipe_flag = FALSE;
+394  	}
+395  	if(infile != NULL){
+396  		infile = NULL;
+397  	}
+398  
+399  }
+400  void sighandler(){
+401  
+402  
+403  }
+
+Test 2... Checking program structure with cflow:
+cflow ~cssc0018/Two/p2.c ~cssc0018/Two/getword.c
+main() <int main () at /home/cs/carroll/cssc0018/Two/p2.c:17>:
+    setpgid()
+    signal()
+    sighandler() <void sighandler () at /home/cs/carroll/cssc0018/Two/p2.c:400>
+    printf()
+    parse() <int parse (char **commands, char *line) at /home/cs/carroll/cssc0018/Two/p2.c:92>:
+        getword() <int getword (char *w) at /home/cs/carroll/cssc0018/Two/getword.c:38>:
+            getenv()
+            getchar()
+            ungetc()
+        strcmp()
+        perror()
+        abs()
+    fflush()
+    perror()
+    strcmp()
+    chdir()
+    getenv()
+    clear_flags() <void clear_flags () at /home/cs/carroll/cssc0018/Two/p2.c:386>:
+    exec_command() <void exec_command (char *command, char **args) at /home/cs/carroll/cssc0018/Two/p2.c:198>:
+        fflush()
+        fork()
+        perror()
+        run_child_command() <void run_child_command (char *command, char **args) at /home/cs/carroll/cssc0018/Two/p2.c:234>:
+            set_up_redirection() <int set_up_redirection () at /home/cs/carroll/cssc0018/Two/p2.c:327>:
+                file_exists()
+                perror()
+                open()
+                exit()
+                dup2()
+                close()
+            perror()
+            exit()
+            pipe()
+            fflush()
+            fork()
+            dup2()
+            close()
+            execvp()
+            wait()
+            printf()
+        wait()
+        printf()
+    killpg()
+    getpgrp()
+
+Test 3... Checking for some prescribed/proscribed features;
+a human will have to look over the output from the grep commands...
+----------------------------------------------------------------------STORAGE
+Are you defining a character buffer large enough to handle MANY 'long' words?
+egrep -n '#define|STORAGE' p2.h p2.c
+p2.h:13:#define EOF -255
+p2.h:14:#define ZERO_COMMANDS 0
+p2.h:15:#define FAIL -1
+p2.h:16:#define SUCCESS 0
+p2.h:17:#define STRING_EQUALS 0 
+p2.h:18:#define TRUE 1
+p2.h:19:#define FALSE 0
+p2.h:20:#define PARSE_ERROR -2
+p2.h:23:#define MAXITEM 100 /* max number of words */
+p2.h:24:#define MAXSIZE (STORAGE*MAXITEM) /*Max amount of characetr per commandline */
+----------------------------------------------------------------------SIG
+Are children being terminated with the correct signal?
+egrep -n 'SIG|setp|signal|terminated' p2.c
+19:	setpgid(0,0); // Sets current process and children to its own process group
+20:	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+83:	killpg(getpgrp(),SIGTERM);
+84:	printf("p2 terminated.\n");
+----------------------------------------------------------------------wait
+Is the parent waiting for a child?  ...For the CORRECT child?
+egrep -n 'wait|while' p2.c
+21:	while(TRUE){
+159:	} while (word_size != EOF && word_size != ZERO_COMMANDS); // read until a line terminator is encountered
+200:	int wait_status;
+214:		/* if background flag is not set then the shell waits
+219:				wait_status = wait(NULL);
+221:			}while(wait_status != child_pid);
+235:	int wait_status;
+279:					wait_status = wait(NULL);
+280:				}while(wait_status != child_pid);
+----------------------------------------------------------------------void
+grep -n void p2.c
+20:	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+198:void exec_command(char *command, char **args){
+234:void run_child_command(char *command, char **args){
+386:void clear_flags(){
+400:void sighandler(){
+----------------------------------------------------------------------null
+Are you ensuring that background children don't compete for keyboard input?
+grep -n /dev/null p2.c
+371:		file_descriptor = open("/dev/null", O_RDONLY);
+----------------------------------------------------------------------fflush
+Are you ensuring that children inherit only empty buffers?
+egrep -n 'fork|fflush' p2.c
+12: * 			- To handle execution we use system calls like dup2, execvp, fork, and pipe, etc.
+30:			fflush(stdout);
+35:			fflush(stdout);
+37:			fflush(stderr);
+201:	fflush(stdout);// Flushing before a fork to ensure stdout & stdout buffers are clear for the child.
+202:	fflush(stderr);
+204:	if((child_pid = fork()) == FAIL){
+253:		fflush(stdout); //Flush before fork everything.
+254:		fflush(stderr);
+255:		if((child_pid =fork()) == FAIL){
+----------------------------------------------------------------------exit
+Do all children exit() upon failure?
+egrep -n 'execvp|exit|dup2|open|CHK|perror' p2.c
+12: * 			- To handle execution we use system calls like dup2, execvp, fork, and pipe, etc.
+18:	//int exit_code;
+36:			perror("Parse error");
+41:		 * use execvp to execute cd.
+48:					perror("cd command failed to go HOME");	
+58:					perror("Failed to cd into directory");		
+65:				perror("cd has an invalid number of arguments");
+111:					perror("Cannot have multiple pipes");		
+115:					perror("Need to an argument to pipe to.");
+126:					perror("Ambiguous redirection output. Cannot execute");
+134:					perror("Ambiguous redirection. Cannot execute.");
+166:		perror("Background char '&' is in the wrong format or location");
+170:		perror("Redirection cannot output to a file.");
+175:		perror("Redirection coudln't get input from input file.");
+180:		perror("No executable commands after the redirectioni from input file");
+185:		perror("No executable commands after redirection to output file");
+189:		perror("No process or executable commands after the pipeline");
+205:		perror("Forked failed");
+242:			perror("Redirection error");
+243:			exit(-10);
+250:			perror("Pipe failed");
+251:			exit(-11);
+256:			perror("Fork failed inside of pipe code");
+257:			exit(-12);	
+264:			if(dup2(fds[1], STDOUT_FILENO) == FAIL){
+265:				perror("Pipe output redirection failed using dup2");
+266:				exit(-13);
+271:			if(execvp(command,args) == FAIL){
+272:				perror("Execvp failed inside of pipeline code");
+273:				exit(-14);
+283:				if(dup2(fds[0], STDIN_FILENO) == FAIL){
+284:					perror("Pipe redirection failed from child's input to end of pipe");
+285:					exit(-15);
+291:				if(execvp(args[pipe_flag + 1],args + (pipe_flag + 1)) == FAIL){
+292:					perror("Exec failed with pipes");
+293:					exit(-15);
+299:				if(dup2(fds[0], STDIN_FILENO) == FAIL){
+300:					perror("Pipe input redirection failed with background flag");
+301:					exit(-16);
+305:				if(execvp(args[pipe_flag + 1], args  +(pipe_flag + 1)) == FAIL){
+306:					perror("Execvp failed for pipes with background flag");
+307:					exit(-16);
+319:		if(execvp(command, args) == FAIL){
+320:			perror("execvp failed");	
+321:			exit(-1);
+331:		 * read and write permissions as indicated b the flags passed to open
+334:			perror("File exists");
+338:		file_descriptor = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR, S_IWUSR);
+341:			perror("Cannot open overwrite file");
+342:			exit(-3);
+345:		/* Redirecting output from stdout to the open file*/
+347:		if(dup2(file_descriptor, STDOUT_FILENO) < SUCCESS){
+348:			perror("Output redirection with dup2 failed");
+349:			exit(-4);
+358:		file_descriptor = open(infile, O_RDONLY); //Only reading file
+360:			perror("Cannot read input file");
+361:			exit(-5);
+363:		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){
+364:			perror("Input file overwritten");
+365:			exit(-6);
+371:		file_descriptor = open("/dev/null", O_RDONLY);
+373:			perror("Cannot open file with background flag ");
+374:			exit(-7);
+376:		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){
+377:			perror("input redirection failed with background flag");
+378:			exit(-9);
+NOTE: sometimes _exit() can be preferable to exit()
+----------------------------------------------------------------------parse
+What (if anything) are you passing to parse?
+grep -n parse( p2.c
+23:		new_argv_size = parse(new_argv, line);
+92:int parse(char **commands , char *line){ 
+----------------------------------------------------------------------system
+Calls to system() are NOT being used, right?:
+grep -n system p2.c
+12: * 			- To handle execution we use system calls like dup2, execvp, fork, and pipe, etc.
+
+Test 4... is p2.c documented?
+(Your p2.c documentation does NOT have to repeat all the specs for p2,
+but it should list your name, instructor name [NOTE: 'Carroll' contains
+two 'R's and two 'L's], class [that is, 'CS570'], due date, etc.)
+A brief synopsis and guidance at decision points / tricky issues will suffice.
+You may LOSE a point here if keywords are missing; your total is now 0/0
+(Many more points depend on your documentation, but a human will have to
+assign the remaining documentation points.)
+
+Test 5... how is the syntax?
+make splint
+splint -warnposix +trytorecover -weak getword.c p2.c
+Splint 3.1.2 --- 11 Oct 2015
+
+p2.c: (in function main)
+p2.c:83:2: Unrecognized identifier: killpg
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+p2.c: (in function parse)
+p2.c:99:6: Test expression for if is assignment expression:
+              word_size = getword(line)
+  The condition test is an assignment expression. Probably, you mean to use ==
+  instead of =. If an assignment is intended, add an extra parentheses nesting
+  (e.g., if ((a = b)) ...) to suppress this message. (Use -predassign to
+  inhibit warning)
+p2.c: (in function run_child_command)
+p2.c:241:27: Unrecognized identifier: set_up_redirection
+p2.c:241:6: Test expression for if is assignment expression:
+               redirection_return = set_up_redirection() < 0
+
+Finished checking --- 4 code warnings
+make: *** [splint] Error 1
+
+NOTE: not everything that 'splint' comments about is necessarily a bad thing;
+for example, splint may complain if you don't save the value that printf()
+returns (even if this may be a perfectly reasonable thing to ignore).
+
+Test 6... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+
+1:"I wrote this code myself but I used the p2.c outline 
+2: in the lecture notes to jump start my p2.c 
+3: As errors occured I often googled syntax and used websites like
+4: stackoverflow.com and various other that lead me to 
+5: fix my code." I also emailed Dr. Caroll for help and hints on this program and 
+6: he has given me very good help that has lead me to finish it. 
+7:
+8:Notes:
+9:-The documentation of p2.h explains the methods and their input and output values. Throughout the p2.c code there is various comments explaining how things work which serve more as a reminder and aid for myself.
+10:-My program has a total of 
+11:
+12:Decisions:
+13:Started off using global big buffer and new argv arrays but my code was broken and I got frustrated and stared alover using parameters for these values and it was more complicated as we now have parameters that need to point to the global variables. I wanted to make major components of the program modular so I would be able to pinpoint the error if it happened. It was more overhead but I think it was worth it.
+14:For the order of my code I have parse and main as the primarily methods but there are helper methods.   
+15:
+16:Errors that are ambiguous commands are flagged with errors sent to stderr with perror.
+17:
+18:
+19:
+20:As of right now my code is finished, has no known bugs and 
+21:does produce the correct output which has been verified
+22:by the autograder. It doesn't not include the last 3 points for the correct implementation of vertical piping or the points for the quality of the documentation. .
+23:
+24:References:
+25:CS 570 Lecture notes pg.3 exec1.c
+26:		     pg.4 fork1.c
+27:		     pg.5 fork.c
+28:		     pg.6 pipe.c
+29:		     pg.7 dup.c
+30:		     pg.8 dup2.c
+31:		     pg.9 sig.c
+32:		     pg.10 sighandler.c
+33:		     pg.17 parsing the command line
+34:		     pg.18 Arguments to main()
+35:		     pg.19 arg.c
+36:		     pg.20-21 file descriptor
+37:
+38:
+39:Linix man pages mentioned in the leture notes
+40:	dup2(2), execvp(3), chdir(2), getenv(3), exit(3), fork(3), open(2), perror(3), wait(2), 
+41:	access(2), pipe(2), fflush(3), sigaction(3), signal(2), setpgid(2), getpgrp(2), and killpg(2).
+42:		
+43:Stackoverflow.com
+44:	"What does M-bM-^@M-^\dereferencingM-bM-^@M-^] a pointer
+45:		 https://stackoverflow.com/questions/4955198https://stackoverflow.com/questions/4955198/what-does-dereferencing-a-pointer-mean/what-does-dereferencing-a-pointer-mean	
+46:	"Break in a do while loop"
+47:https://stackoverflow.com/questions/12217014/break-in-do-while-loop"
+48:
+49:
+50:Loyal College in Maryland CS 702 Operating System 
+51:	
+52:http://www.cs.loyola.edu/~jglenn/702/S2005/Examples/index.html
+
+You may LOSE a point here if it doesn't exist; your total is now 0/0
+(Note that TWO required statements belong in this file; also list your design
+decisions here [see the 'checklist' below for samples of what to include .]
+A human grader will check this later, and perhaps adjust your score.)
+
+Test 7... are the makefile and getword.h soft links in place?
+ls -l ~cssc0018/Two/makefile ~cssc0018/Two/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 36 Oct  2 10:23 /home/cs/carroll/cssc0018/Two/getword.h -> /home/cs/faculty/cs570/One/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 35 Sep 18 08:58 /home/cs/carroll/cssc0018/Two/makefile -> /home/cs/faculty/cs570/Two/makefile
+makefile is correctly linked.
+getword.h is correctly linked.
+If you don't have the right setup, you could LOSE a point here;
+                                       Your total is now 0/0
+
+Test 8... are the proper .h files included in your source code?
+One more point was possible here; your total is now 1/1
+(If you are failing this test, just #include all the .h files for the system
+calls recommended for program2, even if you are not yet using all those calls.)
+There are (at least) 8 header files that you will need.
+And of course, if you're using non-recommended calls, make sure you have the
+proper .h files for those, too.
+
+NOTE: Review the earlier splint output; if some function names are tagged as
+"Unrecognized identifier", this is a pretty big hint about what you are missing.
+
+Test 9... does your program compile?
+make clean; make
+rm -f *.o p2 your.output*
+gcc -g   -c -o p2.o p2.c
+In file included from p2.c:1:0:
+p2.h:13:0: warning: "EOF" redefined [enabled by default]
+ #define EOF -255
+ ^
+In file included from /usr/include/stdio.h:74:0,
+                 from p2.h:1,
+                 from p2.c:1:
+/usr/include/libio.h:63:0: note: this is the location of the previous definition
+ # define EOF (-1)
+ ^
+p2.c: In function 'parse':
+p2.c:146:13: warning: assignment from incompatible pointer type [enabled by default]
+     outfile = line;
+             ^
+p2.c:149:12: warning: assignment from incompatible pointer type [enabled by default]
+     infile = line;
+            ^
+p2.c: In function 'set_up_redirection':
+p2.c:333:3: warning: passing argument 1 of 'file_exists' from incompatible pointer type [enabled by default]
+   if(file_exists(outfile) == SUCCESS){
+   ^
+In file included from p2.c:1:0:
+p2.h:104:5: note: expected 'const char *' but argument is of type 'int *'
+ int file_exists(const char *file_name){
+     ^
+p2.c:338:3: warning: passing argument 1 of 'open' from incompatible pointer type [enabled by default]
+   file_descriptor = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR, S_IWUSR);
+   ^
+In file included from p2.h:3:0,
+                 from p2.c:1:
+/usr/include/fcntl.h:173:12: note: expected 'const char *' but argument is of type 'int *'
+ extern int open (const char *__file, int __oflag, ...) __nonnull ((1));
+            ^
+p2.c:358:3: warning: passing argument 1 of 'open' from incompatible pointer type [enabled by default]
+   file_descriptor = open(infile, O_RDONLY); //Only reading file
+   ^
+In file included from p2.h:3:0,
+                 from p2.c:1:
+/usr/include/fcntl.h:173:12: note: expected 'const char *' but argument is of type 'int *'
+ extern int open (const char *__file, int __oflag, ...) __nonnull ((1));
+            ^
+gcc -g   -c -o getword.o getword.c
+gcc p2.o getword.o -o p2
+[1] 5015
+
+Test 10... does your program ignore '&' as a command separator if it is in
+the middle of the line, and handle '\;' correctly?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input1 :
+
+Your output was:
+:570: Null & ; echo Void
+:570: p2 terminated.
+
+The correct output should be something like:
+Null & ; echo Void
+:570: :570: p2 terminated.
+
+Your output might be ordered differently, and that's OK, as long as the
+child output and the number of prompts (2 of them) is correct.
+
+Parent/child output could get interleaved, but that's still correct behavior.
+
+Three more points were possible here; your total is now 4/4
+
+NOTE: If your ':570: ' prompt prints the proper NUMBER of times, but is intermixed
+with the other output, the autograder should still give you full credit; if not,
+the most common reason is inexact punctuation (6 colons AND a period).
+
+Test 11... does your program honor the 'cd' command?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input2 :
+
+Your output was:
+:570: :570: TOTAL 0
+DRWXR-XR-X 2 ROOT ROOT 37 JUL 19 10:44 MAN1
+DRWXR-XR-X 2 ROOT ROOT  6 FEB 20  2017 MAN5
+:570: p2 terminated.
+
+                    Child process produced reasonable output -- CONGRATULATIONS
+
+Two more points were possible here; your total is now 6/6
+
+Test 12... does 'cd' with no arguments work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input3 :
+
+Your output was:
+:570: :570: /usr/local/bin
+:570: p2 terminated.
+
+The correct output is:
+/usr/local/bin
+:570: :570: :570: p2 terminated.
+(You can get full credit, even with parent and child output interleaved.)
+
+
+Two more points were possible here; your total is now 8/8
+
+Test 13... does backgrounding work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input4 :
+
+Your output was:
+:570: Fri Oct  5 23:10:49 PDT 2018
+:570: /home/cs/faculty/cs570/jabbersleepy [5054]
+:570: :570: Fri Oct  5 23:10:49 PDT 2018
+:570: child =5054= begins sleep
+child =5054= ends sleep
+:570: p2 terminated.
+
+Did you print the process name, a space, and '[' ? (i.e., '.../jabbersleepy [')
+             /home/cs/faculty/cs570/jabbersleepy was printed -- CONGRATULATIONS
+
+Did your shell print the correct child process ID, within '[' and ']' ?
+                    Yes, the child PID inside [] was printed -- CONGRATULATIONS
+Did the two 'date' commands get executed within the same second?
+    Good, your shell did not wait for the background process -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 11/11
+
+Test 14... do backgrounded zombies get reaped quickly?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input88 :
+
+Your output was:
+:570: sleep [5085]
+:570: :570: sleep [5086]
+:570: :570: sleep [5087]
+:570: :570: :570: foreground jobs should clear out all zombies...if you use 
+wait() correctly.
+:570: USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+cssc0018  4908  0.1  0.0  15684  1472 pts/3    S+   23:10   0:00 sg
+cssc0018  4932  0.3  0.0  15680  1476 pts/3    S+   23:10   0:00 csh 
+/tmp/carroll2980/studscript
+cssc0018  5015  0.0  0.0  15680   584 pts/3    S    23:10   0:00 csh 
+/tmp/carroll2980/studscript
+cssc0018  5016  0.0  0.0   4360   348 pts/3    S    23:10   0:00 sleep 20
+cssc0018  5083  0.0  0.0   4372   348 pts/3    S+   23:10   0:00 head -100
+cssc0018  5084  0.0  0.0   4248   516 pts/3    S    23:10   0:00 
+/home/cs/carroll/cssc0018/Two/p2
+cssc0018  5092  0.0  0.0  51708  1728 pts/3    R    23:10   0:00 /bin/ps -xu
+:570: p2 terminated.
+
+           No zombie '<defunct>' processes were found by ps  -- CONGRATULATIONS
+
+You LOSE a point here if zombies remain (or ps fails); your total is now 11/11
+
+Test 15... do backgrounded processes get killed when the shell exits?
+NOTE: The following test does NOT work when I run it from a script
+(such as my grading script) :-(
+This is one of the tests I'll have to run 'by hand' after the due date.
+ ~cssc0018/Two/p2 < ~cs570/Data2/input5
+grep -n 'killpg(' ~/Two/p2.c
+83:	killpg(getpgrp(),SIGTERM);
+In file included from /home/cs/carroll/cssc0018/Two/p2.c:1:0:
+/home/cs/carroll/cssc0018/Two/p2.h:13:0: warning: "EOF" redefined [enabled by default]
+ #define EOF -255
+ ^
+In file included from /usr/include/stdio.h:74:0,
+                 from /home/cs/carroll/cssc0018/Two/p2.h:1,
+                 from /home/cs/carroll/cssc0018/Two/p2.c:1:
+/usr/include/libio.h:63:0: note: this is the location of the previous definition
+ # define EOF (-1)
+ ^
+ killpg(getpgrp(),15);
+One more point was possible here; your total is now 12/12
+
+Test 16... does the shell wait for foreground children?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input6 :
+
+Your output was:
+:570: /bin/date [5105]
+:570: :570: Fri Oct  5 23:10:54 PDT 2018
+child =5106= begins sleep
+child =5106= ends sleep
+:570: Fri Oct  5 23:10:56 PDT 2018
+:570: p2 terminated.
+
+Did two seconds pass between the two 'date' commands?
+          Good, your shell waited for the foreground process -- CONGRATULATIONS
+
+One more point was possible here; your total is now 13/13
+
+Test 17... does your program redirect standard output?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input7 :
+
+Your stdout contents (only ':570: :570: :570: p2 terminated.' should appear here) was:
+:570: :570: :570: p2 terminated.
+A diff of the correct prompts with yours shows:
+Your shell should print an 'extra' :570: due to the blank line -- CONGRATULATIONS
+Checking for the specified file (your.outputO)...
+ls -l your.outputO
+-r-------- 1 cssc0018 carroll 116 Oct  5 23:10 your.outputO
+The data in the specified file (your.outputO) was:
+Linux edoras.sdsu.edu 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 
+2018 x86_64 x86_64 x86_64 GNU/Linux
+
+A diff of the correct output with the contents of your.outputO shows:
+
+                     Child process redirected output to file -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 16/16
+
+Test 18... do pipelines and input/output redirection all work?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input11 :
+
+The contents of stdout/stderr was:
+:570: :570: p2 terminated.
+
+The results of the redirected pipeline (in your.outputc) was:
+ECHO NULL & \; ECHO VOID   
+
+The proper file contents should be:
+ECHO NULL & \; ECHO VOID   
+
+              Pipeline redirected input/output from/to files -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 19/19
+
+Test 19... does your program guard against buffer overruns?
+(Note that every one of the strings you put in your argv[] array could
+potentially contain 254 characters, so p2 needs a LARGE character buffer...
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input8 :
+
+What was sent to stdout was (with 'extra' newlines inserted at column 80,
+so that the results don't display in a misleading way):
+:570: abcde 123456789a123456789b123456789c123456789d123456789e123456789f12345678
+9g123456789h123456789i123456789j123456789k123456789l123456789m123456789n12345678
+9o123456789p123456789q123456789r123456789s123456789t123456789u123456789v12345678
+9w123456789x123456789y1234 56789z123456789A123456789B123456789C123456789D1234567
+89E123456789F123456789G123456789H123456789I123456789J123456789K123456789L1234567
+89M123456789N123456789O123456789P123456789Q123456789R123456789S123456789T1234567
+89U123456789V123456789W123456789X12345678 9Y123456789Z
+:570: 15748
+:570: p2 terminated.
+
+The first line of correct output (with extraneous newlines in column 80,
+to wrap the lines and make them fit on the screen) are:
+abcde 123456789a123456789b123456789c123456789d123456789e123456789f123456789g1234
+56789h123456789i123456789j123456789k123456789l123456789m123456789n123456789o1234
+56789p123456789q123456789r123456789s123456789t123456789u123456789v123456789w1234
+56789x123456789y1234 56789z123456789A123456789B123456789C123456789D123456789E123
+456789F123456789G123456789H123456789I123456789J123456789K123456789L123456789M123
+456789N123456789O123456789P123456789Q123456789R123456789S123456789T123456789U123
+456789V123456789W123456789X12345678 9Y123456789Z
+       Good, your shell continued to process the bc pipeline -- CONGRATULATIONS
+
+    Your shell found the first truncation location correctly -- CONGRATULATIONS
+
+Good, your shell found the second truncation point correctly -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 22/22
+
+Test 20... does your program avoid overwriting existing files?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input99 :
+
+Your stdout contents were:
+:570: :570: :570: :570: p2 terminated.
+NOTE: examine your error messages below carefully; if you see repeated
+messages that you did not expect, this is likely because the parent still had
+the error message in its buffer, the forked child inherited this data, and then
+both the parent and the child printed it.  You may have trouble reproducing
+this effect in your own experiments, but fflush() is what you need to fix it.
+**********************************************************************
+*             STDERR MESSAGES FROM input99                           *
+**********************************************************************
+Your stderr contents were:
+File exists: Success
+Redirection error: Invalid argument
+   If you complained about not overwriting existing files, then CONGRATULATIONS
+may be appropriate.
+Checking for the specified file (your.outputO)...
+ls -l your.outputO
+-r-------- 1 cssc0018 carroll 116 Oct  5 23:10 your.outputO
+The data in the specified file (your.outputO) was:
+Linux edoras.sdsu.edu 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 
+2018 x86_64 x86_64 x86_64 GNU/Linux
+
+The output of the uname command should be in this file (not the echo output)
+     Child process redirected output, but did not overwrite -- CONGRATULATIONS
+
+Two more points were possible here; your total is now 24/24
+
+Test 21... do foreground/background input/output redirection all work?
+NOTE: in this test, your HOME directory was set to /home/cs/faculty/cs570
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input9 :
+
+The contents of stdout/stderr was:
+:570: tr [5190]
+:570: :570: :570: /home/cs/faculty/cs570 :570: p2 terminated.
+
+The results of the foreground command (in your.outputf) was:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+The proper file contents should be:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+         Child process redirected input/output from/to files -- CONGRATULATIONS
+
+The results of the background command (in your.outputb) was:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+The proper file contents should be:
+NO-BRAINER ONE ; 
+  TRICKIER;T$O  $MASTER
+  $$DIFFERENT $WORDS $
+$; $EXPECT 10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255
+$
+         Child process redirected input/output from/to files -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 27/27
+
+Test 22... Does tilde and dollar-sign get treated correctly?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input12 :
+
+The contents of stdout was:
+:570: AB~CD /usr/local/binABCD SHELL ~ echo still part of previous line $SHELL &
+:570: :570: p2 terminated.
+
+Your prompts might be interleaved differently, but stdout should look like:
+AB~CD /usr/local/binABCD SHELL ~ echo still part of previous line $SHELL &
+:570: :570: :570: p2 terminated.
+
+**********************************************************************
+*             STDERR MESSAGES FROM input12                           *
+**********************************************************************
+What was sent to stderr was:
+execvp failed: No such file or directory
+
+   If you complained about the '&' binary not being found, then CONGRATULATIONS
+may be appropriate.
+Note that the NAME of the thing not found (namely &) should be listed! 
+(Don't expect ~cssc0018 in the output, since I randomly set the HOME variable.)
+
+Two more points were possible here; your total is now 29/29
+
+Test 23... does your program handle badly-constructed commands?
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input10 :
+
+What was sent to stdout was:
+:570: :570: :570: :570: :570: :570: Linux
+:570: :570: sort [5228]
+:570: :570: This echo and the next cd SHOULD be executed by your shell and NOT 
+cause errors
+:570: :570: :570: /etc
+:570: p2 terminated.
+
+    Good, your shell continued to process the valid commands -- CONGRATULATIONS
+
+**********************************************************************
+*             STDERR MESSAGES FROM input10                           *
+**********************************************************************
+What was sent to stderr was:
+cd has an invalid number of arguments: Success
+execvp failed: No such file or directory
+Ambiguous redirection. Cannot execute.: Invalid argument
+sort: cannot read: hells: No such file or directory
+execvp failed: Permission denied
+No executable commands after the redirectioni from input file: Invalid argument
+Cannot read input file: No such file or directory
+Redirection cannot output to a file.: Invalid argument
+No process or executable commands after the pipeline: Invalid argument
+Exec failed with pipes: No such file or directory
+Redirection cannot output to a file.: Invalid argument
+sort: cannot read: /cs/faculty/cs570/freq: No such file or directory
+
+If your stderr message complained about confusing options, then CONGRATULATIONS
+may be appropriate.
+
+Of course, a human will have to judge the quality of your error/warning messages
+
+Three more points were possible here; your total is now 32/32
+The assignment will be worth 35 points (after a human grades it).
+
+Test 24... no points, just a way of checking if vertical piping is implemented.
+If you have pipelines working, the results of a ps command should be displayed.
+Examine the output of the ps command below carefully.  If you are doing vertical
+piping correctly, the parent of the 'sleep' process (shown in the PPID coumn)
+should be the 'vertical' process, NOT the parent 'p2' process.
+If p2, vertical, and sleep report 3 different numbers in the PPID column,
+relax -- you're doing things right.
+
+But if both children report p2 as their parent, this is horizontal piping.
+The autograder is too dumb to check this effectively, so it may be reporting a
+MUCH higher score than is warranted.
+
+If you fail to do vertical piping, it [negatively] affects your grade.  A human
+(me) will have to sadly demolish your piping points when I grade the printouts.
+
+One of the 3 processes reported should be the child doing the 'sleep' command.
+If you see only two processes in the ps output, perhaps you are [inadvisably]
+having one child wait until the grandchild finishes.  Don't do that...
+
+Here is the result of ~cssc0018/Two/p2 < ~cs570/Data2/input16 :
+
+:570: S UID        PID  PPID  C PRI  NI   RSS    SZ WCHAN  STIME TTY          
+TIME CMD
+S cssc0018  5016  5015  0  80   0   348  1090 hrtime 23:10 pts/3    00:00:00 
+sleep 20
+S cssc0018  5239  4932  0  80   0   344  1062 do_wai 23:10 pts/3    00:00:00 
+/home/cs/carroll/cssc0018/Two/p2
+S cssc0018  5242  5239  0  80   0   344  1052 do_wai 23:10 pts/3    00:00:00 
+/home/cs/faculty/cs570/vertical
+:570: :570: p2 terminated.
+NOTE: if you are not seeing any output, this [may] mean that you are INCORRECTLY
+having the child wait() for the grandchild.  You should NOT do this --
+Only the original parent should be doing any wait()ing.
+
+Your grade for this assignment will be determined by a (human) grader
+at the due date.
+The automation currently only tests 32 out of the total 35 points;
+a human will determine whether you have earned the remaining 3 points,
+and if you miss too much stuff on the checklist below, you'll LOSE some points.
+(On the automated part, you scored 32/32.)
+See the extensive checklist to get an idea of what I will be looking for.
+             ------
+Total Points |32+?|  for cssc0018 cssc0018 - Bernardo Cervantes,,,61960017 for Program 2
+             |----|
+             | 35 |   X 1.15 = 
+             ------
+Program 2 gradesheet
+
+a PARTIAL checklist of things the grader may judge:
+
+Quality of documentation & header info          constants, etc. documented?
+                                        ___/    name, class, instructor, date?
+getword.c documentation?                        algorithm explained?
+                                        ___/
+Appropriate bad-syntax error messages           (to stderr, of course)
+                                        ___/
+NO inappropriate duplicate output lines
+(neither stderr nor stdout)             ___/    Research fflush()
+Correct foreground child wait()ed for?
+                                        ___/    2 statements, and also:
+MULTIPLE required items in gradernotes?         E.g., what do you do if you see:
+                                        ___/    echo hi>& ?   Document your
+Documentation of individual choices             choices *in gradernotes*, so
+                                        ___/    that I can find it!
+Background processes dup2 on /dev/null?
+                                        ___/    Are background zombies reaped
+Background processes terminate correctly        as soon as possible?
+                                        ___/
+Do you exit upon execvp failure?                Same for pipe, dup2, open, etc.?
+                                        ___/
+NO ONE should wait() for grandchild!            ...this can cause deadlock!
+                                        ___/
+Does a child create grandchild in pipes?        IMPORTANT!!! You will LOSE *ALL*
+                                        ___/    the pipeline points if you did
+Is your character array long enough?            not use 'vertical' pipelining.
+                                        ___/
+"p2 terminated" printf comes AFTER killpg       (This is how I check if your
+                                        ___/    signal handler is working...)
+Unexpected behavior (if any) documented
+in gradernotes file                     ___/    SAY what isn't working!
+                                       ______
+                                      |      |
+                         ___ X 1.15 = |______|
+                                      |  35  |
+                                      |______|

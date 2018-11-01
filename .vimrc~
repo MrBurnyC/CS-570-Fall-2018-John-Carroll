@@ -1,4 +1,4 @@
-set undolevels=100 compatible
+set undolevels=0 compatible
 map!  Bi{\tt Ea}
 map  !G tr -d '\015' 
 map  :s/\<\([A-Za-z]\)\([A-Za-z]*\)\>/\u\1\L\2/g

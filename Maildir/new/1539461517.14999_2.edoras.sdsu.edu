@@ -1,0 +1,142 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 91CB86000049; Sat, 13 Oct 2018 13:11:57 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 8FA566000048
+	for <cs570-01@edoras.sdsu.edu>; Sat, 13 Oct 2018 13:11:57 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: CS570 midterm advice (October 25, 2018)
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <14792.1539461517.1@edoras>
+Date: Sat, 13 Oct 2018 13:11:57 -0700
+Message-Id: <20181013201157.8FA566000048@edoras.sdsu.edu>
+
+Page numbers in this document are for the THIRD edition of Tanenbaum.
+A copy of this document can be found at ~cs570/midterm_advice .
+
+Our midterm will cover the four chapters (1, 2, 6, 3) listed below,
+including [most] of Chapter 3.  Later, I will be able to confirm just how
+much of Chapter 3 we will cover; so there will be an additional mailing
+where  I'll announce more accurate coverage.  Basically, coverage will
+stop wherever the in-class lecture stops on October 18; October 23
+will be reserved for review and exercise-solving.
+
+The midterm for CS570 is scheduled for Thursday, October 25, 2018.
+The exam will be closed-book, but you may bring to the exam ONE
+8.5x11-inch page of notes (you can write/xerox/doodle on both sides
+of the page).  Occasionally students pool resources and create a
+compact, whiz-bang compendium of facts, which multiple people can
+then print and use.  While this is legal [ANYTHING you want to put
+on either side is legal], I don't recommend it; sifting through the
+material to create the notes, deciding what is important, and then
+writing it down is the most useful thing you can do to study for
+the exam -- this process is where you're actually going to learn
+the material.  Using a canned sheet will be better than walking
+into the exam empty-handed, but even a seriously incomplete sheet
+that you've constructed yourself will almost certainly lead to a
+better outcome than using someone else's list.
+
+There ought to be enough room to write all your answers on the
+printed exam, but I'll bring some additional paper to class in case
+anyone runs out of space.  I'll have a stapler with me, to attach
+additional sheets to the exam.  (If you prefer to use your own paper,
+make sure it is 8.5x11 inches, and NOT ripped out of a spiral-bound
+notebook -- definitely use my paper if spiral is all you have.)
+
+The exam will cover Chapters 1,2,6,3; specifics are given below,
+such as the sections/topics we have skipped.  There are bits of
+Chapter 10 you will find useful, too.
+
+The in-class Chapter xeroxed notes form a fairly accurate guide
+to the material we have covered, although the written notes for
+Chapter 1 end around Page 20, whereas we in fact discussed this
+overview material in class in some detail up through Page 59; the
+remainder of the chapter was only covered briefly, so Page 60 and
+beyond will therefore be de-emphasized on the exam[s].
+
+The end-of-chapter questions (beginning on Page 79 for Chapter 1)
+form an effective review of the material; a few of the exam
+questions may be of the short-answer variety, such as:
+1, 2, 3, 4, 8, 14, 17, 18, 19, 22.
+(This list of 'Tanenbaum questions' is reiterated near the top
+of the Exercises1 file of the lecture notes.)  One would hope you
+now have a pretty good handle on #30 on Page 82...  (For those of
+you with the 4th edition: at the bottom of my published Exercise sheets
+you will find a list the corresponding page numbers and problem numbers
+for the fourth edition.)
+
+In Chapter 2, we covered topics through page 146; it's not a bad
+idea to review the summary on Pages 169-170.  Note that near the
+end of my Chapter 2 notes, scheduling in UNIX is discussed in more
+detail than you will find in Tanenbaum.
+
+Some end-of-chapter questions (beginning on Page 170 for Chapter 2):
+1, 3, 10, 11, 23, 45, 46, 47 Tanenbaum, Chapter 10 (Page 808): 9, 14
+Recall that the Summary (Page 462) gives a good synopsis of the
+important concepts in Chapter 6.  Problem 30 (Page 465) is related
+to ideas in Chapter 2, and is an appropriate exercise.
+
+Here are some relevant exercises for the material related to
+Chapter 3 (these start on Page 248): 4, 12, 13, 15, 18, 19, 20,
+26, 32 Chapter 10 (Page 809): 20, 24
+This list is likely to SHRINK somewhat, depending on how far
+we venture into Chapter 3 this week, so put your study emphasis
+on the other three chapters for now, until you get a more accurate
+list of which Chapter 3 problems will be relevant for the midterm.
+
+In Chapter 10, we have looked at various sections as we have
+needed them.  Useful parts to review prior to the midterm are:
+Section 10.2.1, 10.2.3, 10.2.4, 10.3.1, 10.3.2, 10.3.3, 10.4.1,
+10.6.1 (Pages 729,732-736,739-749,758-761,780-781).
+
+It is highly likely that I will give you some (flawed) code for
+cooperating processes (a la dining philosophers) and ask you
+for a failure scenario.  You should be able to give a precise
+sequence of steps of two (or more) processes that leads to deadlock
+or starvation.  I might also ask for some insight as to how to
+correct the problem.  [You need not write down or memorize the
+scenarios on your cheat sheet; I'll include the code on the exam,
+and if it is different than the code in Tanenbaum, I will (usually)
+point out where the differences are.]
+
+It is highly likely that I will ask about some issue relevant to
+programming a shell.  (If you successfully completed the shell
+programming assignment, such questions should be trivial to answer.)
+
+It is highly likely that I will ask about some arithmetic issue
+relevant to virtual memory (translating some address, calculating
+the number of page frames or pages, determining the number of
+bits necessary to specify an offset for a given page size, etc.)
+Experience has shown that many students have trouble making these
+calculations; since similar questions will recur on the final,
+NOW is the time to study this thoroughly!
+
+Here are some good questions from the Second Edition of Tanenbaum
+that are not present in later editions:
+
+A) A computer system has enough room to hold four programs in its
+main memory.  These programs are idle waiting for I/O half the time.
+What fraction of the CPU time is wasted?  What is the utilization
+of the CPU?
+
+B) Using the page table in Figure 3-9 (Page 190), give the physical
+address corresponding to each of the following virtual addresses:
+i)   20 ii)  4100 iii) 8300
+
+Toward the back of the xeroxed notes, there are additional exercises
+related to the chapters we have covered (starting on page 76;
+many of them have answers supplied).  Most of these are also good
+examples of exam questions.  (Indeed, most of these are taken from
+previous exams that I have given.)
+
+The class session prior to the exam will be set aside for review.
+We can consider some of these sample exam problems, and also go
+over any concepts that still seem confusing.
+
+Cheers,
+jc

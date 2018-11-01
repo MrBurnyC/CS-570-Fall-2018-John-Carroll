@@ -1,0 +1,11 @@
+"I believe everything works perfectly under all conditions"
+"I wrote p3helper.c code by myself" I did have help with concepts from classmates and emails to Dr. Carroll. I also read 
+the readers and writer problem very thorougly in the Tanenbaum textbook.
+This website in particular helped me to get started with the syntax: https://www.geeksforgeeks.org/use-posix-semaphores-c/
+I first started with a solution that made the jogger have priority with the gym and only one shooter would be allowed
+in the gym at a time. So there would be 4 joggers and 0 shooters and when it was the shooters turn there would be a queue of 4 shooters 
+but they could only enter one at a time. I was really following the Tanenbaum's reader writer solution. 
+I had many semaphores that were not necessary such as renterlock, scountlock & jcountlock. I removed them and now only have
+critical region, slock and jlock. The solution is so much simplier than the original one.
+When the joggers enter there is an if statement to check it is the first one in prolog and if it is the last jogger to leave in epilog. The same is 
+true for the shooters. Once it is lock, the current cusomter has complete access to the critical_region/gym until last of the type of customers leave.

@@ -1,0 +1,37 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id C80386000049; Fri, 19 Oct 2018 12:37:51 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id C5D9D6000048
+	for <cs570-01@edoras.sdsu.edu>; Fri, 19 Oct 2018 12:37:51 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: update of CS570 midterm coverage (10/25/18)
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <12684.1539977871.1@edoras>
+Date: Fri, 19 Oct 2018 12:37:51 -0700
+Message-Id: <20181019193751.C5D9D6000048@edoras.sdsu.edu>
+
+Here's the promised update on the 'midterm advice' (~cs570/midterm_advice)
+for CS570.
+
+We did not quite finish Chapter 3 in the class notes on Thursday; we
+stopped a few paragraphs into Page 47, so that's where our midterm
+coverage stops for this chapter.  This corresponds to the middle
+of Page 209 in Tanenbaum (3rd edition).  So, any questions regarding
+the Working Set (3.4.8) or WSCLock (3.4.9) algorithms, or subsequent
+Chapter 3 material, may occur on the final, but they will NOT appear
+on our midterm.
+
+Page 84 of my notes lists some Tanenbaum questions in Chapter 3 and
+Chapter 10 to review for the exam.  ALL these are still relevant,
+except for #26 in Chapter 3 (Page 251), which involved the WSClock
+algorithm.  And ALL the 'Exercises 3' problems on Pages 83-84 of my
+notes are still relevant for next week's exam.
+
+Cheers,
+jc

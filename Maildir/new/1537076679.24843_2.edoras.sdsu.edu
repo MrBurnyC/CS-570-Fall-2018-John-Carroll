@@ -1,0 +1,543 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id C7F086000048; Sat, 15 Sep 2018 22:44:39 -0700 (PDT)
+Date: Sat, 15 Sep 2018 22:44:39 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 1 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20180916054439.C7F086000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 1.
+Due dates for our programs can be found in the ~cs570/calendar file on edoras.
+
+This message, which will appear to be mailed from your account, is intended to
+show you some (but not necessarily all) of the checks that will be made on your
+assignment when the due date actually arrives.  This is NOT the actual version
+that will be graded, but only an attempt to give you early warning of any
+potential problems.  Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/8       *  Sep 14 23:10 6196001753                (72.192.150.204)
+
+Checking Program 1:
+total 52
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Sep 15 00:38 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018    46 Sep 11 16:33 Sandbox/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 40
+lrwxrwxrwx 1 cssc0018    29 Sep 10 22:11 Data1 -> /home/cs/faculty/cs570/Data1//
+-rw-r--r-- 1 cssc0018  6314 Sep 15 00:20 getword.c
+lrwxrwxrwx 1 cssc0018    36 Sep  4 08:51 getword.h -> /home/cs/faculty/cs570/One/getword.h
+-rw------- 1 cssc0018  7160 Sep 15 00:20 getword.o
+-rw------- 1 cssc0018   563 Sep 13 08:59 gradernotes
+-rw------- 1 cssc0018    92 Sep 13 08:53 input3
+lrwxrwxrwx 1 cssc0018    35 Sep  4 08:52 makefile -> /home/cs/faculty/cs570/One/makefile
+-rwx------ 1 cssc0018 11680 Sep 15 00:20 p1*
+lrwxrwxrwx 1 cssc0018    31 Sep  4 08:51 p1.c -> /home/cs/faculty/cs570/One/p1.c
+-rw------- 1 cssc0018  3416 Sep 14 23:00 p1.o
+Test 1... testing will proceed only if you have created the proper file:
+ls -lo ~/One/getword.c
+-rw-r--r-- 1 cssc0018 6314 Sep 15 00:20 /home/cs/carroll/cssc0018/One/getword.c
+
+1    /*getword.c  - is a lexical analyzer that meets the requirements
+2     *	       of Program 0.
+3     *
+4     * Class Info- Bernardo Cervantes , John Carroll, CS570 ,
+5     *	       Due: 9/17/18 @ 8PM
+6     *		 
+7     * Synopsis  - Takes input from the keyboard (stdin) or from
+8     * 	       Data1/input# and writes to the Storage array 
+9     *	       and returns a int back to p0.
+10    *
+11    * Objective - Returns the correct input back to p0 so that 
+12    *             p0 will print out the correct int and string
+13    *	       that is identical to the same output in the 
+14    *	       p0 prompt and the what autograder produces.
+15    *             
+16    */
+17   
+18   /* Include Files */
+19   #include <stdio.h>
+20   #include <stdlib.h>
+21   #include "getword.h"
+22   
+23   /*
+24   * Getword is the principal method of getword.c
+25   * Takes in a char pointer that points to the STORAGE 
+26   * array to write chars to it based on the p1 prompt 
+27   * criteria. It return at int back to p1 that is the 
+28   * size of the string. p1 prints out the word which is the
+29   * STORAGE array and its size.
+30   * 
+31   */
+32   
+33   int getword(char *w){
+34   	int wordCount = 0; //Must initalize to zero or else you get garbage.
+35   	int iochar = 0;
+36   	int true = 0;      //bool for checking '$'
+37   	const char *name = "HOME";
+38    	char *value = getenv(name); //Sets home directory to value ; 
+39   	char *x = value;	//Points to beginning string of value.
+40    	
+41   	/* Stores intital char from STDIN/file */
+42   
+43   	iochar = getchar(); 
+44   
+45   	/* Skipping leading spaces. */
+46   
+47   	while(iochar == ' '){
+48   		iochar = getchar();	
+49   	}
+50   
+51   	/* Check if EOF signal is in the beginning
+52   	 * and puts null char in array (storage) to print
+53   	 * an empty string. 
+54   	 * Returns -255
+55   	 */
+56   
+57   	if(iochar == EOF){
+58   		*w = '\0';    
+59   		return -255;
+60   	}
+61   
+62   	/* Checks if newline is in the beginning of the input.
+63   	 * Puts null char in array to print empty string.
+64   	 * Returns 0
+65   	 */
+66   
+67   	if(iochar == '\n'){
+68   		*w = '\0';
+69   		return 0;
+70   	}
+71   
+72   	/*
+73   	 * Checks if ";" is first char  
+74   	 * in input. Puts null char in array to print
+75   	 * null empty string.
+76   	 * Return 0 
+77   	 */ 
+78   
+79   	if(iochar == ';'){
+80   		*w = '\0';
+81   		return 0;
+82   	}
+83   
+84   
+85   	/*
+86   	 * Checks if "$" is first char  
+87   	 * in input. Puts null char in array to print
+88   	 * null empty string. Gets next char and checks 
+89   	 * if it is EOF. Sets boolean true to 1 or true.
+90   	 * Return 0 
+91   	 */ 
+92   
+93   	if(iochar == '$'){
+94   		true = 1;
+95   		iochar = getchar();
+96   		if(iochar == EOF){
+97   			*w = '\0';
+98   			return 0;
+99   		}
+100  	} 
+101  	
+102  	/* Checks if the first char is ~. If it is then it 
+103  	*  writes to the STORAGE array with w* with the value:
+104  	*  home path directory which is dynamically generated with getenv().
+105  	*  *x points to the char array that contains the home directory 
+106  	*  and is used to write to w* which points to STORAGE array.
+107  	*/
+108  
+109  	if(iochar == '~' && true == 0){
+110  		iochar = getchar();
+111  		
+112  			while(*x != '\0'){
+113  				*w = *x;
+114  				w++;
+115  				x++;
+116  				wordCount++;
+117  		}	
+118  	}
+119  
+120  /*
+121   *Checking for meta characters '<', '>','|. and '&'
+122   * Special if statement case if next two char
+123   * together are '<<'. If so it puts it in the STORAGE array
+124   * and returns the size. Otherwise it does the same 
+125   * for other single metacharacter.
+126   *
+127   * 
+128   */	
+129  	if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
+130  
+131  		
+132  		if(iochar == '<'){
+133  			*w = iochar;
+134  			w++;	
+135  			wordCount++;
+136  			iochar = getchar();	
+137  			
+138  			if(iochar == '<'){
+139  			      *w = iochar;      		
+140                                 w++;
+141  			       wordCount++;
+142                                 *w = '\0';
+143  			       return wordCount;
+144  			}
+145  			else{
+146  				iochar = ungetc(iochar , stdin);
+147  				*w = '\0';
+148  				return wordCount;
+149  			}		
+150  			
+151  			
+152  			
+153  		}
+154  		
+155  		*w = iochar;
+156  		w++;
+157  		wordCount++;
+158  		*w = '\0';
+159  		return wordCount;
+160  			
+161  
+162  
+163  	}
+164  	
+165  	
+166  	
+167  
+168  	/*
+169  	 * Infinite for loop is used to get any remaining.  
+170  	 * characters with exception chars accounted for such as
+171  	 * EOF spaces, newlines and semicolons which are the same
+172  	 * as the first checks but this time we return wordCount since
+173  	 * these characters are not the first char in the words anymore.
+174           * when the word is processed the storage array has been written
+175  	 * with the word or an empty string based on some execptions
+176  	 * and the wordcount is returned which stops the for loop.    
+177  	 */ 
+178  
+179  	for(;;){
+180  
+181  		
+182   		/* Checks to see if wordCount is greater than Storage (255).
+183  		 * If so then it terminates the string and returns its
+184  		 * current word count.
+185   		*/
+186  
+187  		if(wordCount == STORAGE - 1){
+188  			iochar = ungetc(iochar, stdin);
+189  			*w = '\0';
+190  			return wordCount; 
+191  		}
+192  		
+193  
+194  		/* Checks for EOF. If wordCount is anything but zero. It returns
+195  		 * th word count. If not it returns -255. 
+196  		 */
+197  	
+198  		if(iochar == EOF){
+199  				if(wordCount < 0 || wordCount > 0){
+200  					iochar = ungetc(iochar,stdin);
+201  					*w = '\0';
+202  					return wordCount;
+203  				}
+204  
+205  				return -255; 
+206  			}
+207  
+208  			/* Checks for space. If found, write null char to 
+209  			 * array and 
+210  			 * return wordCount.
+211  			 */
+212  
+213  			if(iochar == ' '){
+214  				*w = '\0';
+215  				return wordCount;
+216  			}
+217  
+218  
+219  			/* Checks for newline or semicolon. 
+220  			 * If found, write null char to 
+221  			 * array and 
+222  			 * return wordCount.
+223  			 */
+224  
+225  			if(iochar == '\n'|| iochar == ';'){
+226  				iochar = ungetc(iochar,stdin);
+227  				*w = '\0';
+228  				return wordCount;
+229  			}
+230  	
+231  /*
+232  * Checks metacharacter again in but this time it for 
+233  * chars not in the front. However it is handled the same 
+234  * way. It puts the char back into stdin adds null char to the
+235  * STORAGE array, and then returns the word size so the meta character 
+236  * will be deal with the next program run.  
+237  *
+238  */
+239  			
+240  	if(iochar == '<' || iochar == '>' || iochar == '|' || iochar == '&'){
+241  
+242  		ungetc(iochar, stdin);
+243  		*w = '\0';
+244  		return wordCount;
+245  	}
+246  
+247  		/*
+248  		 *Checks for backslahes in input. Have to put two 
+249  		* two backslashes because C has one backslashs as a 
+250  		* special keyword.
+251  		*/
+252  
+253  		if(iochar  == '\\'){ 
+254  			iochar = getchar();
+255  
+256  			//if(iochar == '\n' || iochar == EOF){
+257  			if(iochar == '\n'){
+258  				//ungetc(iochar ,stdin);
+259  				//iochar = getchar();
+260  				*w = '\0';
+261  				iochar = ' ';
+262  				w++;
+263  				return wordCount;
+264  
+265  			}
+266  
+267  		}
+268  
+269  		
+270  
+271  
+272  
+273  		/* Writes Current Iochar To Array.
+274  		 * Increments pointer to next array index. 
+275  		 */
+276  
+277  		*w = iochar;
+278  		w++;
+279  
+280  		/* Check if $ was at the beginning of a word.
+281  		 * If true then wordCount is decremented 
+282  		 *  and is negative. If not then the wordCount 
+283  		 *  is incremented and is postive. 
+284  		 */
+285  
+286  		if(true == 1){
+287  			wordCount--;
+288  		}
+289  
+290  		else{
+291  			wordCount++;
+292  		}
+293  		/*Gets next char and repeats loop. */
+294  
+295  		iochar = getchar();
+296  
+297  
+298  	}
+299  
+300  }
+
+Test 2... is getword.c documented?
+(Your getword.c documentation does NOT have to repeat the specs in getword.h,
+but it should contain your name, instructor name [NOTE: 'Carroll' contains two
+'R's and two 'L's], class (that is, 'CS570'), due date, etc.)
+One point was possible here; your total is now 1/1
+
+Test 3... how is the syntax?
+splint -warnposix +trytorecover -weak getword.c
+Splint 3.1.2 --- 11 Oct 2015
+
+Finished checking --- no warnings
+
+NOTE: not everything that 'splint' comments about is necessarily a bad thing;
+for example, splint may complain if you don't save the value that ungetc()
+returns (even if this may be a perfectly reasonable thing to ignore).
+
+Test 4... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+1:"I wrote this code myself but I used example inout2.c from C
+2:by Discovery by Foster. I also read the first couple of 
+3:chapters of this book to learn the C language. As errors 
+4:occured I often googled syntax and used websites like
+5:stackoverflow.com and various other that lead me to 
+6:fix my code."
+7:I also emailed Dr. Caroll for help and hints on this program and 
+8:he has given me very good help that has lead me to finish it. 
+9:
+10:As of right now my code is finished, has no known bugs and 
+11:does produce the correct output which has been verified
+12:by the autograder. 
+
+A human will have to read and evaluate the contents of gradernotes.
+Double-check that you have BOTH required statements in gradernotes! 
+
+Test 5: checking the soft links...
+Is the getword.h soft link in place?
+ls -l ~cssc0018/One/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 36 Sep  4 08:51 /home/cs/carroll/cssc0018/One/getword.h -> /home/cs/faculty/cs570/One/getword.h
+Yes.
+Is the makefile soft link in place?
+ls -l ~cssc0018/One/makefile
+lrwxrwxrwx 1 cssc0018 carroll 35 Sep  4 08:52 /home/cs/carroll/cssc0018/One/makefile -> /home/cs/faculty/cs570/One/makefile
+Yes.
+Is the p1.c soft link in place?
+ls -l ~cssc0018/One/p1.c
+lrwxrwxrwx 1 cssc0018 carroll 31 Sep  4 08:51 /home/cs/carroll/cssc0018/One/p1.c -> /home/cs/faculty/cs570/One/p1.c
+Yes.
+Unless ALL these are right, you could LOSE a point here; your total is now 1/1
+
+Test 6... does your program compile?
+make clean; make
+rm -f *.o p1
+gcc -g   -c -o getword.o getword.c
+gcc -g   -c -o p1.o p1.c
+gcc -o p1 getword.o p1.o
+[1] 24784
+
+Test 7... are all the program0 specs still met?
+Here is the result of ~cssc0018/One/p1 < ~cs570/Data1/input1 :
+
+Your output was:
+n=10, s=[no-brainer]
+n=3, s=[one]
+n=0, s=[]
+n=0, s=[]
+n=8, s=[trickier]
+n=0, s=[]
+n=3, s=[t$o]
+n=-6, s=[master]
+n=0, s=[]
+n=-10, s=[$Different]
+n=-5, s=[Words]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=0, s=[]
+n=-6, s=[expect]
+n=49, s=[10,3,0,0,8,0,3,-6,0,-10,-5,0,0,0,0,-6,49,0,0,-255]
+n=0, s=[]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 4/4
+
+Test 8... does your program recognize metacharacters?
+Here is the result of ~cssc0018/One/p1 < ~cs570/Data1/input2 :
+
+Your output was:
+n=5, s=[AB~CD]
+n=18, s=[/usr/local/binABCD]
+n=-5, s=[SHELL]
+n=-1, s=[~]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+   (NOTE: Since I randomly set the HOME variable, you should not expect
+   to see ~cssc0018 in the output.)
+Three more points were possible here; your total is now 7/7
+
+Test 9... how does your program react to backslash-metacharacters?
+Here is the result of ~cssc0018/One/p1 < ~cs570/Data1/input3 :
+
+Your output was:
+n=12, s=[one>stillone]
+n=1, s=[<]
+n=1, s=[<]
+n=5, s=[$abcd]
+n=2, s=[<<]
+n=5, s=[~foo\]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+Two more points were possible here; your total is now 9/9
+
+Test 10... does your program handle buffer overruns correctly?
+Here is the result of ~cssc0018/One/p1 < ~cs570/Data1/input4 :
+
+Your output was:
+n=6, s=[123$56]
+n=25, s=[/home/cs/carroll/cssc0018]
+n=-255, s=[]
+
+The correct output is:
+n=6, s=[123$56]
+n=25, s=[/home/cs/carroll/cssc0018]
+n=-255, s=[]
+
+ Tilde was expanded correctly, dollar sign left verbatim -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 12/12
+
+Test 11... does your program handle buffer overruns correctly?
+Here is the result of ~cssc0018/One/p1 < ~cs570/Data1/input5 :
+
+Your output was:
+n=5, s=[word1]
+n=1, s=[|]
+n=254, 
+s=[123456789a123456789b123456789c123456789d123456789e123456789f123456789g1234567
+89h123456789i123456789j123456789k123456789l123456789m123456789n123456789o1234567
+89p123456789q123456789r123456789s123456789t123456789u123456789v123456789w1234567
+89x123456789y1234]
+n=254, 
+s=[56789z123456789A123456789B123456789C123456789D123456789E123456789F123456789G1
+23456789H123456789I123456789J123456789K123456789L123456789M123456789N123456789O1
+23456789P123456789Q123456789R123456789S123456789T123456789U123456789V123456789W1
+23456789X12345678]
+n=12, s=[9Y123456789Z]
+n=0, s=[]
+n=-255, s=[]
+
+A diff of the correct output with your output shows:
+                              No differences encountered -- CONGRATULATIONS
+
+Three more points were possible here; your total is now 15/15
+
+Your grade for this assignment may be adjusted by a (human) grader at the
+due date.  Your grade could be as much as two points lower, depending on what
+you have put in gradernotes, and the quality of your getword.c documentation.
+
+             ------
+Total Points | 15 |  for cssc0018 - Bernardo Cervantes,,,61960017 for Program 1
+             |----|
+             | 15 |
+             ------

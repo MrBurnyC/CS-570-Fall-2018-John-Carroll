@@ -1,0 +1,25 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id D61A66000049; Sun, 30 Sep 2018 09:24:07 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id D402C6000048
+	for <cs570-01@edoras.sdsu.edu>; Sun, 30 Sep 2018 09:24:07 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: p2 input1, input9
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <11576.1538324647.1@edoras>
+Date: Sun, 30 Sep 2018 09:24:07 -0700
+Message-Id: <20180930162407.D402C6000048@edoras.sdsu.edu>
+
+CS570 folks,
+I've tweaked the contents of input1 and input9 under ~cs570/Data2/;
+the autograder was definitely saying crazy things about input1.
+We'll see if it's gotten any smarter later today...
+
+Cheers,
+jc

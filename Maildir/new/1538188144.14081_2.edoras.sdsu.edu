@@ -1,0 +1,29 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 352206000049; Fri, 28 Sep 2018 19:29:04 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 32EE76000048
+	for <cs570-01@edoras.sdsu.edu>; Fri, 28 Sep 2018 19:29:04 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: p2 autograder
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <14045.1538188144.1@edoras>
+Date: Fri, 28 Sep 2018 19:29:04 -0700
+Message-Id: <20180929022904.32EE76000048@edoras.sdsu.edu>
+
+CS570 folks,
+I'll be running my initial attempt at the program2 autograder later this
+evening.  It's not quite finished, so it doesn't yet total up all the points.
+I would not be surprised if I'm evaluating some tests incorrectly, and I'll
+be positively shocked if the autograder completely avoids giving bad advice.
+
+So don't hesitate to ask if the autograder is telling you something that
+you don't understand...
+
+Cheers,
+jc

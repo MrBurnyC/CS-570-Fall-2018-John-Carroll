@@ -1,0 +1,151 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id D3E2D6000048; Sun, 28 Oct 2018 18:55:59 -0700 (PDT)
+Date: Sun, 28 Oct 2018 18:55:59 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 3 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181029015559.D3E2D6000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 3.
+
+This message, which will appear to be mailed from your account, is intended to
+show you some (but not necessarily all) of the checks that will be made on your
+assignment when the due date actually arrives.  This is NOT the actual version
+that will be graded, but only an attempt to give you early warning of any
+potential problems.  Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/7       *  Oct 28 10:11 6196001753                (99.71.222.118)
+
+Checking Program 3:
+Checking Program 3:
+Remember, the GradeEarly file will be used to decide if you are FINISHED.
+If the GradeEarly file is present at the extra-credit deadline,
+your program will be considered 'submitted', with NO further chance for
+modifications.  Checking if the GradeEarly file exists:
+ls -l ~cssc0018/Three/GradeEarly
+/bin/ls: cannot access /home/cs/carroll/cssc0018/Three/GradeEarly: No such file or directory
+This indicates you are NOT currently applying for extra credit.
+Your solution would then be collected (for normal credit) the following week.
+
+NOTE: Make sure your p3helper.c documentation EXPLAINS your solution strategy.
+Remember that you are to try to provide FAIRNESS TO WRITERS (via p3 1 [seed] ),
+in addition to avoiding 'breaking the rules'-- so describe how that is achieved.
+Also, p3 0 [seed] should instead be programmed to give priority to writers.
+
+total 60
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Oct  5 20:52 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018   138 Oct 18 10:22 Sandbox/
+drwx------ 2 cssc0018   153 Oct 16 13:03 Three/
+drwx------ 2 cssc0018  4096 Oct 25 11:08 Two/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+-rw------- 1 cssc0018    50 Sep 23 16:27 bar
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 56
+lrwxrwxrwx 1 cssc0018    34 Oct 16 13:03 CHK.h -> /home/cs/faculty/cs570/Three/CHK.h
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 makefile -> /home/cs/faculty/cs570/Three/makefile
+-rwx------ 1 cssc0018 22448 Oct 16 13:03 p3*
+lrwxrwxrwx 1 cssc0018    33 Oct 16 13:03 p3.h -> /home/cs/faculty/cs570/Three/p3.h
+-rw-r--r-- 1 cssc0018   608 May 17  2017 p3helper.c
+-rw------- 1 cssc0018  3600 Oct 16 13:03 p3helper.o
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 p3main.c -> /home/cs/faculty/cs570/Three/p3main.c
+-rw------- 1 cssc0018 22208 Oct 16 13:03 p3main.o
+Test 1... testing will proceed only if you have MODIFIED the proper file:
+ls -lo ~/Three/; cat ~cssc0018/Three/p3helper.c
+total 56
+lrwxrwxrwx 1 cssc0018    34 Oct 16 13:03 CHK.h -> /home/cs/faculty/cs570/Three/CHK.h
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 makefile -> /home/cs/faculty/cs570/Three/makefile
+-rwx------ 1 cssc0018 22448 Oct 16 13:03 p3
+lrwxrwxrwx 1 cssc0018    33 Oct 16 13:03 p3.h -> /home/cs/faculty/cs570/Three/p3.h
+-rw-r--r-- 1 cssc0018   608 May 17  2017 p3helper.c
+-rw------- 1 cssc0018  3600 Oct 16 13:03 p3helper.o
+lrwxrwxrwx 1 cssc0018    37 Oct 16 13:03 p3main.c -> /home/cs/faculty/cs570/Three/p3main.c
+-rw------- 1 cssc0018 22208 Oct 16 13:03 p3main.o
+/* p3helper.c
+ * <YOUR NAME HERE>
+ * Program 3
+ * CS570
+ * <INSTRUCTOR NAME HERE>
+ * SDSU
+ * <DATE HERE>
+ *
+ * This is the only file you may change. (In fact, the other files should
+ * be symbolic links to:
+ *   ~cs570/Three/p3main.c
+ *   ~cs570/Three/p3.h
+ *   ~cs570/Three/Makefile
+ *   ~cs570/Three/CHK.h    )
+ *
+ */
+#include "p3.h"
+
+/* You may put any semaphore (or other global) declarations/definitions here: */
+
+
+
+
+/* General documentation for the following functions is in p3.h
+ * Here you supply the code:
+ */
+void initstudentstuff(void) {
+}
+
+void prolog(int kind) {
+}
+
+void epilog(int kind) {
+}  
+
+p3helper.c has not been modified; no further tests are warranted.
+Program 3 gradesheet
+
+a PARTIAL checklist of things the grader may judge:
+
+Quality of documentation & header info          constants, etc. documented?
+                                        ___/    name, class, date?
+Program logic and correctness                   algorithm explained?
+                                        ___/
+3 REQUIRED items in gradernotes file            Don't forget to include your
+                                        ___/    algorithm explanation!
+NO sleep() calls in p3helper.c                  sleep() masks some problems,
+                                        ___/    but could cause others...
+Only 'approved' sem_* system calls?
+                                        ___/    If there are *logical* race
+No *POTENTIAL* race conditions                  conditions, this is very bad,
+                                        ___/    even if your code appears to
+No extraneous files left behind                 give right answers.  Check this!
+                                        ___/
+Unexpected behavior (if any) documented
+in gradernotes file                     ___/     SAY what isn't working!
+                                       ______
+                                      |      |
+                                      |______|
+                                      |  20  |
+                                      |______|

@@ -1,0 +1,318 @@
+Return-Path: <cssc0018@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1129)
+	id 33D876000048; Sun, 30 Sep 2018 17:51:25 -0700 (PDT)
+Date: Sun, 30 Sep 2018 17:51:25 -0700
+To: cssc0018@edoras.sdsu.edu
+Subject: CS570 Program 2 results
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181001005125.33D876000048@edoras.sdsu.edu>
+From: cssc0018@edoras.sdsu.edu (Bernardo Cervantes)
+
+This is a **preliminary** test of your upcoming Program 2.
+
+This message, which will appear to be mailed from your account, is intended to
+show you some (but not necessarily all) of the checks that will be made on your
+assignment when the due date actually arrives.  This is NOT the actual version
+that will be graded, but only an attempt to give you early warning of any
+potential problems.  Point totals in the final graded version may differ.
+
+[Standard Disclaimer:]
+These practice tests are intended to show bugs, but also to reveal places
+where you may not be following all the automatic grader's nitpicking
+requirements.  If you receive failure warnings on the preliminary tests
+and then also have difficulty during the graded event, you have very little
+recourse.  To take full advantage of the feedback provided in this course,
+you must do the assignments in a timely fashion.
+jc
+
+Login     Name                 Tty      Idle  Login Time   Office     Office Phone   Host
+cssc0018  Bernardo Cervantes   pts/14      *  Sep 29 23:13 6196001753                (99.71.222.118)
+
+Checking Program 2:
+
+Remember, the GradeEarly file will be used to decide if you are FINISHED.
+If the GradeEarly file is present at the extra-credit deadline,
+your program will be considered 'submitted', with NO further chance for
+modifications.  Checking if the GradeEarly file exists:
+ls -l ~cssc0018/Two/GradeEarly
+/bin/ls: cannot access /home/cs/carroll/cssc0018/Two/GradeEarly: No such file or directory
+This indicates you are NOT currently applying for extra credit.
+Your solution would then be collected (for normal credit) the following week.
+total 60
+-rw------- 1 cssc0018    74 Sep  6 12:37 2ndfile
+-rw------- 1 cssc0018 12288 Sep  6 12:47 9-6-18
+drwx------ 5 cssc0018    52 Aug 30 23:26 Maildir/
+drwx------ 2 cssc0018  4096 Sep 29 23:23 One/
+-rw------- 1 cssc0018  1733 Aug 31 18:01 README
+drwx------ 2 cssc0018    84 Sep 20 12:38 Sandbox/
+drwx------ 2 cssc0018  4096 Sep 29 23:37 Two/
+drwxr-xr-x 2 cssc0018  4096 Sep 14 23:48 Zero/
+-rw------- 1 cssc0018    50 Sep 23 16:27 bar
+lrwxrwxrwx 1 cssc0018    31 Aug 30 10:16 calendar -> /home/cs/faculty/cs570/calendar
+-rwxr-xr-x 1 cssc0018  9648 Aug 31 08:26 errors*
+lrwxrwxrwx 1 cssc0018    31 Aug 31 08:05 errors.c -> /home/cs/faculty/cs570/errors.c
+-rw------- 1 cssc0018     3 Sep  6 13:00 hifile
+-rw------- 1 cssc0018    83 Sep  6 12:32 newfile
+-rw------- 1 cssc0018    95 Sep  6 12:39 nf
+-rw------- 1 cssc0018     0 Sep  6 12:40 sorted
+Test 0... checking for the proper directory:
+total 64
+lrwxrwxrwx 1 cssc0018    28 Sep 25 19:36 Data2 -> /home/cs/faculty/cs570/Data2/
+lrwxrwxrwx 1 cssc0018    39 Sep 18 09:15 getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+lrwxrwxrwx 1 cssc0018    36 Sep 29 18:40 getword.h -> /home/cs/faculty/cs570/One/getword.h
+-rw------- 1 cssc0018  7160 Sep 28 19:54 getword.o
+-rw------- 1 cssc0018   500 Sep 18 09:09 gradernotes
+lrwxrwxrwx 1 cssc0018    35 Sep 18 08:58 makefile -> /home/cs/faculty/cs570/Two/makefile
+-rwx------ 1 cssc0018 18712 Sep 29 22:19 p2*
+-rw-r--r-- 1 cssc0018  3356 Sep 29 23:37 p2.c
+-rw-r--r-- 1 cssc0018  3280 Sep 29 23:20 p2.c~
+-rw------- 1 cssc0018   282 Sep 29 22:12 p2.h
+-rw------- 1 cssc0018   262 Sep 29 21:43 p2.h~
+-rw------- 1 cssc0018 10752 Sep 29 22:19 p2.o
+-rw------- 1 cssc0018    10 Sep 23 21:45 test
+Test 1... testing will proceed only if you have created the proper files:
+ls -lo ~/Two/p2.c ~/Two/getword.c
+lrwxrwxrwx 1 cssc0018   39 Sep 18 09:15 /home/cs/carroll/cssc0018/Two/getword.c -> /home/cs/carroll/cssc0018/One/getword.c
+-rw-r--r-- 1 cssc0018 3356 Sep 29 23:37 /home/cs/carroll/cssc0018/Two/p2.c
+
+
+
+
+Test 2... Checking program structure with cflow:
+cflow ~cssc0018/Two/p2.c ~cssc0018/Two/getword.c
+main() <int main (int argc, char *argv[]) at /home/cs/carroll/cssc0018/Two/p2.c:30>:
+    printf()
+    setpgid()
+    signal()
+    sighandler() <void sighandler (int signum) at /home/cs/carroll/cssc0018/Two/p2.c:170>:
+        printf()
+    parse() <int parse () at /home/cs/carroll/cssc0018/Two/p2.c:121>:
+        getword() <int getword (char *w) at /home/cs/carroll/cssc0018/Two/getword.c:33>:
+            getenv()
+            getchar()
+            ungetc()
+        abs()
+    open()
+    perror()
+    fflush()
+    fork()
+    exit()
+    dup2()
+    close()
+    execvp()
+    wait()
+    killpg()
+    getpgrp()
+
+Test 3... Checking for some prescribed/proscribed features;
+a human will have to look over the output from the grep commands...
+----------------------------------------------------------------------STORAGE
+Are you defining a character buffer large enough to handle MANY 'long' words?
+egrep -n '#define|STORAGE' p2.h p2.c
+p2.h:7:#define MAXITEM 100 /* max number of words */
+p2.h:8:#define MAXSTORAGE (STORAGE*MAXITEM) /*Max amount of characetr per commandline */
+p2.c:25:char charArray[MAXSTORAGE]; //Array of character from stdin aka big buffer
+----------------------------------------------------------------------SIG
+Are children being terminated with the correct signal?
+egrep -n 'SIG|setp|signal|terminated' p2.c
+35:	setpgid(0,0); //Eviqualent to setpgrp()
+36:	(void)signal(SIGTERM,sighandler);
+116:	killpg(getpgrp(), SIGTERM);
+117:	printf("p2 terminated.\n");
+171:	printf("Received SIGTERM (%d), and the special handler is running..\n", signum);
+----------------------------------------------------------------------wait
+Is the parent waiting for a child?  ...For the CORRECT child?
+egrep -n 'wait|while' p2.c
+98:					pid = wait(NULL);
+----------------------------------------------------------------------void
+grep -n void p2.c
+36:	(void)signal(SIGTERM,sighandler);
+170:void sighandler(int signum){
+----------------------------------------------------------------------null
+Are you ensuring that background children don't compete for keyboard input?
+grep -n /dev/null p2.c
+52:			/*Open /dev/null so background job doesn't read from stdin */
+53:			if((devnull_fd = open("/dev/null", O_RDONLY)) == -1){
+54:				perror("/dev/null");
+----------------------------------------------------------------------fflush
+Are you ensuring that children inherit only empty buffers?
+egrep -n 'fork|fflush' p2.c
+61:		fflush(stdout);
+62:		fflush(stderr);
+64:		if((kidpid == fork()) == -1){
+----------------------------------------------------------------------exit
+Do all children exit() upon failure?
+egrep -n 'execvp|exit|dup2|open|CHK|perror' p2.c
+53:			if((devnull_fd = open("/dev/null", O_RDONLY)) == -1){
+54:				perror("/dev/null");
+65:			perror("Fork failed");
+66:			exit(1);
+72:				if((dup2(devnull_fd, STDIN_FILENO)) == -1){ //STDIN_FILENO from <unistd.h>
+74:					perror("Failed to redirect file descriptor to STDIN");
+75:					exit(1);
+79:					perror("Unable to close file dsecriptor \n");
+80:					exit(1);
+84:			if((execvp(words[0], words)) == -1){
+85:				perror("Command not found");
+86:				exit(9);
+118:	exit(0);
+NOTE: sometimes _exit() can be preferable to exit()
+----------------------------------------------------------------------parse
+What (if anything) are you passing to parse?
+grep -n parse( p2.c
+41:		wordCount = parse();
+121:int parse(){
+----------------------------------------------------------------------system
+Calls to system() are NOT being used, right?:
+grep -n system p2.c
+
+Test 4... is p2.c documented?
+(Your p2.c documentation does NOT have to repeat all the specs for p2,
+but it should list your name, instructor name [NOTE: 'Carroll' contains
+two 'R's and two 'L's], class [that is, 'CS570'], due date, etc.)
+A brief synopsis and guidance at decision points / tricky issues will suffice.
+You may LOSE a point here if keywords are missing; your total is now 0/0
+(Many more points depend on your documentation, but a human will have to
+assign the remaining documentation points.)
+
+Test 5... how is the syntax?
+make splint
+splint -warnposix +trytorecover -weak getword.c p2.c
+Splint 3.1.2 --- 11 Oct 2015
+
+p2.c: (in function main)
+p2.c:98:12: Unrecognized identifier: wait
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+p2.c:116:2: Unrecognized identifier: killpg
+p2.c: (in function parse)
+p2.c:149:13: Operands of == have incompatible types (char [25500], char):
+                charArray + locationOfWord == '$'
+  Types are incompatible. (Use -type to inhibit warning)
+p2.c:149:12: Dereference of non-pointer (boolean):
+                *(charArray + locationOfWord == '$' && charCount == 1)
+p2.c:149:66: Parse Error. Attempting to continue.
+p2.c:149:66: Cannot recover from parse error.
+*** Cannot continue.
+make: *** [splint] Error 1
+
+NOTE that splint could not fully process your p2.c source code.
+The most common mistake is putting executable statements before you have
+finished all your declarations.  Make sure that all (local) declarations
+are at the very top of each block of code.
+splint IS UNLIKELY TO EXPLICITLY GIVE THIS REASON, BUT YOU SHOULD CHECK THIS
+ANYWAY.                                       ERROR    ERROR    ERROR    ERROR
+
+YOU LOSE A POINT HERE; your total is now -1/0
+
+NOTE: not everything that 'splint' comments about is necessarily a bad thing;
+for example, splint may complain if you don't save the value that printf()
+returns (even if this may be a perfectly reasonable thing to ignore).
+
+Test 6... Does the gradernotes file exist?
+Yes.
+Your gradernotes file contains:
+
+1:"I wrote this code myself but I used the p2.c outline 
+2: in the lecture notes to jump start my p2.c 
+3: As errors occured I often googled syntax and used websites like
+4: stackoverflow.com and various other that lead me to 
+5: fix my code." I also emailed Dr. Caroll for help and hints on this program and 
+6: he has given me very good help that has lead me to finish it. 
+7:
+8:As of right now my code is finished, has no known bugs and 
+9:does produce the correct output which has been verified
+10:by the autograder.
+
+You may LOSE a point here if it doesn't exist; your total is now -1/0
+(Note that TWO required statements belong in this file; also list your design
+decisions here [see the 'checklist' below for samples of what to include .]
+A human grader will check this later, and perhaps adjust your score.)
+
+Test 7... are the makefile and getword.h soft links in place?
+ls -l ~cssc0018/Two/makefile ~cssc0018/Two/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 36 Sep 29 18:40 /home/cs/carroll/cssc0018/Two/getword.h -> /home/cs/faculty/cs570/One/getword.h
+lrwxrwxrwx 1 cssc0018 carroll 35 Sep 18 08:58 /home/cs/carroll/cssc0018/Two/makefile -> /home/cs/faculty/cs570/Two/makefile
+makefile is correctly linked.
+getword.h is correctly linked.
+If you don't have the right setup, you could LOSE a point here;
+                                       Your total is now -1/0
+
+Test 8... are the proper .h files included in your source code?
+One more point was possible here; your total is now -1/1
+(If you are failing this test, just #include all the .h files for the system
+calls recommended for program2, even if you are not yet using all those calls.)
+There are (at least) 8 header files that you will need.
+And of course, if you're using non-recommended calls, make sure you have the
+proper .h files for those, too.
+
+NOTE: Review the earlier splint output; if some function names are tagged as
+"Unrecognized identifier", this is a pretty big hint about what you are missing.
+
+Test 9... does your program compile?
+make clean; make
+rm -f *.o p2 your.output*
+gcc -g   -c -o p2.o p2.c
+p2.c: In function 'parse':
+p2.c:149:40: warning: comparison between pointer and integer [enabled by default]
+   else if(*(charArray + locationOfWord == '$' && charCount == 1){
+                                        ^
+p2.c:149:11: error: invalid type argument of unary '*' (have 'int')
+   else if(*(charArray + locationOfWord == '$' && charCount == 1){
+           ^
+p2.c:149:65: error: expected ')' before '{' token
+   else if(*(charArray + locationOfWord == '$' && charCount == 1){
+                                                                 ^
+p2.c:165:2: error: expected expression before '}' token
+  }
+  ^
+make: *** [p2.o] Error 1
+
+Compilation of your program failed -- aborting tests
+At this point, you have accumulated -1/1 autograder points.
+The assignment will be worth 35 points (after a human grades it).
+
+Program 2 gradesheet
+
+a PARTIAL checklist of things the grader may judge:
+
+Quality of documentation & header info          constants, etc. documented?
+                                        ___/    name, class, instructor, date?
+getword.c documentation?                        algorithm explained?
+                                        ___/
+Appropriate bad-syntax error messages           (to stderr, of course)
+                                        ___/
+NO inappropriate duplicate output lines
+(neither stderr nor stdout)             ___/    Research fflush()
+Correct foreground child wait()ed for?
+                                        ___/    2 statements, and also:
+MULTIPLE required items in gradernotes?         E.g., what do you do if you see:
+                                        ___/    echo hi>& ?   Document your
+Documentation of individual choices             choices *in gradernotes*, so
+                                        ___/    that I can find it!
+Background processes dup2 on /dev/null?
+                                        ___/    Are background zombies reaped
+Background processes terminate correctly        as soon as possible?
+                                        ___/
+Do you exit upon execvp failure?                Same for pipe, dup2, open, etc.?
+                                        ___/
+NO ONE should wait() for grandchild!            ...this can cause deadlock!
+                                        ___/
+Does a child create grandchild in pipes?        IMPORTANT!!! You will LOSE *ALL*
+                                        ___/    the pipeline points if you did
+Is your character array long enough?            not use 'vertical' pipelining.
+                                        ___/
+"p2 terminated" printf comes AFTER killpg       (This is how I check if your
+                                        ___/    signal handler is working...)
+Unexpected behavior (if any) documented
+in gradernotes file                     ___/    SAY what isn't working!
+                                       ______
+                                      |      |
+                                      |______|
+                                      |  35  |
+                                      |______|

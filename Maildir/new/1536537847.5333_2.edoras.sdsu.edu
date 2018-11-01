@@ -1,0 +1,46 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 526AC6000049; Sun,  9 Sep 2018 17:04:07 -0700 (PDT)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 505C16000048
+	for <cs570-01@edoras.sdsu.edu>; Sun,  9 Sep 2018 17:04:07 -0700 (PDT)
+To: cs570-01@edoras.sdsu.edu
+Subject: new due dates for CS570
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <5301.1536537847.1@edoras>
+Date: Sun, 09 Sep 2018 17:04:07 -0700
+Message-Id: <20180910000407.505C16000048@edoras.sdsu.edu>
+
+Fairly soon, I'll be running the autograder for Program 1.  If you have
+a compilable program in ~/One (perhaps just copy over your getword.c
+from ~/Zero for now if you haven't started on the new requirements yet --
+that way, at least you'll get feedback about what the tests are, and what
+the right answers are supposed to be.
+
+I've updated ~cs570/calendar (you will find this info in ~/calendar,
+since you've created a convenient link already). For convenience,
+I've included the new due dates in this mailing:
+
+CS570 Program1  Monday, September 17  (the standard 11pm deadline)
+CS570 Program2  Friday, October 6     (11pm 110% deadline)
+CS570 Program2  Wednesday, October 11 (11pm 100% deadline)
+
+The program1 deadline is quite soon, to maximize the time you have to
+complete the BIG project (program2).  The program2 deadline is more
+than a month away (though you can get EXTRA CREDIT if you turn it in 5
+days earlier).
+
+program3 won't be due until November, to leave time to study for our
+midterm.  You folks will vote on a midterm date when we get closer to
+the proper time -- I want to be a little ways into Chapter 3 when we
+have the exam.  But you can expect it to be in the latter half of October.
+
+Stay tuned for some autograder results!
+
+Cheers,
+jc
