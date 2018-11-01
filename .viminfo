@@ -111,7 +111,7 @@ $\u\1\L\2
 # Registers:
 "0	LINE	0
 				//if(redirection_return = set_up_redirection() < REDIRECTION_ERROR){
-""1	LINE	0
+"1	LINE	0
 	
 "2	LINE	0
 	
@@ -129,12 +129,12 @@ $\u\1\L\2
 	
 "9	LINE	0
 	
-"-	CHAR	0
-	o
+""-	CHAR	0
+	U
 
 # File marks:
-'0  3  0  ~/README
-'1  2  0  ~/README
+'0  2  3  ~/README
+'1  3  0  ~/README
 '2  1  1  ~/Three/program3
 '3  1  1  ~/Two/program2
 '4  42  0  ~/Three/p3helper.c
@@ -145,8 +145,8 @@ $\u\1\L\2
 '9  77  0  ~/Three/p3helper.c
 
 # Jumplist (newest first):
+-'  2  3  ~/README
 -'  3  0  ~/README
--'  2  0  ~/README
 -'  1  0  ~/README
 -'  1  1  ~/Three/program3
 -'  1  1  ~/Two/program2
@@ -242,16 +242,15 @@ $\u\1\L\2
 -'  3  17  ~/Sandbox/test.c
 -'  1  0  ~/Sandbox/test.c
 -'  62  22  /home/cs/faculty/cs570/program3
--'  76  39  ~/Three/p3.h
 
 # History of marks within files (newest to oldest):
 
 > ~/README
-	"	3	0
-	^	3	0
-	.	2	0
+	"	2	3
+	^	2	4
+	.	2	3
 	+	1	41
-	+	2	0
+	+	2	3
 
 > ~/Three/program3
 	"	1	1
