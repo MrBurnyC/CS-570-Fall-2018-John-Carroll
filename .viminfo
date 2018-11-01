@@ -133,18 +133,21 @@ $\u\1\L\2
 	o
 
 # File marks:
-'0  1  1  ~/Three/program3
-'1  1  1  ~/Two/program2
-'2  42  0  ~/Three/p3helper.c
-'3  10  147  ~/Three/gradernotes
-'4  98  2  ~/Three/p3helper.c
-'5  11  0  ~/Three/gradernotes
-'6  2  0  ~/Three/GradeEarly
-'7  77  0  ~/Three/p3helper.c
-'8  87  12  ~/Three/p3helper.c
-'9  64  18  ~/Three/p3helper.c
+'0  3  0  ~/README
+'1  2  0  ~/README
+'2  1  1  ~/Three/program3
+'3  1  1  ~/Two/program2
+'4  42  0  ~/Three/p3helper.c
+'5  10  147  ~/Three/gradernotes
+'6  98  2  ~/Three/p3helper.c
+'7  11  0  ~/Three/gradernotes
+'8  2  0  ~/Three/GradeEarly
+'9  77  0  ~/Three/p3helper.c
 
 # Jumplist (newest first):
+-'  3  0  ~/README
+-'  2  0  ~/README
+-'  1  0  ~/README
 -'  1  1  ~/Three/program3
 -'  1  1  ~/Two/program2
 -'  42  0  ~/Three/p3helper.c
@@ -240,11 +243,15 @@ $\u\1\L\2
 -'  1  0  ~/Sandbox/test.c
 -'  62  22  /home/cs/faculty/cs570/program3
 -'  76  39  ~/Three/p3.h
--'  79  7  ~/Three/p3.h
--'  218  10  ~/Three/p3main.c
--'  62  2  ~/Three/p3main.c
 
 # History of marks within files (newest to oldest):
+
+> ~/README
+	"	3	0
+	^	3	0
+	.	2	0
+	+	1	41
+	+	2	0
 
 > ~/Three/program3
 	"	1	1
