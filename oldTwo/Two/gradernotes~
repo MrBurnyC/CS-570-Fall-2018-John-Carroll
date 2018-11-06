@@ -1,0 +1,48 @@
+"I wrote this code myself but I used the p2.c outline 
+ in the lecture notes to jump start my p2.c 
+ As errors occured I often googled syntax and used websites like
+ stackoverflow.com and various other that lead me to 
+ fix my code." I also emailed Dr. Caroll for help and hints on this program and 
+ he has given me very good help that has lead me to finish it. 
+
+Notes:
+-The documentation of p2.h explains the methods and their input and output values. Throughout the p2.c code there is various comments explaining how things work which serve more as a reminder and aid for myself.
+-My program has a total of 
+
+Decisions:
+Started off using global big buffer and new argv arrays but my code was broken and I got frustrated and stared alover using parameters for these values and it was more complicated as we now have parameters that need to point to the global variables. I wanted to make major components of the program modular so I would be able to pinpoint the error if it happened. It was more overhead but I think it was worth it.  
+
+
+As of right now my code is finished, has no known bugs and 
+does produce the correct output which has been verified
+by the autograder. It doesn't not include the last 3 points for the correct implementation of vertical piping or the points for the quality of the documentation. .
+
+References:
+CS 570 Lecture notes pg.3 exec1.c
+		     pg.4 fork1.c
+		     pg.5 fork.c
+		     pg.6 pipe.c
+		     pg.7 dup.c
+		     pg.8 dup2.c
+		     pg.9 sig.c
+		     pg.10 sighandler.c
+		     pg.17 parsing the command line
+		     pg.18 Arguments to main()
+		     pg.19 arg.c
+		     pg.20-21 file descriptor
+
+
+Linix man pages mentioned in the leture notes
+	dup2(2), execvp(3), chdir(2), getenv(3), exit(3), fork(3), open(2), perror(3), wait(2), 
+	access(2), pipe(2), fflush(3), sigaction(3), signal(2), setpgid(2), getpgrp(2), and killpg(2).
+		
+Stackoverflow.com
+	"What does “dereferencing” a pointer
+		 https://stackoverflow.com/questions/4955198https://stackoverflow.com/questions/4955198/what-does-dereferencing-a-pointer-mean/what-does-dereferencing-a-pointer-mean	
+	"Break in a do while loop"
+https://stackoverflow.com/questions/12217014/break-in-do-while-loop"
+
+
+Loyal College in Maryland CS 702 Operating System 
+	
+http://www.cs.loyola.edu/~jglenn/702/S2005/Examples/index.html
