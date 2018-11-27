@@ -1,0 +1,30 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id CD5E06000049; Mon, 19 Nov 2018 19:56:28 -0800 (PST)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id CB5896000048
+	for <cs570-01@edoras.sdsu.edu>; Mon, 19 Nov 2018 19:56:28 -0800 (PST)
+To: cs570-01@edoras.sdsu.edu
+Subject: p4 autograder test 11 (input3)
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <4411.1542686176.1@edoras>
+Date: Mon, 19 Nov 2018 19:56:28 -0800
+Message-Id: <20181120035628.CB5896000048@edoras.sdsu.edu>
+
+The previous autograder was wrongly implying that prompts like
+:bin:570: 
+are required.  The correct prompt is in fact
+bin:570: 
+(always 2 colons, never 3).  Note that the prompt remains
+:570: 
+(with NO directory name in front) until a VALID 'cd' command is processed.
+
+The next autograder run will be looking for the right prompts for input3...
+
+Cheers,
+jc

@@ -14,30 +14,12 @@
  */
 char *new_argv[MAXITEM];// Holds addressed to parsed commands to be executed by the shell.
 char line[MAXSIZE]; // Holds the unparsed line from stidn
-char *bname; //Used to store basename to modify the shell prompt
-int result_Of_Chdir; //result of chdir()
-char *path;// result fo getcwd storage
-char *path2; //temp path
-
 int main(){
 	setpgid(0,0); // Sets current process and children to its own process group
 	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
 	while(TRUE){
-		/*Print prompt */
-		if(prompt_changed_flag){
-			if(slash_special_case_flag){
-				printf("/");
-				slash_special_case_flag = FALSE;
-			}
-			else{
-				printf(bname);
-			}
-			printf("%s",prompt);	
-		}
-		else{
-			printf("%s", prompt);
-		}
-		/*Hereis handling */
+		printf("%s", prompt);
+
 		if(hereis_flag){
 			set_up_hereis_doc();
 			hereis_flag = FALSE;//Can now execute the commands
@@ -63,86 +45,32 @@ int main(){
 		}
 		/* Handing cd for the shell since you cannot
 		 * use execvp to execute cd.
+		 *
 		 */
 		else if(strcmp(new_argv[0], "cd") == STRING_EQUALS){
-			prompt_changed_flag = TRUE;
-
 			if(new_argv_size == 1){
-				result_Of_Chdir = chdir(getenv("HOME"));
-				path = getcwd(cwd, sizeof(cwd));
 
-				if(result_Of_Chdir == FAIL){
+				if(chdir(getenv("HOME")) == FAIL){
 					print_error(CD_FAIL, getenv("HOME"));		
 				}
 				else{
 					clear_flags();
 				}
-
-				if(path != NULL){
-					path2 = strdup(path);
-					bname = basename(path2);
-				}
-				else{
-					perror("getcwd() didn't work");
-					exit(-37);
-				}
 			}
 
 			/* Case for two arguments to change directory*/
 			else if(new_argv_size == 2){
-				result_Of_Chdir = chdir(new_argv[1]);
-				path = getcwd(cwd, sizeof(cwd));
-
-				if(result_Of_Chdir == FAIL){
+				if(chdir(new_argv[1]) == FAIL){
 					print_error(CD_FAIL, new_argv[1]);		
 				}
 				else{
 					clear_flags();
-				}
-
-				if(path != NULL){
-					path2 = strdup(path);
-					bname = basename(path2);
-				}
-				else{
-					perror("getcwd() didn't work");
-					exit(-37);
-				}
-
+				}	
 			}
-
 			else {// cd only accepts 0 or 1 arguemnts
 				print_error(CD_INVALID_NUM_ARGS, NULL);	
 			}
 		}
-		else if(strcmp(new_argv[0], "environ") == STRING_EQUALS){
-			if(new_argv_size == 2){// environ and the arugments
-				char *environment = getenv(new_argv[1]);
-				if(environment == NULL){
-					printf("\n");
-				}
-				else{
-					printf("%s\n",environment);
-				}	
-			}
-			else if(new_argv_size == 3){//environ and two arugments
-				if(strcmp(new_argv[2], "/") == STRING_EQUALS){
-					slash_special_case_flag = TRUE;	
-					if(setenv(new_argv[1],"/",1) == FAIL){
-						perror("setenv(): Setting the environment variable failed.");
-					}
-				}
-				else if(setenv(new_argv[1],new_argv[2],1) == FAIL){
-					perror("setenv(): Setting the environment variable failed.");
-				}
-
-			}
-
-			else{
-				perror("environ must contain one or two arguments");
-			}
-		}
-
 		else {
 			/*Don't execute the commands yet*/
 			if(hereis_flag){
@@ -172,79 +100,12 @@ int parse(char **commands , char *line){
 	int output_redirection = FALSE;
 	int input_redirection = FALSE;
 	int location; // gets the locations of the pipes to execute the commands easier laster on.
-	char *tilde_word; //location of tilde_word to be taken from line
-
-	FILE *cmd;
-	char *args[4];
 
 	do {
 		if((word_size = getword(line))) {//I don't do > ZERO_COMMANDS because of the negative values from getword 
 			if(strcmp(line, "&") == STRING_EQUALS && backslash_flag == FALSE && background_flag_from_getword == TRUE){
 				background_flag = TRUE;
 				break;
-			}
-			else if(word_size < 0 && word_size != EOF){
-				env_variable = getenv(line);
-				if(env_variable == FAIL){
-					perror("Environment variable not found");
-					exit(-39);
-				}
-				else if(env_variable == NULL){
-					perror("Environable variable doesn't exist");
-				}
-				if(output_redirection && outfile == NULL){
-					outfile = env_variable;
-					word_count++;
-					line += abs(word_size) + 1;
-				}	
-				else{
-					word_count++;
-					*commands++ = env_variable;
-					line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
-				}
-			
-			}else if(tilde_flag){
-				
-				tilde_flag = FALSE;
-				struct passwd *pwd;
-				char *name = line;
-				const char delimiter[2] = "/";
-				char *token;	
-				pwd = getpwnam(name);
-				char buffer[MAXSIZE];
-				
-				if(pwd == NULL){
-					//Special case for Data4/input50
-					token = strtok(name, delimiter);
-					pwd = getpwnam(token);
-					if(pwd == NULL){
-
-
-					printf("Couldn't find user %s.\n",token);
-					//perror("Couldn't find user\n");
-					}
-					else{
-						printf("Found user %s\n",token);
-						printf("pw_dir%s\n", pwd->pw_dir);
-						strncpy(buffer,pwd->pw_dir,MAXSIZE - 1);
-						token = strtok(NULL, delimiter);
-						strncat(buffer, "/", MAXSIZE - strlen(buffer) - 1);
-						strncat(buffer, token, MAXSIZE -strlen(buffer) - 1);
-						printf("buffer %s\n", buffer);
-						word_count++;
-						*commands++ = buffer;
-						line +=abs(word_size) + 1;
-					}
-				}
-				else{
-					printf("Found user %s.\n", name);
-
-				word_count++;
-				*commands++ = pwd->pw_dir;
-				line += abs(word_size) + 1;
-				}
-			
-			
 			}
 			else if (strcmp(line, "|") == STRING_EQUALS) {
 				/* if statement executes if pipe_flag is anything but 0. 
@@ -312,13 +173,13 @@ int parse(char **commands , char *line){
 				hereis_delimiter = line;
 				word_count++;
 				line += word_size + 1;
-				//commands++ = tmp_name; Pointer to filename where hereis_doc contents is at.
+				//*commands++ = tmp_name; //Pointer to filename where hereis_doc contents is at.
 			}
 			else { // add the commands to the commands array and increment line to point to the new word.
 				word_count++;
 				*commands++ = line;
-				line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
-				//line += word_size + 1; 
+				//line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
+				line += word_size + 1; 
 			}
 
 		}
@@ -369,7 +230,7 @@ void exec_command(char *command, char **args){
 
 	}else {
 		/* if background flag is not set then the shell waits
-		 * for its childern to die and any leftover zombies.
+		 * for its childrne to die and any leftover zombies.
 		 */
 		if(!background_flag){
 			do{
@@ -392,6 +253,7 @@ void run_child_command(char *command, char **args){
 	//it wait_status;
 	pid_t child_pid;
 	int redirection_return;	
+	int hereis_executed_flag = FALSE;
 
 	if(redirection_flag){
 		if((redirection_return = set_up_redirection()) < SUCCESS){
@@ -455,20 +317,18 @@ void run_child_command(char *command, char **args){
 			print_error(PIPE_INPUT_REDIRECT_FAILED, num);	
 			exit(DUP_FAILED);
 		}
-		/*
-		if(hereis_flag){
-
-			set_up_hereis_doc();
-			dup(saved_stdin);
-			hereis_flag = FALSE;
-		}
-		*/
 		close(fds[0]);
 		close(fds[1]);
 
+		if(hereis_flag){
+			set_up_hereis_doc();
+			//dup(saved_stdin);//Restoring stdin
+			hereis_executed_flag = TRUE;
+		}
+
 
 		/*Executing hereis section */
-		if(execvp(args[current + 1], args + (current + 1 )) == FAIL){
+		if(execvp(args[current + 1], args + (current + 1 )) == FAIL && hereis_executed_flag == FALSE){
 			print_error(EXEC_FAILED_EXIT_CODE, args[current + 1]);
 			exit(EXEC_FAILED_EXIT_CODE);
 		}

@@ -1,0 +1,30 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 930EC6000049; Fri, 23 Nov 2018 18:33:23 -0800 (PST)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 907C56000048
+	for <cs570-01@edoras.sdsu.edu>; Fri, 23 Nov 2018 18:33:23 -0800 (PST)
+To: cs570-01@edoras.sdsu.edu
+Subject: error in last autograder
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <16150.1543026803.1@edoras>
+Date: Fri, 23 Nov 2018 18:33:23 -0800
+Message-Id: <20181124023323.907C56000048@edoras.sdsu.edu>
+
+In Test 23, I added one mmore command to ~cs570/Data4/input55 (namely
+/bin/rm -f your.output55
+as the first line).  So the correct stdout/stderr text should be:
+:570: :570: :570: p2 terminated.
+However, the last run was still expecting one less command, which would
+mean prompts of only
+:570: :570: p2 terminated.
+...and so the autograder  was often deducting two points where it shouldn't.
+That issue will be fixed in tomorrow's run...
+
+Cheers,
+jc

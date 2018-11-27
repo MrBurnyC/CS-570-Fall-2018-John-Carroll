@@ -1,4 +1,7 @@
-cd 
+environ HOME /
+cd
+cd home/cs/carroll
+cd $USER
 grep askcc<.mailrc>$OSTYPE
 cat linux
 rm $OSTYPE

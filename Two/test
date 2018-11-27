@@ -1,1 +1,2 @@
-ihi
+echo ~cs570/Data4 | tr em ob | tr c b | sed s,ty,ous,
+echo BAD_USER ~tc

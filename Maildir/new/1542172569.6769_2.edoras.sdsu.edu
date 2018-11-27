@@ -1,0 +1,27 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 7DACA6000049; Tue, 13 Nov 2018 21:16:09 -0800 (PST)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 7B7EA6000048
+	for <cs570-01@edoras.sdsu.edu>; Tue, 13 Nov 2018 21:16:09 -0800 (PST)
+To: cs570-01@edoras.sdsu.edu
+Subject: more man pages for p4
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <6737.1542172569.1@edoras>
+Date: Tue, 13 Nov 2018 21:16:09 -0800
+Message-Id: <20181114051609.7B7EA6000048@edoras.sdsu.edu>
+
+In the list of relevant man pages shown in ~cs570/program4 , I left
+out an important one: setenv() .
+
+You may also find that basename() is useful for some things.  Don't
+look at the user-level commands with these names (section 1) -- what
+you want is in section 3 of the man pages.
+
+Cheers,
+jc

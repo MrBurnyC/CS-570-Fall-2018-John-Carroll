@@ -203,50 +203,17 @@ int parse(char **commands , char *line){
 					line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
 				}
 			
-			}else if(tilde_flag){
-				
-				tilde_flag = FALSE;
-				struct passwd *pwd;
-				char *name = line;
-				const char delimiter[2] = "/";
-				char *token;	
-				pwd = getpwnam(name);
-				char buffer[MAXSIZE];
-				
-				if(pwd == NULL){
-					//Special case for Data4/input50
-					token = strtok(name, delimiter);
-					pwd = getpwnam(token);
-					if(pwd == NULL){
+			/*
+			else if(tilde_flag){
+				args[0] = "grep";
+				args[1] = line;
+				args[2] = "/etc/passwd";
+				args[3] = NULL;
 
 
-					printf("Couldn't find user %s.\n",token);
-					//perror("Couldn't find user\n");
-					}
-					else{
-						printf("Found user %s\n",token);
-						printf("pw_dir%s\n", pwd->pw_dir);
-						strncpy(buffer,pwd->pw_dir,MAXSIZE - 1);
-						token = strtok(NULL, delimiter);
-						strncat(buffer, "/", MAXSIZE - strlen(buffer) - 1);
-						strncat(buffer, token, MAXSIZE -strlen(buffer) - 1);
-						printf("buffer %s\n", buffer);
-						word_count++;
-						*commands++ = buffer;
-						line +=abs(word_size) + 1;
-					}
-				}
-				else{
-					printf("Found user %s.\n", name);
-
-				word_count++;
-				*commands++ = pwd->pw_dir;
-				line += abs(word_size) + 1;
-				}
-			
-			
 			}
-			else if (strcmp(line, "|") == STRING_EQUALS) {
+			*/
+			}else if (strcmp(line, "|") == STRING_EQUALS) {
 				/* if statement executes if pipe_flag is anything but 0. 
 				 * Case preventing more than one pipe which will be handled in p4.c according to class lecture.	
 				 */
@@ -369,7 +336,7 @@ void exec_command(char *command, char **args){
 
 	}else {
 		/* if background flag is not set then the shell waits
-		 * for its childern to die and any leftover zombies.
+		 * for its childrne to die and any leftover zombies.
 		 */
 		if(!background_flag){
 			do{
@@ -455,14 +422,12 @@ void run_child_command(char *command, char **args){
 			print_error(PIPE_INPUT_REDIRECT_FAILED, num);	
 			exit(DUP_FAILED);
 		}
-		/*
 		if(hereis_flag){
 
 			set_up_hereis_doc();
 			dup(saved_stdin);
 			hereis_flag = FALSE;
 		}
-		*/
 		close(fds[0]);
 		close(fds[1]);
 

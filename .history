@@ -1,23 +1,3 @@
-#+1536075597
-p0 < Data0/input4
-#+1536079162
-git commit -m "First commit. Autograder gave 8/8."
-#+1536079200
-git remote add origin https://github.com/MrBurnyC/cs570
-#+1536079209
-git push -u origin master
-#+1536079248
-git pull
-#+1536079258
-git pull origin master
-#+1536079527
-rm .git/
-#+1536079529
-rm .git
-#+1536079533
-ls -a
-#+1536079565
-rm -rf .git/
 #+1536079689
 git init
 #+1536079700
@@ -131,9 +111,9 @@ exec csh
 #+1537205150
 exec tcsh
 #+1537244448
-cd One/
-#+1537244448
 ; s
+#+1537244448
+cd One/
 #+1537380259
 cd
 #+1537380264
@@ -174,27 +154,47 @@ cd Two
 vim test
 #+1538611560
 p2 < test
-#+1538612221
-ls
 #+1538612227
 vim Data2/input11
 #+1538612235
 vim Data2/input2
 #+1538612410
 vim p2.h
-#+1538612648
-vim p2.c
-#+1538612674
-make
 #+1538612677
 p2
 #+1538613476
 vim getword.c
-#+1538613730
-exit
 #+1538713070
 exec /home/cs/carroll/cssc0018/Two/p2 < Data2/input12
 #+1538713465
 exec /home/cs/carroll/cssc0018/One/p1 < Data2/input12
-#+1538715919
+#+1541101914
+./p3 54 ./p3 53 ./p3 50 ./p3 51 ./p3 52 ./p3 55 ./p3 56 ./p3 57 ./p3 58 ./p3 59 ./p3 60
+#+1541120337
+./p3 50 ; ./p3 51 ; ./p3 52 ; ./p3 53 ; ./p3 54 ; ./p3 55 ; ./p3 56 ; ./p3 57 ; ./p3 58 ; ./p3 59 ; ./p3 60 ;
+#+1541121330
+grep failure news
+#+1543021156
+ls
+#+1543021156
+cd Two/
+#+1543021466
+vim p2.c
+#+1543021496
+make
+#+1543023253
+exit
+#+1543155995
+exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input55
+#+1543203876
+exec /usr/bin/grep < test
+#+1543211870
+exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input3
+#+1543213338
+exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input51
+#+1543214900
+exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input53
+#+1543284472
+exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input50
+#+1543284969
 exec /home/cs/carroll/cssc0018/Two/p2 < test

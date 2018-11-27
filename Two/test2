@@ -1,0 +1,4 @@
+> foo cat << goofydelimiter
+line1
+sentence2
+goofydelimiter

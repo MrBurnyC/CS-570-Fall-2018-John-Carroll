@@ -1,0 +1,779 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+						location = word_count + pipe_flag;
+						location = word_count;//first pipe is set to the location of word_count
+						perror("setenv(): Setting the environment variable failed.");
+					*commands++ = env_variable;
+					//perror("Cannot have more than 10 pipes");		
+					//perror("Need to an argument to pipe to.");
+					bname = basename(path2);
+					bname = basename(path2);
+					char num[2];
+					clear_flags();
+					clear_flags();
+					exit(-1);
+					exit(-14);
+					exit(-37);
+					exit(-37);
+					exit(-39);
+					exit(DUP_FAILED);
+					exit(DUP_FAILED);
+					exit(EXEC_FAILED_EXIT_CODE);
+					if(pipe_flag == 0){
+					if(setenv(new_argv[1],"/",1) == FAIL){
+					line += abs(word_size) + 1;
+					line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
+					outfile = env_variable;
+					path2 = strdup(path);
+					path2 = strdup(path);
+					perror("Ambiguous hereis document. Cannot execute");
+					perror("Ambiguous redirection output. Cannot execute");
+					perror("Ambiguous redirection. Cannot execute.");
+					perror("Environable variable doesn't exist");
+					perror("Environment variable not found");
+					perror("Execvp failed inside of pipeline code");
+					perror("getcwd() didn't work");
+					perror("getcwd() didn't work");
+					perror("setenv(): Setting the environment variable failed.");
+					pipe_location[pipe_flag++] = location; // store the location of the piepe an then increment the pipe flag.
+					print_error(CD_FAIL, getenv("HOME"));		
+					print_error(CD_FAIL, new_argv[1]);		
+					print_error(EXEC_FAILED_EXIT_CODE, command);
+					print_error(PIPE_OUTPUT_REDIRECT_FAILED, "1");
+					print_error(PIPE_OUTPUT_REDIRECT_FAILED,num);
+					printf("%s\n",environment);
+					printf("\n");
+					return -1;
+					return -1;
+					return MULTIPLE_PIPELINES;
+					return PIPE_FORMAT_ERROR;
+					slash_special_case_flag = TRUE;	
+					to_string(i,num);
+					word_count++;
+					word_count++;
+					}
+					}
+					}else{// offset by the location by the number of pipe already parsed.
+				 * Case preventing more than one pipe which will be handled in p4.c according to class lecture.	
+				 */
+				*commands++ = NULL; // set the argument at the pipeflag to be null to split the 1st process from
+				*commands++ = line;
+				/* if statement executes if pipe_flag is anything but 0. 
+				// the second.a
+				//commands++ = tmp_name; Pointer to filename where hereis_doc contents is at.
+				//line += word_size + 1; 
+				args[0] = "grep";
+				args[1] = line;
+				args[2] = "/etc/passwd";
+				args[3] = NULL;
+				background_flag = TRUE;
+				break;
+				char *environment = getenv(new_argv[1]);
+				char num[2];
+				char num[2];
+				clear_flags();
+				close(fds[0]);
+				close(fds[1]);
+				close(fds[start_fd + 1]);
+				close(fds[start_fd]);
+				continue;
+				else if(env_variable == NULL){
+				else if(setenv(new_argv[1],new_argv[2],1) == FAIL){
+				else{
+				else{
+				else{
+				else{
+				else{
+				else{
+				env_variable = getenv(line);
+				exec_command(new_argv[0], new_argv);
+				exit(-20);	
+				exit(DUP_FAILED);		
+				exit(DUP_FAILED);		
+				hereis_delimiter = line;
+				hereis_flag = TRUE;	
+				if (input_redirection) {// if more than one '<' symbol is found set error flag to clear the stream.
+				if (output_redirection) { // if more than one '>' symbol is found set error flag to clear the stream.
+				if (pipe_flag > 10) { 
+				if (word_count == ZERO_COMMANDS) { // case where pipe is the only arguement on line/STDIN 
+				if(dup2(fds[1], STDOUT_FILENO) < SUCCESS){
+				if(dup2(fds[start_fd + 1], STDOUT_FILENO) < SUCCESS){
+				if(env_variable == FAIL){
+				if(environment == NULL){
+				if(execvp(command, args) == FAIL){
+				if(execvp(command,args) == FAIL){
+				if(hereis_flag){
+				if(output_redirection && outfile == NULL){
+				if(path != NULL){
+				if(path != NULL){
+				if(result_Of_Chdir == FAIL){
+				if(result_Of_Chdir == FAIL){
+				if(strcmp(new_argv[2], "/") == STRING_EQUALS){
+				infile = line;
+				input_redirection = TRUE;
+				line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
+				line += word_size + 1;
+				line += word_size + 1;
+				line += word_size + 1;
+				nested_pipeline(command, args);
+				outfile = line;
+				output_redirection = TRUE;
+				path = getcwd(cwd, sizeof(cwd));
+				path = getcwd(cwd, sizeof(cwd));
+				perror("Exec failed within nested pipe code");
+				perror("environ must contain one or two arguments");
+				print_error(CD_INVALID_NUM_ARGS, NULL);	
+				print_error(PIPE_INPUT_REDIRECT_FAILED, num);
+				print_error(PIPE_OUTPUT_REDIRECT_FAILED, num);
+				printf("/");
+				printf(bname);
+				redirection_flag = TRUE;
+				redirection_flag = TRUE;
+				result_Of_Chdir = chdir(getenv("HOME"));
+				result_Of_Chdir = chdir(new_argv[1]);
+				slash_special_case_flag = FALSE;
+				to_string(i, num);
+				to_string(i,num);
+				wait_status = wait(NULL);
+				word_count++;
+				word_count++;
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}	
+				} else {
+			   */
+			   do{
+			   if(!background_flag){
+			   wait_status = wait(NULL);
+			   }while(wait_status != child_pid);
+			 * Setting address pointer to coresponding file and incrementing line
+			 * since 0 and NULL are equivalent
+			 * which is the stdin.
+			 */
+			*/
+			/*
+			/*
+			/* Case for two arguments to change directory*/
+			/* Checking for a valid out/input file. Using NULL instead of 0 to check 
+			/* Creating a pointer to the hereis delimiter*/
+			/*Don't execute the commands yet*/
+			//More than two commands handle nested pipe lines
+			//Only two commands.
+			//Redirecting child input to the output end of the pipe
+			//printf("A match found on line: %d\n", line_num);
+			background_flag = FALSE;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			break;
+			char num[2];
+			char num[2];
+			char num[2];
+			close(fds[start_fd + 1]); //close write end of own pipe
+			close(fds[start_fd - 1]); //close write end of inherited pipe
+			close(fds[start_fd - 2]); //close read end of inherited pipe
+			close(fds[start_fd]);	  //close rend end of own pipe
+			continue;
+			continue;	
+			current = pipe_location[i - 1]; //get the previous pipe to execute the middle command.
+			current = pipe_location[pipe_flag - 1];
+			do{
+			dup(saved_stdin);
+			else if (output_redirection && outfile == NULL) {
+			else if (strcmp(line, ">") == STRING_EQUALS) { // if the symbol is '>' set up output redirection
+			else if(hereis_flag && hereis_delimiter == NULL){
+			else if(new_argv_size == 2){
+			else if(new_argv_size == 3){//environ and two arugments
+			else if(tilde_flag){
+			else if(word_size < 0 && word_size != EOF){
+			else { // add the commands to the commands array and increment line to point to the new word.
+			else {// cd only accepts 0 or 1 arguemnts
+			else{
+			else{
+			else{
+			else{
+			exit(-17);
+			exit(-3);
+			exit(-4);
+			exit(-5);
+			exit(-6);
+			exit(-7);
+			exit(-9);
+			exit(DUP_FAILED);
+			exit(DUP_FAILED);		
+			exit(EXEC_FAILED_EXIT_CODE);
+			exit(PIPE_FAILED_EXIT_CODE);
+			exit(PIPE_FAILED_EXIT_CODE);
+			exit(REDIRECTION_ERROR);
+			fflush(stderr);
+			fflush(stdout);
+			fflush(stdout);
+			fprintf(stderr, ":570:  %s: command not found.\n", arg);
+			fprintf(stderr, ":570:  Cd: can only take one argument.\n");
+			fprintf(stderr, ":570:  Nested pipe line #%s failed.\n",arg);
+			fprintf(stderr, ":570:  ambiguous input redirection.\n");
+			fprintf(stderr, ":570:  ambiguous output redirection.\n");
+			fprintf(stderr, ":570:  cannot redirect input because no executable has been provided.\n");
+			fprintf(stderr, ":570:  cannot redirect output because no executable has been provided.\n");
+			fprintf(stderr, ":570:  cd: %s: No such file or directory.\n", arg);
+			fprintf(stderr, ":570:  could not open output file {%s}. \n", outfile);
+			fprintf(stderr, ":570:  file {%s} already exists.\n", outfile);
+			fprintf(stderr, ":570:  input redirection failed on file {%s}.\n",arg);
+			fprintf(stderr, ":570:  input redirection failed on pipeline #%s.\n",arg);
+			fprintf(stderr, ":570:  no process provided after `|\'.\n");
+			fprintf(stderr, ":570:  output redirection failed on file {%s}.\n",arg);
+			fprintf(stderr, ":570:  output redirection failed on pipeline #%s.\n",arg);
+			fprintf(stderr, ":570:  pipe line #%s failed.\n",arg);
+			fprintf(stderr, ":570:  syntax error expected file name after input redirection.\n");
+			fprintf(stderr, ":570:  syntax error expected file name after output redirection.\n");
+			fprintf(stderr, ":570:  syntax error near unexpected token `&\'.\n");
+			fprintf(stderr, ":570:  syntax error near unexpected token `|\'.\n");
+			fprintf(stderr, ":570:  this shell can only handle 10 pipelines.\n");
+			fprintf(stderr, "Could not fork process #%s.\n",arg);
+			hereis_flag = FALSE;
+			hereis_flag = FALSE;//Can now execute the commands
+			if(dup2(fds[start_fd - 1], STDOUT_FILENO) < SUCCESS){
+			if(dup2(fds[start_fd], STDIN_FILENO) < SUCCESS){
+			if(execvp(args[current + 1], args + (current + 1)) == FAIL){
+			if(hereis_flag){
+			if(i - 1 == 0){
+			if(new_argv_size == 1){
+			if(new_argv_size == 2){// environ and the arugments
+			if(pipe_flag > 1){
+			if(slash_special_case_flag){
+			if(strcmp(line, "&") == STRING_EQUALS && backslash_flag == FALSE && background_flag_from_getword == TRUE){
+			j++;
+			new_argv_size = parse(new_argv, line);
+			perror("Cannot open file with background flag ");
+			perror("Cannot open overwrite file");
+			perror("Cannot read input file");
+			perror("File exists");
+			perror("Input file overwritten");
+			perror("Nested pipeline failed");
+			perror("Output redirection with dup2 failed");
+			perror("input redirection failed with background flag");
+			print_error(EXEC_FAILED_EXIT_CODE, args[current + 1]);
+			print_error(FORK_FAILED_EXIT_CODE, num);
+			print_error(PIPE_FAILED_EXIT_CODE, "1");
+			print_error(PIPE_FAILED_EXIT_CODE, "1");
+			print_error(PIPE_INPUT_REDIRECT_FAILED, num);	
+			print_error(new_argv_size, NULL);		
+			print_error(redirection_return, NULL);
+			printf("%s [%d]\n", command, child_pid);
+			printf("%s", prompt);
+			printf("%s",prompt);	
+			printf(":570:  could not open input file {%s}. \n", infile);
+			prompt_changed_flag = TRUE;
+			putc(iochar , fileptr1);
+			return 	-1;
+			set_up_hereis_doc();
+			set_up_hereis_doc();
+			temp_line++;
+			to_string(i,num);
+			to_string(i,num);
+			to_string(pipe_flag -1 , num);
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}
+			}		
+			} else if (input_redirection && infile == NULL) {
+			} else if (strcmp(line, "<") == STRING_EQUALS) { // if the symbol is '<' set up input redirection
+			}else if (strcmp(line, "|") == STRING_EQUALS) {
+			}else if(strcmp(line, "<<") == STRING_EQUALS){
+			}while(wait_status != child_pid);
+		 * for its childrne to die and any leftover zombies.
+		 * or write end of the pipe. One can think of it has the stdout of the pipe.
+		 * read and write permissions as indicated b the flags passed to open
+		 * use execvp to execute cd.
+		 */
+		 */
+		 */
+		 */
+		/* Handing cd for the shell since you cannot
+		/* If it is the parent of the the grandchild, then execute the command */	
+		/* Redirecting output from stdout to the open file*/
+		/* The grandchild handles the redirection to the output to the of the pipe
+		/* if background flag is not set then the shell waits
+		/*Executing hereis section */
+		/*Hereis handling */
+		/*Open file for write only if it doesn't exists. It creates a file with
+		/*Print prompt */
+		//Copy all except the delimiter line
+		//int fds[2]; //file descriptors
+		background_flag = FALSE;
+		case AMBIGUOUS_INPUT_REDIRECTION:
+		case AMBIGUOUS_OUTPUT_REDIRECTION:
+		case BACKGROUND_FORMAT_ERROR:
+		case CD_FAIL:
+		case CD_INVALID_NUM_ARGS:
+		case EXEC_FAILED_EXIT_CODE:
+		case FORK_FAILED_EXIT_CODE:
+		case INPUT_FILE_OPEN_ERROR:
+		case INPUT_REDIRC_FORMAT_ERROR:
+		case INPUT_REDIRECTION_FAILED:
+		case MULTIPLE_PIPELINES:
+		case NESTED_PIPELINE_PIPE_FAILED:
+		case NO_EXECUTABLE_AFTER_INPUT_REDIRC:
+		case NO_EXECUTABLE_AFTER_OUTPUT_REDIRC:
+		case NO_PROCESS_AFTER_PIPE:
+		case OUTPUT_FILE_OPEN_ERROR:
+		case OUTPUT_REDIRC_FORMAT_ERROR:
+		case OUTPUT_REDIRECTION_FAILED:
+		case PIPE_FAILED_EXIT_CODE:
+		case PIPE_FORMAT_ERROR:
+		case PIPE_INPUT_REDIRECT_FAILED:
+		case PIPE_OUTPUT_REDIRECT_FAILED:
+		case REDIRECTION_FILE_EXISTS:
+		close(fds[0]);
+		close(fds[1]);
+		close(file_descriptor);
+		close(file_descriptor);
+		close(file_descriptor);
+		default:
+		else if (grandChild_pid != SUCCESS){
+		else if(child_pid == SUCCESS){
+		else if(new_argv_size < PARSE_ERROR){
+		else if(new_argv_size == ZERO_COMMANDS){
+		else if(strcmp(new_argv[0], "cd") == STRING_EQUALS){
+		else if(strcmp(new_argv[0], "environ") == STRING_EQUALS){
+		else {
+		else{
+		else{
+		else{
+		else{
+		exit(-36);
+		exit(EXEC_FAILED_EXIT_CODE);
+		fclose(fileptr1);
+		fclose(fp);
+		fclose(hereis_doc);
+		fflush(stderr);
+		fflush(stderr);
+		fflush(stdout);
+		fflush(stdout); //Flush before fork everything.
+		file_descriptor = open("/dev/null", O_RDONLY);
+		file_descriptor = open(infile, O_RDONLY); //Only reading file
+		file_descriptor = open(outfile, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR, S_IWUSR);
+		i++;
+		if(!background_flag){
+		if((child_pid = fork()) == FAIL){
+		if((grandChild_pid = fork()) == FAIL){ 
+		if((redirection_return = set_up_redirection()) < SUCCESS){
+		if((strstr(temp,str)) != NULL){
+		if((word_size = getword(line))) {//I don't do > ZERO_COMMANDS because of the negative values from getword 
+		if(dup2(fds[0], STDIN_FILENO) < SUCCESS){//to read the outpt of the grandchild
+		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){ //redirect the input from stdin to dev/null
+		if(dup2(file_descriptor, STDIN_FILENO) < SUCCESS){//redirect input from stdin to newly opened file.
+		if(dup2(file_descriptor, STDOUT_FILENO) < SUCCESS){
+		if(execvp(args[current + 1], args + (current + 1 )) == FAIL){
+		if(file_descriptor < SUCCESS){
+		if(file_descriptor < SUCCESS){
+		if(file_descriptor < SUCCESS){
+		if(file_exists(outfile) == SUCCESS){
+		if(hereis_flag){
+		if(hereis_flag){
+		if(iochar == '\n'){
+		if(new_argv_size == EOF){
+		if(pipe((fds + (2 * j))) == FAIL){
+		if(pipe(fds) == FAIL){
+		if(prompt_changed_flag){
+		if(temp_line != delimiter_line){
+		infile = NULL;
+		int current; //current pipe
+		iochar = getc(hereis_doc);
+		iochar = getchar();
+		line_num++;
+		mystring[i] = iochar;
+		outfile = NULL;
+		perror("Couldn't read tmp file");
+		perror("fopen failed");
+		pipe_flag = FALSE;
+		print_error(EXEC_FAILED_EXIT_CODE, command);	
+		print_error(FORK_FAILED_EXIT_CODE, "1");
+		return -1;
+		return BACKGROUND_FORMAT_ERROR;
+		return INPUT_REDIRC_FORMAT_ERROR;
+		return NO_EXECUTABLE_AFTER_INPUT_REDIRC;
+		return NO_EXECUTABLE_AFTER_OUTPUT_REDIRC;
+		return NO_PROCESS_AFTER_PIPE;
+		return OUTPUT_REDIRC_FORMAT_ERROR;
+		return;
+		run_child_command(command, args);
+		start_fd = (2*j); // get the read end of the current pipe.
+		word_count = EOF;
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}		
+		}else{
+	 * be taken out
+	 * line
+	 * new file and then replacing it without the delimiter
+	 */
+	 */
+	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
+	*commands = NULL; //null terminate string array of commands
+	/* Executes the child command */
+	/* Loop until one finds the line that needs to
+	/* Redirecting stdin to get input from our file tmp_name. */
+	/*644 meanms you can read and write and so can other users. */
+	/*Null terminating the char array and removes the last newline */
+	/*Removing line from file by copying it to a 
+	//FILE* file = open(tmp_name,O_WRONLY | O_APPEND | O_CREAT, 0644);
+	//dup2(*file_descriptor_ptr, STDIN_FILENO);
+	//file_descriptor_ptr = fileno(hereis_doc);
+	//hereis_doc = &file;
+	//hereis_doc = freopen(tmp_name, "w+", stdin);	
+	//i--;
+	//it wait_status;
+	//loop until one before the last pipe.
+	FILE *cmd;
+	FILE *fileptr1;
+	FILE *fp;
+	char *args[4];
+	char *tilde_word; //location of tilde_word to be taken from line
+	char iochar = NULL;
+	char mystring [MAXSIZE] = "";
+	char temp[512] = "";
+	clear_flags(); // clear all the flags on an error to return to neutral state.switch (error_code) {
+	close(file_descriptor_in);
+	delimiter_line = search_in_File(tmp_name, hereis_delimiter);
+	do {
+	dup2(file_descriptor_in, 0);
+	else if(child_pid == SUCCESS){
+	fflush(hereis_doc); // need to fflush so the contents will appear in the file immediately.
+	fflush(stderr);
+	fflush(stdout);// Flushing before a fork to ensure stdout & stdout buffers are clear for the child.
+	file_descriptor_in = open(tmp_name, O_RDONLY);
+	fileptr1 = fopen("replica","w");
+	for(i = pipe_flag - 1; i > 0; i--){
+	fputs(mystring, hereis_doc);
+	hereis_doc = fopen(tmp_name, "w+");
+	if((child_pid = fork()) == FAIL){
+	if((fp = fopen(fname, "r")) == NULL){
+	if(background_flag && word_count == ZERO_COMMANDS){
+	if(background_flag)
+	if(execvp(command, args) == FAIL){
+	if(fileptr1){
+	if(fp){
+	if(hereis_doc == NULL){
+	if(hereis_doc){
+	if(infile != NULL && word_count == 0){
+	if(infile != NULL){
+	if(infile != NULL){
+	if(infile == NULL && background_flag){//redirect background process input to dev/null to avoid having deadlock
+	if(input_redirection && infile == NULL){
+	if(outfile != NULL && word_count == 0){
+	if(outfile != NULL){
+	if(outfile != NULL){
+	if(output_redirection && outfile == NULL){
+	if(pipe_flag && pipe_location[pipe_flag -1] + 1 >= word_count + pipe_flag){
+	if(pipe_flag){
+	if(pipe_flag){
+	if(redirection_flag){
+	if(word_size == EOF){
+	int current;//currrent pipe line to execute	
+	int delimiter_line = 1;	
+	int file_descriptor = 0;
+	int file_descriptor_in;//using for replacing stdin with a our file
+	int i = 0;
+	int i;
+	int input_redirection = FALSE;
+	int j = 1; //offset for pipes
+	int line_num =1;
+	int location; // gets the locations of the pipes to execute the commands easier laster on.
+	int output_redirection = FALSE;
+	int redirection_return;	
+	int start_fd = 0; // the read end of the current pipe.
+	int temp_line = 1;//Starts at line 1
+	int wait_status;
+	int word_count = 0;
+	int word_size = 0;
+	iochar = NULL; //Reset from last while loop because it's last value is -1 
+	killpg(getpgrp(),SIGTERM);
+	mystring[i] ='\0';
+	pid_t child_pid;
+	pid_t child_pid;
+	pid_t grandChild_pid; //pid of the current grand_child
+	printf("p2 terminated.\n");
+	remove(tmp_name);
+	rename("replica", tmp_name);
+	return 0;
+	return OK_TO_EXECUTE_COMMANDS;
+	return file_descriptor;
+	return line_num;	
+	return word_count;
+	rewind(hereis_doc);
+	saved_stdin = dup(0); //save stdin to restore it later
+	setpgid(0,0); // Sets current process and children to its own process group
+	switch (error_code){
+	while(TRUE){
+	while(fgets(temp, 512, fp) != NULL){
+	while(iochar != -1){
+	while(iochar != -1){ //Use -1 instead of EOF because we defined EOF to be -255
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}	
+	}	
+	}	
+	}		
+	} 
+	} while (word_size != EOF && word_size != ZERO_COMMANDS); // read until a line terminator is encountered
+	}else {
+ *
+ * 			- Array is a parsed and then passed to evecvp to execute the commands.
+ * 			- Program uses getword.c to get STDIN and parse it into a string array.
+ * 			- To handle execution we use system calls like dup2, execvp, fork, and pipe, etc.
+ * 		Due : 11/28/18 for extra credit and 12/5/18 for regular deadline
+ * 		for input & output redirection.
+ * 		the line and returns the corresponding command output. It handles 
+ * 		the metacharacters {'&','<','>','|','\',"<<" and EOF. Now handles up to 10 pipes
+ * Class Info - Program #4 Bernardo Cervantes, John Carroll, CS570 program 2
+ * Synopsis   - Program acts as a simple unix shell. It reads from stdin and parses
+ * and pointer to a char array line which is line
+ */
+ */
+#include "p2.h"
+/*
+/* Parameters:Takes a pointer to a char pointer array which is new_argv, 
+char *bname; //Used to store basename to modify the shell prompt
+char *new_argv[MAXITEM];// Holds addressed to parsed commands to be executed by the shell.
+char *path2; //temp path
+char *path;// result fo getcwd storage
+char line[MAXSIZE]; // Holds the unparsed line from stidn
+else{//no pipe line so execute the command normally
+int main(){
+int parse(char **commands , char *line){ 
+int result_Of_Chdir; //result of chdir()
+int search_in_File(char *fname, char *str){
+int set_up_hereis_doc(){
+int set_up_redirection(){
+void clear_flags(){
+void exec_command(char *command, char **args){
+void nested_pipeline(char *command, char **args){
+void print_error(int error_code, char *arg){
+void run_child_command(char *command, char **args){
+void sighandler(){
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

@@ -1,0 +1,38 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id DBF3C6000048; Mon, 19 Nov 2018 10:08:24 -0800 (PST)
+Date: Mon, 19 Nov 2018 10:08:24 -0800
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181119180824.DBF3C6000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+Below are the grade totals for the first four programming assignments
+(p0, p1, p2 and p3).  The grade total for the midterm exam is in the far
+right column, labelled "E1".  Recall that the midterm score is NOT combined
+with the totals for the assignments, and is NOT reflected in the percent
+(%) column, since a point on the midterm is not quite worth the same
+as a point on an assignment.  The % column is just the average of your
+program scores, which now incorporates p3.
+
+At the end of the course, scores will be adjusted to reflect the 30%/25%/45%
+split advertised in the syllabus for the assignments/midterm/final weights.
+The final is already worth 45% of your grade, but if you do SIGNIFICANTLY
+better on the final than on the midterm, I'll weight the final even more
+heavily, to help boost your grade.  Start studying NOW, and remember that
+you need to concentrate on understanding, not just memorization.
+
+The lines below show the class average, maximum achieved, maximum possible,
+and your score.
+
+logname P0 P1 P2 P3   CS570 Fall 2018            Total % E1
+logname  7 14 26 20    --averages--               67  86 37
+logname  8 15 39 24      -maximum-                86 110 49
+masc0000 8 15 35 20 Aardvark, Aaron               78 100 50 <Perfect Score
+cssc0018 7 14 39 24 Cervantes, Bernardo           84 108 31

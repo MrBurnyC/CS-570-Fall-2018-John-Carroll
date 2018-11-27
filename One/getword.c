@@ -35,13 +35,14 @@
 
 int backslash_flag ; //helps p2.c decipher metacharaceters from regular chars
 int background_flag_from_getword ; //flag for & in p2.c
+int tilde_flag; //use to indicate that getword has seen the tilde ~ metachar
 int getword(char *w){
 	int wordCount = 0; //Must initalize to zero or else you get garbage.
 	int iochar = 0;
 	int true = 0;      //bool for checking '$'
-	const char *name = "HOME";
-	char *value = getenv(name); //Sets home directory to value ; 
-	char *x = value;
+	//const char *name = "HOME";
+	//char *value = getenv(name); //Sets home directory to value ; 
+	//char *x = value;
 
 
 	/* Stores intital char from STDIN/file */
@@ -114,13 +115,14 @@ int getword(char *w){
 
 	if(iochar == '~' && true == 0){
 		iochar = getchar();
-
-		while(*x != '\0'){
+		tilde_flag = TRUE;
+	/*	while(*x != '\0'){
 			*w = *x;
 			w++;
 			x++;
 			wordCount++;
-		}	
+		}
+	*/	
 	}
 
 	/*
