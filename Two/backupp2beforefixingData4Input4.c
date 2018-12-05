@@ -41,15 +41,17 @@ int main(){
 		else{
 			printf("%s", prompt);
 		}
-		/*
-		 * Exec_command() came back and did a hereis command
-		 * so there should be no more input left 
-		 * therefore we stop parsing and executing commands
+		/*Hereis handling 
+		 * to get the rest of stdin and make it the 
+		 * argument for the command left of the << meta character
 		 */
-		if(stop_reading_commands_flag){
-			break;
+		if(hereis_flag){
+			set_up_hereis_doc();
+			hereis_flag = FALSE;//Can now execute the commands
 		}
-		new_argv_size = parse(new_argv, line);
+		else{
+			new_argv_size = parse(new_argv, line);
+		}
 
 		if(new_argv_size == EOF){
 			break;
@@ -156,15 +158,13 @@ int main(){
 
 		else {
 			/*Don't execute the commands yet*/
-			/*
-			   if(hereis_flag){
-			   continue;
-			   }
-			   */
-			//else{
-			exec_command(new_argv[0], new_argv);
-			clear_flags();
-			//}
+			if(hereis_flag){
+				continue;
+			}
+			else{
+				exec_command(new_argv[0], new_argv);
+				clear_flags();
+			}
 		}
 	}
 	killpg(getpgrp(),SIGTERM);
@@ -204,7 +204,7 @@ int parse(char **commands , char *line){
 				env_variable = getenv(line);
 				if(env_variable == FAIL){
 					perror("Environment variable not found");
-					exit(-39);
+				exit(-39);
 				}
 				else if(env_variable == NULL){
 					perror("Environable variable doesn't exist");
@@ -320,9 +320,8 @@ int parse(char **commands , char *line){
 			}else if(strcmp(line, "<<") == STRING_EQUALS){
 				if(hereis_flag){
 					perror("Ambiguous hereis document. Cannot execute");
-					return -1;
+					exit(-1);
 				}
-				redirection_flag = TRUE;
 				hereis_flag = TRUE;	
 			}
 
@@ -337,27 +336,16 @@ int parse(char **commands , char *line){
 			} else if (input_redirection && infile == NULL) {
 				infile = line;
 				line += word_size + 1;
+			}
 
-
-				/* Creating a pointer to the hereis delimiter*/
-			}else if(hereis_flag && hereis_delimiter == NULL){
-					hereis_delimiter = line;
-					if(hereis_delimiter == NULL){
-						perror("No here is delimiter");
-						dont_execute_flag = TRUE;
-						return -1;
-					}
-					else{
-
-						append(hereis_delimiter,'\n');// Add a newline for comparsion later in search_in_file
-						//word_count++;
-						//We don't add to word_count because the hereis_delimiter
-						//is not apart of new_argv
-						line += word_size + 1;
-					}
-				
+			/* Creating a pointer to the hereis delimiter*/
+			else if(hereis_flag && hereis_delimiter == NULL){
+				hereis_delimiter = line;
+				word_count++;
+				line += word_size + 1;
 				//commands++ = tmp_name; Pointer to filename where hereis_doc contents is at.
-			}else { // add the commands to the commands array and increment line to point to the new word.
+			}
+			else { // add the commands to the commands array and increment line to point to the new word.
 				word_count++;
 				*commands++ = line;
 				line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
@@ -369,6 +357,7 @@ int parse(char **commands , char *line){
 
 	if(word_size == EOF){
 		word_count = EOF;
+
 	}
 	if(background_flag && word_count == ZERO_COMMANDS){
 		return BACKGROUND_FORMAT_ERROR;
@@ -389,28 +378,7 @@ int parse(char **commands , char *line){
 	}
 	if(pipe_flag && pipe_location[pipe_flag -1] + 1 >= word_count + pipe_flag){
 		return NO_PROCESS_AFTER_PIPE;
-	}
-	if(hereis_flag && hereis_delimiter){
-		stop_reading_commands_flag = TRUE;
-	}
-	if(hereis_flag && hereis_delimiter == NULL){
-		perror("<< needs an argument after ie. << hereis");
-		hereis_flag = FALSE;
-		redirection_flag = FALSE;
-		dont_execute_flag =TRUE;
-		stop_reading_commands_flag = FALSE;
-	}
-
-	if(hereis_flag && input_redirection){
-		perror("Cannot have < and << in the same command");
-		hereis_flag = FALSE;
-		redirection_flag = FALSE;
-		input_redirection = FALSE;
-		dont_execute_flag = TRUE;
-		stop_reading_commands_flag = FALSE;
-		hereis_delimiter = NULL;
-	}
-
+	}	
 
 	*commands = NULL; //null terminate string array of commands
 	return word_count;
@@ -423,9 +391,8 @@ void exec_command(char *command, char **args){
 	fflush(stderr);
 
 	/*If the username lookup fails, do not fork a child*/
-	if(username_lookup_fail_flag || dont_execute_flag){
+	if(username_lookup_fail_flag){
 		username_lookup_fail_flag = FALSE;
-		dont_execute_flag = FALSE;
 		return;
 	}
 	/* If the environment variable failed do not fork a child
@@ -619,9 +586,11 @@ int set_up_hereis_doc(){
 	remove(tmp_name);
 	rename("replica", tmp_name);
 	/* Redirecting stdin to get input from our file tmp_name. */
+	//saved_stdin = dup(0); //save stdin to restore it later
 	file_descriptor_in = open(tmp_name, O_RDONLY);
 	dup2(file_descriptor_in, 0);
 	close(file_descriptor_in);
+	//hereis_doc = &file;
 	return OK_TO_EXECUTE_COMMANDS;
 
 }
@@ -630,9 +599,6 @@ int search_in_File(char *fname, char *str){
 	FILE *fp;
 	int line_num =1;
 	char temp[512] = "";
-	char *line = NULL;
-	ssize_t nread;
-	size_t len = 0;
 
 	if((fp = fopen(fname, "r")) == NULL){
 		perror("Couldn't read tmp file");
@@ -642,8 +608,8 @@ int search_in_File(char *fname, char *str){
 	/* Loop until one finds the line that needs to
 	 * be taken out
 	 */
-	while((nread = getline(&line,&len,fp)) != FAIL){
-		if((strcmp(line,str)) == SUCCESS){
+	while(fgets(temp, 512, fp) != NULL){
+		if((strstr(temp,str)) != NULL){
 			//printf("A match found on line: %d\n", line_num);
 			break;
 		}
@@ -695,14 +661,6 @@ int set_up_redirection(){
 			exit(-6);
 		}
 		close(file_descriptor);
-	}
-	if(hereis_flag){
-		if(set_up_hereis_doc() < SUCCESS){
-			perror("Couldn't set up hereis command");
-			exit(-41);	
-		}
-		stop_reading_commands_flag = TRUE;
-
 	}
 
 	if(infile == NULL && background_flag){//redirect background process input to dev/null to avoid having deadlock
@@ -793,12 +751,6 @@ void nested_pipeline(char *command, char **args){
 	}		
 }
 
-void append(char *s, char c){
-	int len = strlen(s);
-	s[len] = c;
-	s[len + 1] = '\0';
-}
-
 void clear_flags(){
 	if(background_flag)
 		background_flag = FALSE;
@@ -811,9 +763,7 @@ void clear_flags(){
 	if(infile != NULL){
 		infile = NULL;
 	}
-	if(dont_execute_flag){
-		dont_execute_flag = FALSE;
-	}
+
 }
 
 void print_error(int error_code, char *arg){

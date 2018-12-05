@@ -10,8 +10,10 @@ Notes:
 -My program has a total of 
 
 Decisions:
-Started off using global big buffer and new argv arrays but my code was broken and I got frustrated and stared alover using parameters for these values and it was more complicated as we now have parameters that need to point to the global variables. I wanted to make major components of the program modular so I would be able to pinpoint the error if it happened. It was more overhead but I think it was worth it.  
+Started off using global big buffer and new argv arrays but my code was broken and I got frustrated and stared alover using parameters for these values and it was more complicated as we now have parameters that need to point to the global variables. I wanted to make major components of the program modular so I would be able to pinpoint the error if it happened. It was more overhead but I think it was worth it.
+For the order of my code I have parse and main as the primarily methods but there are helper methods.   
 
+Errors that are ambiguous commands are flagged with errors sent to stderr with perror.I did not have enough time to do my fancy errors to stderr that would state whether the command took place for everything. About 80 percent of the code has fancy stderr prompts. 
 
 As of right now my code is finished, has no known bugs and 
 does produce the correct output which has been verified

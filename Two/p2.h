@@ -1,14 +1,17 @@
-#include <stdio.h>
+#include <stdio.h> //perror, fflush, getline
 #include "getword.h"
-#include <fcntl.h>
-#include <signal.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdlib.h>
+#include <fcntl.h> //open, access
+#include <signal.h> //sigaction, signal, killpg
+#include <sys/stat.h> //open, stat
+#include <unistd.h> //dup2,execvp,chdir,fork, access, pipe, setpgid, getpgrp, getcwd, stat
+#include <sys/types.h> //fork, open, wait, setpgid, stat
+#include <sys/wait.h> //wait
+#include <stdlib.h>//getenv,setenv,exit 
 #include <linux/limits.h>
 #include <pwd.h>
+#include <libgen.h> //basename
+#include <string.h> //strdup, strtok
+
 /*Errors codes */
 #define NESTED_PIPELINE_PIPE_FAILED         -34
 #define PIPE_INPUT_REDIRECT_FAILED          -33
@@ -63,16 +66,22 @@ char *env_variable; //Stores environment variable
 int background_flag = 0; //flag for the & metachar
 int pipe_flag = 0; // flag for the | meta char
 int hereis_flag = 0; //flag for << meta character
+int stop_reading_commands_flag = FALSE; //Comamnds to stop reading from stdin. Used for hereis << command
+int dont_execute_flag = FALSE; //Flag for bad command that still executes. Used for bad input and hereis redirect commands
+int username_lookup_fail_flag =FALSE; //flag to not fork a child if there is a bad username look up.
+int environment_var_fail_flag = FALSE; //flag to not fork a child if there is a nonexistant environment var
 int new_argv_size = 0; // holds the amount of arguments to be executed
 int *outfile = NULL; //holds the name for outputfile
 int *infile = NULL; //holds the name for the input file.
 char *tmp_name = "TMPFILE"; //Global filename for new_argv to access
 char *hereis_delimiter; //Holds the address to the delimiter document/word
 FILE *hereis_doc = NULL; //Holds address to file here the contents of hereis is held.
+int file_descriptor_in; //file descriptor for hereis operation.
 //int *file_descriptor_ptr; //Pointer for file desriptor for a file to be used instead of stdin.
 int saved_stdin; //Use to restore stdin after hereis << command 
 int redirection_flag = 0; //Flag for any type of redirection
 int pipe_location[MAX_PIPES];// locations of the pipes in the array of commands
+int fds[MAX_PIPES*2]; //holds file descriptors for pipes
 int fds[MAX_PIPES*2]; //holds file descriptors for pipes
 extern int backslash_flag; // a global flag for getword.c and p2.c to see if a backslash occured
 extern int background_flag_from_getword;// a global flag for getword.c and p2.c to see if a apersand is at the end of a line.
@@ -179,13 +188,14 @@ void to_string(int number, char* string){
 	sprintf(string, "%d",number);
 }
 /*
- * Function to search for a specfic string in a file.
  * Used for the << metacharacter to remove a string
  * on a line which is the delimiter.
  */
 int search_in_File(char *fname, char *str);
-
-
+/*
+ *  Appends a char to the end of a string.
+ */
+void append(char*, char c);
 /*
  * Prints out the corresponding errors int the shell and calls clearflags
  * at the very end

@@ -1,4 +1,11 @@
-echo ~ftp \~ftp > your.output50
-cd ~apache
-echo ~cs570/Data4 | tr em ob | tr c b | sed s,ty,ous,
-echo BAD_USER ~tc
+cd /tmp this and the next 7 should all cause complaints to be sent to stderr
+echo $NotADefinedVariable
+< somefile
+/usr/bin/uname <
+echo SHOULD_not_EXEC |
+sort </home/cs/faculty/cs570/Data1/input1> your.outputE << Done
+>> -f
+echo no hereis terminator <<
+echo This echo and the next cd SHOULD be executed by your shell and NOT cause errors
+cd .. &
+/usr/bin/pwd

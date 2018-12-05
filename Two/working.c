@@ -23,11 +23,7 @@ int main(){
 	setpgid(0,0); // Sets current process and children to its own process group
 	(void) signal(SIGTERM,sighandler); // Signal handler to catch SIGTERM
 	while(TRUE){
-		/*Print prompt but if cd has been called then
-		 * change the prompt.
-		 * There is also a special case for using environ HOME /
-		 * which is Data4/input51
-		 */
+		/*Print prompt */
 		if(prompt_changed_flag){
 			if(slash_special_case_flag){
 				printf("/");
@@ -41,15 +37,14 @@ int main(){
 		else{
 			printf("%s", prompt);
 		}
-		/*
-		 * Exec_command() came back and did a hereis command
-		 * so there should be no more input left 
-		 * therefore we stop parsing and executing commands
-		 */
-		if(stop_reading_commands_flag){
-			break;
+		/*Hereis handling */
+		if(hereis_flag){
+			set_up_hereis_doc();
+			hereis_flag = FALSE;//Can now execute the commands
 		}
-		new_argv_size = parse(new_argv, line);
+		else{
+			new_argv_size = parse(new_argv, line);
+		}
 
 		if(new_argv_size == EOF){
 			break;
@@ -68,7 +63,6 @@ int main(){
 		}
 		/* Handing cd for the shell since you cannot
 		 * use execvp to execute cd.
-		 * Also handles the change to prompt.
 		 */
 		else if(strcmp(new_argv[0], "cd") == STRING_EQUALS){
 			prompt_changed_flag = TRUE;
@@ -121,11 +115,6 @@ int main(){
 				print_error(CD_INVALID_NUM_ARGS, NULL);	
 			}
 		}
-		/*Handles environ command which is made up by the prompt
-		 * Handles the special case in Data4/input51 where
-		 * HOME is set to / (root directory) and we need to 
-		 * change the :570: prompt.
-		 */
 		else if(strcmp(new_argv[0], "environ") == STRING_EQUALS){
 			if(new_argv_size == 2){// environ and the arugments
 				char *environment = getenv(new_argv[1]);
@@ -156,17 +145,18 @@ int main(){
 
 		else {
 			/*Don't execute the commands yet*/
-			/*
-			   if(hereis_flag){
-			   continue;
-			   }
-			   */
-			//else{
-			exec_command(new_argv[0], new_argv);
-			clear_flags();
-			//}
+			if(hereis_flag){
+				continue;
+			}
+
+			else{
+				exec_command(new_argv[0], new_argv);
+				clear_flags();
+			}
 		}
+
 	}
+
 	killpg(getpgrp(),SIGTERM);
 	printf("p2 terminated.\n");
 	return 0;
@@ -175,6 +165,7 @@ int main(){
 /* Parameters:Takes a pointer to a char pointer array which is new_argv, 
  * and pointer to a char array line which is line
  */
+
 int parse(char **commands , char *line){ 
 	int word_count = 0;
 	int word_size = 0;
@@ -189,6 +180,7 @@ int parse(char **commands , char *line){
 	char *tilde_word; //location of tilde_word to be taken from line
 	struct passwd *pwd;
 	char *name;
+	//char *name = line;
 	const char delimiter[2] = "/";
 	char *token;	
 	char buffer[MAXSIZE];
@@ -199,7 +191,6 @@ int parse(char **commands , char *line){
 				background_flag = TRUE;
 				break;
 			}
-			/*If the word_size is less than 0 it is a $ argument&+*/
 			else if(word_size < 0 && word_size != EOF){
 				env_variable = getenv(line);
 				if(env_variable == FAIL){
@@ -208,9 +199,6 @@ int parse(char **commands , char *line){
 				}
 				else if(env_variable == NULL){
 					perror("Environable variable doesn't exist");
-					//exit(-40);
-					environment_var_fail_flag = TRUE;
-
 				}
 				if(output_redirection && outfile == NULL){
 					outfile = env_variable;
@@ -222,43 +210,25 @@ int parse(char **commands , char *line){
 					*commands++ = env_variable;
 					line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
 				}
-				/*Code for tilde_flag and username 
-				 * look ups being set in getword.c 
-				 */
+
 			}else if(tilde_flag){
 				tilde_flag = FALSE;
-				name = line;
 
-				pwd = getpwnam(name); //getpwnnam returns a struct passwd
+				name = line;
+				pwd = getpwnam(name);
 				if(pwd == NULL){
-					/* Special case where the input is 
-					 * ~cs570/Data4.
-					 * getpwnam onylgets ~cs570 and not Data4
-					 * This code fixes that special case 
-					 *  which is Data4/input50
-					 */
+					//Special case for Data4/input50
 					token = strtok(name, delimiter);
 					pwd = getpwnam(token);
 					if(pwd == NULL){
 
-						//printf("Couldn't find user %s.\n",token);
-						perror("Couldn't find username directory");
-						//exit(-40);
-						/*Use this flag not to fork a child for this command later
-						 * in exec_command
-						 */
-						username_lookup_fail_flag = TRUE; 
-						//return 0;
+
+						printf("Couldn't find user %s.\n",token);
+						//perror("Couldn't find user\n");
 					}
 					else{
 						//printf("Found user %s\n",token);
 						//printf("pw_dir%s\n", pwd->pw_dir);
-						/* Copying the 6th field of password struct from /etc/passwd
-						 * and putting them together into one string called buffer
-						 * using strncat. This is an alernative way from 
-						 * using strtok and strsep
-						 * which is the reccommend way.
-						 */
 						strncpy(buffer,pwd->pw_dir,MAXSIZE - 1);
 						token = strtok(NULL, delimiter);
 						strncat(buffer, "/", MAXSIZE - strlen(buffer) - 1);
@@ -276,6 +246,8 @@ int parse(char **commands , char *line){
 					*commands++ = pwd->pw_dir;
 					line += abs(word_size) + 1;
 				}
+
+
 			}
 			else if (strcmp(line, "|") == STRING_EQUALS) {
 				/* if statement executes if pipe_flag is anything but 0. 
@@ -320,9 +292,8 @@ int parse(char **commands , char *line){
 			}else if(strcmp(line, "<<") == STRING_EQUALS){
 				if(hereis_flag){
 					perror("Ambiguous hereis document. Cannot execute");
-					return -1;
+					exit(-1);
 				}
-				redirection_flag = TRUE;
 				hereis_flag = TRUE;	
 			}
 
@@ -337,27 +308,16 @@ int parse(char **commands , char *line){
 			} else if (input_redirection && infile == NULL) {
 				infile = line;
 				line += word_size + 1;
+			}
 
-
-				/* Creating a pointer to the hereis delimiter*/
-			}else if(hereis_flag && hereis_delimiter == NULL){
-					hereis_delimiter = line;
-					if(hereis_delimiter == NULL){
-						perror("No here is delimiter");
-						dont_execute_flag = TRUE;
-						return -1;
-					}
-					else{
-
-						append(hereis_delimiter,'\n');// Add a newline for comparsion later in search_in_file
-						//word_count++;
-						//We don't add to word_count because the hereis_delimiter
-						//is not apart of new_argv
-						line += word_size + 1;
-					}
-				
+			/* Creating a pointer to the hereis delimiter*/
+			else if(hereis_flag && hereis_delimiter == NULL){
+				hereis_delimiter = line;
+				word_count++;
+				line += word_size + 1;
 				//commands++ = tmp_name; Pointer to filename where hereis_doc contents is at.
-			}else { // add the commands to the commands array and increment line to point to the new word.
+			}
+			else { // add the commands to the commands array and increment line to point to the new word.
 				word_count++;
 				*commands++ = line;
 				line += abs(word_size) + 1;// Using abs because of the negative sign from $ 
@@ -369,6 +329,7 @@ int parse(char **commands , char *line){
 
 	if(word_size == EOF){
 		word_count = EOF;
+
 	}
 	if(background_flag && word_count == ZERO_COMMANDS){
 		return BACKGROUND_FORMAT_ERROR;
@@ -389,28 +350,7 @@ int parse(char **commands , char *line){
 	}
 	if(pipe_flag && pipe_location[pipe_flag -1] + 1 >= word_count + pipe_flag){
 		return NO_PROCESS_AFTER_PIPE;
-	}
-	if(hereis_flag && hereis_delimiter){
-		stop_reading_commands_flag = TRUE;
-	}
-	if(hereis_flag && hereis_delimiter == NULL){
-		perror("<< needs an argument after ie. << hereis");
-		hereis_flag = FALSE;
-		redirection_flag = FALSE;
-		dont_execute_flag =TRUE;
-		stop_reading_commands_flag = FALSE;
-	}
-
-	if(hereis_flag && input_redirection){
-		perror("Cannot have < and << in the same command");
-		hereis_flag = FALSE;
-		redirection_flag = FALSE;
-		input_redirection = FALSE;
-		dont_execute_flag = TRUE;
-		stop_reading_commands_flag = FALSE;
-		hereis_delimiter = NULL;
-	}
-
+	}	
 
 	*commands = NULL; //null terminate string array of commands
 	return word_count;
@@ -422,20 +362,7 @@ void exec_command(char *command, char **args){
 	fflush(stdout);// Flushing before a fork to ensure stdout & stdout buffers are clear for the child.
 	fflush(stderr);
 
-	/*If the username lookup fails, do not fork a child*/
-	if(username_lookup_fail_flag || dont_execute_flag){
-		username_lookup_fail_flag = FALSE;
-		dont_execute_flag = FALSE;
-		return;
-	}
-	/* If the environment variable failed do not fork a child
-	 * and run the command
-	 */
-	else if(environment_var_fail_flag){
-		environment_var_fail_flag = FALSE;
-		return;
-	}
-	else if((child_pid = fork()) == FAIL){
+	if((child_pid = fork()) == FAIL){
 		print_error(FORK_FAILED_EXIT_CODE, "1");
 		return;
 	}
@@ -452,13 +379,18 @@ void exec_command(char *command, char **args){
 				wait_status = wait(NULL);
 
 			}while(wait_status != child_pid);
+
 		}
 		else{
 			printf("%s [%d]\n", command, child_pid);
 			background_flag = FALSE;
+
 		}
+
 	}	
+
 }
+
 void run_child_command(char *command, char **args){
 	//it wait_status;
 	pid_t child_pid;
@@ -470,6 +402,7 @@ void run_child_command(char *command, char **args){
 			exit(REDIRECTION_ERROR);
 		}
 	}
+
 
 	if(pipe_flag){
 		//int fds[2]; //file descriptors
@@ -545,6 +478,7 @@ void run_child_command(char *command, char **args){
 }
 }
 else{//no pipe line so execute the command normally
+
 	if(execvp(command, args) == FAIL){
 		print_error(EXEC_FAILED_EXIT_CODE, command);	
 		exit(EXEC_FAILED_EXIT_CODE);
@@ -613,15 +547,14 @@ int set_up_hereis_doc(){
 	if(fileptr1){
 		fclose(fileptr1);
 	}
-	/*Replace temp file with replica file which 
-	 * delimited
-	 */
 	remove(tmp_name);
 	rename("replica", tmp_name);
 	/* Redirecting stdin to get input from our file tmp_name. */
+	saved_stdin = dup(0); //save stdin to restore it later
 	file_descriptor_in = open(tmp_name, O_RDONLY);
 	dup2(file_descriptor_in, 0);
 	close(file_descriptor_in);
+	//hereis_doc = &file;
 	return OK_TO_EXECUTE_COMMANDS;
 
 }
@@ -630,9 +563,6 @@ int search_in_File(char *fname, char *str){
 	FILE *fp;
 	int line_num =1;
 	char temp[512] = "";
-	char *line = NULL;
-	ssize_t nread;
-	size_t len = 0;
 
 	if((fp = fopen(fname, "r")) == NULL){
 		perror("Couldn't read tmp file");
@@ -642,8 +572,8 @@ int search_in_File(char *fname, char *str){
 	/* Loop until one finds the line that needs to
 	 * be taken out
 	 */
-	while((nread = getline(&line,&len,fp)) != FAIL){
-		if((strcmp(line,str)) == SUCCESS){
+	while(fgets(temp, 512, fp) != NULL){
+		if((strstr(temp,str)) != NULL){
 			//printf("A match found on line: %d\n", line_num);
 			break;
 		}
@@ -674,6 +604,7 @@ int set_up_redirection(){
 		if(file_descriptor < SUCCESS){
 			perror("Cannot open overwrite file");
 			exit(-3);
+
 		}
 		/* Redirecting output from stdout to the open file*/
 
@@ -681,7 +612,10 @@ int set_up_redirection(){
 			perror("Output redirection with dup2 failed");
 			exit(-4);
 		}
+
 		close(file_descriptor);
+
+
 	}
 
 	if(infile != NULL){
@@ -695,14 +629,6 @@ int set_up_redirection(){
 			exit(-6);
 		}
 		close(file_descriptor);
-	}
-	if(hereis_flag){
-		if(set_up_hereis_doc() < SUCCESS){
-			perror("Couldn't set up hereis command");
-			exit(-41);	
-		}
-		stop_reading_commands_flag = TRUE;
-
 	}
 
 	if(infile == NULL && background_flag){//redirect background process input to dev/null to avoid having deadlock
@@ -787,16 +713,12 @@ void nested_pipeline(char *command, char **args){
 					print_error(EXEC_FAILED_EXIT_CODE, command);
 					exit(EXEC_FAILED_EXIT_CODE);
 				}
+
+
 			}		
 			j++;
 		}
 	}		
-}
-
-void append(char *s, char c){
-	int len = strlen(s);
-	s[len] = c;
-	s[len + 1] = '\0';
 }
 
 void clear_flags(){
@@ -811,9 +733,7 @@ void clear_flags(){
 	if(infile != NULL){
 		infile = NULL;
 	}
-	if(dont_execute_flag){
-		dont_execute_flag = FALSE;
-	}
+
 }
 
 void print_error(int error_code, char *arg){
