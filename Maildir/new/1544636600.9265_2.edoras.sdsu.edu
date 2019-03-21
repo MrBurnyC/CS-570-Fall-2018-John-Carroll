@@ -1,0 +1,39 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id 397986000048; Wed, 12 Dec 2018 09:43:20 -0800 (PST)
+Date: Wed, 12 Dec 2018 09:43:20 -0800
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181212174320.397986000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+Below you'll find the grades for all 5 programs, along with your total
+program points, and the corresponding percentage.  The class average for the
+programming aspect is 83%.  (If you're over 100% in the '%' column, remember
+that those extra points will work toward enhancing your exam scores.)
+
+You can work out what score you need for the final by applying the formula
+that I will be putting in my spreadsheet:
+
+0.45 X (grade_on_final) + 2 X 0.25 X (number under the 'E1' column) + 
+0.30 X (number under the '%' column)  =  your course percentage
+
+So you can put in various numbers into the grade_on_final slot and see how
+the percentages will shake out.  Keep in mind that a substantial improvement
+on the final will give your letter grade a bigger boost than the above
+formula might indicate.
+
+The lines below show the class average, maximum achieved, maximum possible,
+and your score.
+
+logname P0 P1 P2 P3 P4   CS570 Fall 2018      Total % E1
+logname  7 14 26 20 34    --averages--        102  83 37
+logname  8 15 39 24 55      -maximum-         140 115 49
+masc0000 8 15 35 20 44 Aardvark, Aaron        122 100 50 <Perfect Score
+cssc0018 7 14 39 24 54 Cervantes, Bernardo    138 113 31

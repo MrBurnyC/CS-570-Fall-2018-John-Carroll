@@ -1,0 +1,63 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cssc0018
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix, from userid 1007)
+	id 5740A6000048; Wed, 19 Dec 2018 16:28:12 -0800 (PST)
+Date: Wed, 19 Dec 2018 16:28:12 -0800
+To: cssc0018@edoras.sdsu.edu
+Subject: grades
+User-Agent: Heirloom mailx 12.5 7/5/10
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <20181220002812.5740A6000048@edoras.sdsu.edu>
+From: carroll@edoras.sdsu.edu (J Carroll)
+
+Below are the CS570 final exam grades, totals, and your course grade.
+To the right of your name you will find the headings:
+
+Total % E1 Fi C% Grade
+
+The first Total and Percentage (%) columns are just for the sum of the programs.
+E1 is the same as before, and represents the midterm exam score (out of 50);
+the column (labeled 'Fi') shows your score on the final.
+
+The next Percentage column (C%) is the cumulative weighted percent of the
+three main components of the course (following the advertised 30% / 25% / 45%
+weightings), followed by your letter grade for the course (under the
+'Grade' column).  The letter grade should match what you see via WebGrades.
+
+The formula I used to compute course percentages to achieve
+the advertised 30%/25%/45% weightings of assignments/midterm/final is:
+0.30*"%" + 2*0.25*E1 + 0.45*Fi = C%
+
+Also, if you did *substantially* better on the final than on the midterm,
+you might see a higher letter grade than was predicted by your course
+percentage.  I also fudged the advertised 90/80/70/60 cutoffs a bit:
+86% was enough for an A-, and you could dip as low as 54% and still get a
+D- rather than the threatened F.  [And D- IS a PASSING grade; it satisfies
+requirements at SDSU; just don't expect to be able to transfer those units
+to another institution!]
+
+Along with the extra credit from the programs, the course average (among
+'active' students) is 73%, which is right around where a 'C' should be.
+
+I'll be teaching classes [probably the same ones!] next fall, but I'm not
+teaching this spring; perhaps I'll see some of you next fall (or at the
+May graduation for those of you who will be gone by then).
+
+You're welcome to come by my office and look at your final in the fall.
+(I'll be keeping all the finals, but you're welcome to come to my office
+to visit yours for a while.)
+
+My office hours will resume about the time classes start up in the fall,
+but I'll still be answering email [including advising questions] daily
+during the winter break, spring, and summer break.
+
+Have a good break,
+jc
+logname P0 P1 P2 P3 P4   CS570 Fall 2018      Total % E1 Fi C% Grade 
+logname  7 14 26 20 34    --averages--        102  83 36 66 73
+logname  8 15 39 24 55      -maximum-         140 115 49 96 99
+masc0000 8 15 35 20 44 Aardvark, Aaron        122 100 50100100<Perfect Score
+cssc0018 7 14 39 24 54 Cervantes, Bernardo    138 113 31 56 75 B- 

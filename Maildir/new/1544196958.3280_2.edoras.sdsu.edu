@@ -1,0 +1,158 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 3FB136000049; Fri,  7 Dec 2018 07:35:58 -0800 (PST)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 3D8A86000048
+	for <cs570-01@edoras.sdsu.edu>; Fri,  7 Dec 2018 07:35:58 -0800 (PST)
+To: cs570-01@edoras.sdsu.edu
+Subject: CS570 final coverage: Thursday, December 13 (2018) 10:30am to 12:30pm
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <3247.1544196958.1@edoras>
+Content-Transfer-Encoding: quoted-printable
+Date: Fri, 07 Dec 2018 07:35:58 -0800
+Message-Id: <20181207153558.3D8A86000048@edoras.sdsu.edu>
+
+We did not cover all the lecture material in the xeroxed notes; you are
+only responsible for what was presented in class (we stopped on Page 64).
+That means none of the Chapter 8 material will be on the final (so
+ignore the Chapter 8 exercises).  We didn't get to the lecture notes I
+have under the heading "Chapter 10" (Pages 68-72), but recall that we
+have been bouncing into Chapter 10 material all semester long -- so some
+of the Chapter 10 Exercises (Page 87) will still be appropriate for the
+final (see below).  As with the midterm, the Exercises in my notes are
+your best clue as to what previous final questions looked like.
+
+This writeup can be found on edoras under ~cs570/final_advice .
+
+Here is the official coverage for the CS570 final exam for Fall 2018:
+
+We've covered most of Chapter 10 (Linux) when it became relevant in the ot=
+her
+Chapters, and my notes also covered some details that are not in Tanenbaum=
+.
+Much of my Chapter 10 lecture notes are devoted to how the preprocessor,
+compiler, and linker work, along with associated things like libraries, an=
+d
+we unfortunately didn't get to that.  As with the midterm, topics/sections
+not mentioned in my notes are not candidates for questions on the final.
+
+After finals are over, you might consider reading the rest of the lecture
+notes.  And you might well find Sections 9.5 onward in Tanenbaum to be
+entertaining, and it might even inspire you to consider our Computer
+Security class as an elective.  Wait until the semester is over, of course=
+,
+before you look at that.
+
+Approximately 1/3 of the final will draw from pre-midterm material,
+so the advice on edoras in ~cs570/midterm_advice is still relevant.
+You will likely be asked to deal with code that needs critical regions,
+semaphores, etc., and have to do some calculations to compute things like
+page frame size, address sizes, virtual to physical address translation, e=
+tc.
+
+Most of the relevant material is in the xeroxed notes, which matches Tanen=
+baum's
+exposition EXCEPT for flash memory, the GPT and UEFI lecture material, and=
+ the
+explanation about how rohan used the log-structured filesystem to create
+efficient hourly backups (in my Chapter 4 notes).  These 'EXCEPTional' top=
+ics
+are in my notes, but not in Tanenbaum -- so study my notes carefully.
+
+NOTE: Our final is on Thursday, 12/13/18, from 10:30am to 12:30pm.  I'll t=
+ry
+to arrive about 5 minutes early, so that we can have a bit of extra time.
+The exam will therefore run from approximately 10:25 to 12:35.  Once I
+call for the exams to be handed in, I expect everyone to stop writing.
+It's not fair for some people to continue working on the exam once others
+have stopped, so this WILL be enforced.
+
+The page and exercise numbers below are for the THIRD EDITION of Tanenbaum=
+.
+
+The exam will be closed-book, but you may bring to the exam TWO 8.5x11-inc=
+h
+pages of notes (you can write/xerox/doodle on both sides of the page).  Ev=
+en
+though there should be enough room to write all your answers on the exam,
+you might want notebook paper for your answers anyway.  I'll have a staple=
+r
+with me, to attach your answers to the exam. (I'll also bring some paper,
+in case anyone runs out.)
+
+The xeroxed Chapter notes form a fairly accurate guide to the material we
+have covered.  Approximately 2/3 of the final will be 'new' material that
+was not covered on the midterm.  Problematic topics from the midterm are
+the most likely ones to be revisited on the final.  Here is a summary of
+the relevant pages in Tanenbaum that correspond to our lectures:
+Chapter 1: Pages 1-59
+Chapter 2: Pages 83-158, 169-170
+Chapter 6: Page 462
+Chapter 3: Pages 175-216, plus some highlights from the remaining sections
+Chapter 4: Pages 255-268, 273-286, 311-317
+Chapter 5: Pages 329-343, 360-363,  367-373, 376-379, 382-384, 388-392 * t=
+his
+semester we did not finish all of chapter 5, so coverage stops at Page 392=
+)
+Chapter 10: portions of Pages 731-802 -- as referred to in the lecture not=
+es
+for Chapters 1-5.
+
+Most of what is in my lecture notes is also covered in the above list of
+Tanenbaum pages (with the exceptions noted above).
+
+Tanenbaum's end-of-chapter questions form an effective review of the mater=
+ial;
+Here is a summary of the problems I recommended from the various chapters:
+Chapter 1 (Page  79): 1, 2, 3, 4, 8, 14, 17, 18, 19, 22
+Chapter 2 (Page 170): 1, 3, 10, 11, 23, 45, 46, 47
+Chapter 6 (Page 465): 30
+Chapter 3 (Page 249): 4, 12, 13, 15, 18, 19, 20, 32
+Chapter 4 (Page 325): 1, 4, 15, 17, 21, 33, 34
+Chapter 5 (Page 429): 13, 22 (consider seek time, latency, transfer rate) =
+* (we
+did not get far enough to have problem #30 be relevant in Fall 2018, so sk=
+ip it)
+Chapter 10 (Page 808): 4, 9, 14, 17, 20, 24-25, 27, 31, 33, 37
+If you have the fourth edition of Tanenbaum, ignore the above numbers; the
+page numbers and problem numbers are listed at the bottom of my Exercises.=
+]
+
+We actually talked a LOT about IDE controllers and drives, but there aren'=
+t
+many good sample questions in the Problem lists.  (We didn't talk about
+all of the devices in this chapter, and you're not responsible for any
+of the 'ignored' devices, of course.  We covered IDE devices, CDROMS, cloc=
+ks;
+Normally, we'd also consider keyboards, mice, and a bit about terminals
+and GUIs, but we ran out of time in Fall 2018.)
+
+There were also some non-Tanenbaum topics in the lecture notes: flash memo=
+ry,
+the newer GPT, and the UEFI replacement for the old BIOS, for example.  My
+Exercise sheets list some sample questions regarding these topics.  These =
+are
+toward the back of the xeroxed notes; there are additional exercises relat=
+ed
+to the chapters we have covered (Xeroxed Pages 78-88).  Most of these are =
+also
+good examples of exam questions [in fact, they have occurred on previous e=
+xams],
+and many have answers.  Don't neglect them!
+
+What you CAN neglect are my exercises that cover topics we didn't get to t=
+his
+semester.  In Fall 2018, all the questions listed for Chapter 1, 2, 3, and=
+ 4
+are fair game (Pages 78-85).  Of my Chapter 5 questions (Page 86), 1, 2, 4=
+,
+5, 10, 11, 12, and 13 are relevant.  Of my Chapter 10 questions (Page 87),
+2, 3, 4, and 7 are relevant.  Ignore Page 88.
+
+Cheers,
+jc

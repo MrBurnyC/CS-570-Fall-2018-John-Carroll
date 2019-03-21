@@ -34,8 +34,6 @@ cd ~cs570/One
 cd.
 #+1536630128
 cd Zero/
-#+1536642605
-vim README
 #+1536642665
 ln -s ~cs570/Data1/
 #+1536642726
@@ -114,10 +112,6 @@ exec tcsh
 ; s
 #+1537244448
 cd One/
-#+1537380259
-cd
-#+1537380264
-ps
 #+1537380267
 kill bash
 #+1537380276
@@ -150,16 +144,10 @@ exec /home/cs/carroll/cssc0018/One/p1
 exec /home/cs/carroll/cssc0018/One/p1 < test
 #+1538611306
 cd Two
-#+1538611318
-vim test
-#+1538611560
-p2 < test
 #+1538612227
 vim Data2/input11
 #+1538612235
 vim Data2/input2
-#+1538612410
-vim p2.h
 #+1538612677
 p2
 #+1538613476
@@ -174,16 +162,6 @@ exec /home/cs/carroll/cssc0018/One/p1 < Data2/input12
 ./p3 50 ; ./p3 51 ; ./p3 52 ; ./p3 53 ; ./p3 54 ; ./p3 55 ; ./p3 56 ; ./p3 57 ; ./p3 58 ; ./p3 59 ; ./p3 60 ;
 #+1541121330
 grep failure news
-#+1543021156
-ls
-#+1543021156
-cd Two/
-#+1543021466
-vim p2.c
-#+1543021496
-make
-#+1543023253
-exit
 #+1543155995
 exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input55
 #+1543203876
@@ -196,5 +174,159 @@ exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input51
 exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input53
 #+1543284472
 exec /home/cs/carroll/cssc0018/Two/p2 < Data4/input50
-#+1543284969
+#+1543345763
 exec /home/cs/carroll/cssc0018/Two/p2 < test
+#+1543372098
+cat your.outputb
+#+1543372184
+vim Data4/input51
+#+1543374855
+ls -la
+#+1543374921
+cp p2.c backupNov2820187:15
+#+1543374938
+vim backupNov2820187:15
+#+1543374949
+mv backupNov2820187:15 backupNov2820187:15.c
+#+1543374955
+vim backupNov2820187:15.c
+#+1543374991
+vim backupNov28BeforeFixingInput53.c
+#+1543375009
+more backupNov2820187:15.c backupNov28BeforeFixingInput53.c
+#+1543375021
+rm backupNov2820187:15.c
+#+1543375044
+cp p2.c backup_p2_before_fixing_Data4/Input4.c
+#+1543375060
+cp p2.c backupp2beforefixingData4/Input4.c
+#+1543375066
+cp p2.c backupp2beforefixingData4Input4.c
+#+1543375069
+vim backupp2beforefixingData4Input4.c
+#+1543378257
+gbq -q p2
+#+1543384191
+vim README
+#+1543384589
+vim p2.h
+#+1543384893
+cp Data4/input10
+#+1543385328
+vim your.outpute
+#+1543385743
+rm TMPFILE
+#+1543385763
+vim TMPFILE
+#+1543385769
+vim Data4/input55
+#+1543385808
+cp Data4/input55 test
+#+1543385830
+gdb -q
+#+1543387103
+cp p2.c working37pts.c
+#+1543387452
+vim ~cs570/vertical
+#+1543387722
+vim ~cs570/vertical.c
+#+1543387785
+vim Data4/input16
+#+1543388236
+vim your.outputE
+#+1543389107
+vim your.output55
+#+1543389387
+ls
+#+1543389419
+gdb - q p2
+#+1543390034
+vim tes
+#+1543390201
+makke
+#+1543392738
+gdb -q p2
+#+1543393358
+cp Data4/input10 test
+#+1543393381
+vim Data4/input10
+#+1543393471
+vim test
+#+1543393602
+make splint
+#+1543393682
+p2 < Data4/input2
+#+1543393689
+p2 < Data4/input3
+#+1543393697
+p2 < Data4/input88
+#+1543393836
+p2 < Data4/input6
+#+1543393845
+p2 < Data4/input7
+#+1543393852
+cat your.outpute
+#+1543393854
+cat your.outputf
+#+1543393863
+p2 < Data4/input8
+#+1543393878
+p2 < Data4/input9
+#+1543393884
+diff your.outputb your.outputf
+#+1543393982
+vim Data4/input22
+#+1543393988
+setenv HOME &
+#+1543393992
+cd
+#+1543393997
+echo HOME
+#+1543394101
+vim Data4/input53
+#+1543394109
+pwd
+#+1543394115
+cd Two/
+#+1543394155
+vim p2.c
+#+1543394322
+p2 < test
+#+1543394361
+p2 < Data4/input16
+#+1543394398
+make clean
+#+1543394399
+make
+#+1543394407
+p2 < Data4/input10
+#+1543394420
+p2 < Data4/input55
+#+1543394424
+cat your.output55
+#+1543394427
+p2 < Data4/input53
+#+1543394435
+p2 < Data4/input22
+#+1543394441
+p2 < Data4/input33
+#+1543394449
+p2 < Data4/input52
+#+1543394451
+p2 < Data4/input51
+#+1543394462
+p2 < Data4/input50
+#+1543394469
+cat your.output50
+#+1543394562
+ps
+#+1543394573
+kill 4205
+#+1543394579
+ps -p
+#+1543394613
+ps -elf
+#+1543394616
+ps -elf | awk '{if ($5 == 1){print $4" "$5" "$15}}'
+#+1543394728
+exit

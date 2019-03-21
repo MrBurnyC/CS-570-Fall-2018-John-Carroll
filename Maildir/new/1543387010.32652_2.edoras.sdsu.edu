@@ -1,0 +1,35 @@
+Return-Path: <carroll@edoras.sdsu.edu>
+X-Original-To: cs570-01@edoras.sdsu.edu
+Delivered-To: cssc0018@edoras.sdsu.edu
+Received: by edoras.sdsu.edu (Postfix)
+	id 8F1496000049; Tue, 27 Nov 2018 22:36:50 -0800 (PST)
+Delivered-To: cs570-01@edoras.sdsu.edu
+Received: from edoras (localhost [127.0.0.1])
+	by edoras.sdsu.edu (Postfix) with ESMTP id 8E8A76000048
+	for <cs570-01@edoras.sdsu.edu>; Tue, 27 Nov 2018 22:36:50 -0800 (PST)
+To: cs570-01@edoras.sdsu.edu
+Subject: p4 issues to consider
+From: John Carroll <carroll@edoras.sdsu.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <32623.1543387010.1@edoras>
+Date: Tue, 27 Nov 2018 22:36:50 -0800
+Message-Id: <20181128063650.8E8A76000048@edoras.sdsu.edu>
+
+Folks,
+Remember that you MUST use vertical piping in program4, or you'll lose
+ALL the points from ALL the piping inputs (so that's likely at least 25
+points out the window).  So definitely do NOT go for the extra credit
+deadline if you don't get this resolved!
+
+The last test (input16) helps you determine if you're vertical or horizontal;
+you need to see all different numbers under the PPID column when you run
+the test.  (And the autograder tells you how to run each of these tests
+'by hand' any time you wish.)
+
+I've added a few more 'check items' to the checklist at the bottom of
+your mailing (and I may add more tomorrow) -- so remember to look over all
+the stuff I'll be checking for.
+
+Cheers,
+jc

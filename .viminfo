@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/$
+~MSle0~/stop_reading_commands
 
 # Last Substitute Search Pattern:
 ~MSle0&\<\([A-Za-z]\)\([A-Za-z]*\)\>
@@ -18,15 +18,17 @@ $\u\1\L\2
 
 # Command Line History (newest to oldest):
 :x
-:q!
-:q
-:x\
 :'a,'bd
 :'a,'by
-:'a'bd
-:X
-::x
+:q!
+:q
 :x:x
+:X
+:'a',by
+:'a,'d
+:'a'bd
+:x\
+::x
 :'
 :c
 :Q
@@ -65,11 +67,35 @@ $\u\1\L\2
 :d
 :<F1>
 :/QUOTE
-::
-:\
 
 # Search String History (newest to oldest):
+?/stop_reading_commands
+?/stop_read
+?/hereis_delimiter
+?/hereis_flag
+?/delimiter
+?/terminator
+?/no hereis
+?/word_count
+?/append
+?/appe
+?/hereis_del
+?/break;r
+?/exit
 ?//
+?/./
+?/`
+?/redirection_flag
+?/parse
+?/username
+?/40
+?/perror
+?/unistd.h
+?/signal
+?/fcntl.h
+?/string
+?/stdlib
+?/cmd
 ?/$
 ?/MAX
 ?/true
@@ -81,7 +107,6 @@ $\u\1\L\2
 ?/main
 ?/*
 ?/redirection_return
-?/parse
 ?/parsen
 ? -p2:
 ? -p2
@@ -94,31 +119,6 @@ $\u\1\L\2
 ??pipe
 ?/no process
 ??no pr
-??no process or 
-??else
-?/e
-?/current
-?/wait_status
-??*jogger
-? jogger
-??jogger
-?/ungetc
-?/redirection
-?/wait
-?/outfile
-?/outfilenn
-?/file_exists
-?/PIPE_FAILED_E
-?/EXEC_FAILED_EXIT
-?/command
-?/comannd
-?/~
-?/pipe_flag
-?/clear_flags
-?/Input file cann
-?/clear_flag
-?/file_name
-? OUTPUT_FILE_OPEN_ERROR
 
 # Expression History (newest to oldest):
 
@@ -128,250 +128,391 @@ $\u\1\L\2
 
 # Registers:
 "0	LINE	0
-				set_up_hereis_doc();
-				hereis_flag = FALSE;//Can now execute the commands
-""1	LINE	0
-					
+							perror("No here is delimiter");
+							dont_execute_flag = TRUE;
+							return -1;
+"1	LINE	0
+	
 "2	LINE	0
-	cd ~apache
+	
 "3	LINE	0
-	echo ~ftp \~ftp > your.output50
+	
 "4	LINE	0
-					
+	
 "5	LINE	0
-	echo BAD_USER ~tc
+		//i--;
 "6	LINE	0
-	cd ~apache
+		//dup2(*file_descriptor_ptr, STDIN_FILENO);
 "7	LINE	0
-	echo ~ftp \~ftp > your.output50
+		//file_descriptor_ptr = fileno(hereis_doc);
 "8	LINE	0
-	
+		//hereis_doc = freopen(tmp_name, "w+", stdin);	
 "9	LINE	0
-	
-"-	CHAR	0
-	/
+		//FILE* file = open(tmp_name,O_WRONLY | O_APPEND | O_CREAT, 0644);
+""-	CHAR	0
+	 
 
 # File marks:
-'0  233  18  ~/Two/p2.c
-'1  1  0  ~/Two/test
-'2  245  2  ~/Two/p2.c
-'3  464  2  ~/Two/p2.c
-'4  187  5  ~/Two/p2.c
-'5  247  5  ~/Two/p2.c
-'6  371  20  ~/Two/p2.c
-'7  1  0  ~/Two/tset
-'8  4  15  /home/cs/faculty/cs570/Data4/input50
-'9  308  0  ~/Two/p2.c
+'0  1  0  ~/One/p1
+'1  1  1  ~/One/program1
+'2  51  0  ~/One/getword.c
+'3  1  0  ~/One/p2.c
+'4  11  0  ~/Two/p2.c
+'5  25  17  ~/Two/gradernotes
+'6  50  61  ~/Two/gradernotes
+'7  853  0  ~/Two/p2.c
+'8  203  0  ~/Two/p2.h
+'9  1  0  ~/p2.h
 
 # Jumplist (newest first):
--'  233  18  ~/Two/p2.c
--'  227  8  ~/Two/p2.c
--'  245  2  ~/Two/p2.c
+-'  1  0  ~/One/p1
+-'  1  1  ~/One/program1
+-'  51  0  ~/One/getword.c
+-'  118  0  ~/One/getword.c
+-'  1  0  ~/One/p2.c
+-'  11  0  ~/Two/p2.c
+-'  853  0  ~/Two/p2.c
+-'  25  17  ~/Two/gradernotes
+-'  50  61  ~/Two/gradernotes
+-'  1  0  ~/Two/gradernotes
+-'  475  2  ~/Two/p2.c
+-'  445  1  ~/Two/p2.c
+-'  456  1  ~/Two/p2.c
+-'  663  0  ~/Two/p2.c
+-'  493  3  ~/Two/p2.c
+-'  448  1  ~/Two/p2.c
+-'  345  4  ~/Two/p2.c
+-'  772  1  ~/Two/p2.c
+-'  203  0  ~/Two/p2.h
+-'  70  7  ~/Two/p2.h
+-'  1  0  ~/p2.h
+-'  1  0  ~/p2.c
+-'  49  5  ~/Two/p2.c
+-'  662  2  ~/Two/p2.c
+-'  394  2  ~/Two/p2.c
+-'  388  1  ~/Two/p2.c
+-'  268  38  ~/Two/p2.c
+-'  332  33  ~/Two/p2.c
+-'  385  36  ~/Two/p2.c
+-'  1  0  Data4/input53
+-'  1  0  /home/cs/faculty/cs570/Data4/input22
 -'  1  0  ~/Two/test
--'  464  2  ~/Two/p2.c
--'  187  5  ~/Two/p2.c
--'  247  5  ~/Two/p2.c
--'  371  20  ~/Two/p2.c
--'  308  0  ~/Two/p2.c
--'  1  0  ~/Two/tset
--'  4  15  /home/cs/faculty/cs570/Data4/input50
--'  235  31  ~/Two/p2.c
--'  232  6  ~/Two/p2.c
--'  230  56  ~/Two/p2.c
--'  231  22  ~/Two/p2.c
--'  229  37  ~/Two/p2.c
--'  217  31  ~/Two/p2.c
--'  222  43  ~/Two/p2.c
--'  172  8  ~/Two/getword.c
--'  117  20  ~/Two/getword.c
--'  1  0  ~/Two/your.output50
--'  239  5  ~/Two/p2.c
--'  223  6  ~/Two/p2.c
--'  242  4  ~/Two/p2.c
--'  246  2  ~/Two/p2.c
--'  215  0  ~/Two/p2.c
--'  209  20  ~/Two/p2.c
--'  1  0  ~/Two/tse
--'  104  1  ~/Two/getword.c
--'  211  3  ~/Two/p2.c
--'  207  22  ~/Two/p2.c
--'  240  4  ~/Two/p2.c
--'  324  0  /etc/passwd
--'  1  0  /etc/passwd
--'  196  9  ~/Two/p2.c
--'  8  0  /home/cs/faculty/cs570/Data4/input51
--'  45  2  ~/Two/getword.c
--'  206  23  ~/Two/p2.c
--'  251  6  ~/Two/p2.c
--'  11  15  ~/Two/p2.h
--'  180  0  ~/Two/p2.h
--'  41  2  ~/Two/p2.c
--'  45  6  ~/Two/p2.c
--'  47  2  ~/Two/p2.c
--'  15  15  ~/Two/p2.c
--'  42  1  ~/Two/p2.c
--'  404  1  ~/Two/p2.c
--'  48  3  ~/Two/p2.c
--'  473  3  ~/Two/p2.c
--'  157  4  ~/Two/p2.c
--'  406  12  ~/Two/p2.c
--'  88  1  ~/Two/p2.c
--'  399  40  ~/Two/p2.c
--'  11  11  /home/cs/faculty/cs570/Data4/input10
--'  1  0  /home/cs/faculty/cs570/Data4/input10
--'  188  40  ~/Two/p2.c
--'  249  4  ~/Two/p2.c
--'  77  3  ~/Two/p2.c
--'  455  0  ~/Two/p2.c
--'  1  0  ~/Two/8W¼—à ƒ)ÆŽwÅDc%EC
--'  5  0  ~/Two/your.outputb
--'  1  0  ~/Two/your.outputf
--'  1  0  ~/Two/your.outpute
--'  20  23  ~/Two/p2.c
--'  105  9  ~/Two/p2.c
+-'  3  0  ~/Two/test
+-'  6  11  /home/cs/faculty/cs570/Data4/input10
+-'  396  1  ~/Two/p2.c
+-'  382  21  ~/Two/p2.c
+-'  380  42  ~/Two/p2.c
+-'  386  11  ~/Two/p2.c
+-'  3  4  /home/cs/faculty/cs570/Data4/input55
+-'  404  18  ~/Two/p2.c
+-'  387  0  ~/Two/p2.c
+-'  389  7  ~/Two/p2.c
+-'  339  7  ~/Two/p2.c
+-'  331  34  ~/Two/p2.c
 -'  1  0  ~/Two/p2.c
--'  2  0  ~/Two/p2.c
--'  19  13  ~/Two/p2.c
--'  69  22  ~/Two/p2.c
--'  179  4  ~/Two/p2.c
--'  82  4  ~/Two/p2.c
--'  118  2  ~/Two/p2.c
--'  10  15  ~/Two/p2.h
--'  118  18  ~/Two/getword.c
--'  191  13  ~/Two/p2.c
--'  1  0  /home/cs/faculty/cs570/Data4/input3
--'  268  5  ~/Two/p2.c
--'  564  26  ~/Two/p2.c
--'  1  0  /home/cs/faculty/cs570/Data4/input33
--'  316  29  ~/Two/p2.c
--'  61  27  ~/Two/p2.h
--'  49  13  ~/Two/p2.h
--'  257  26  ~/Two/p2.c
--'  258  4  ~/Two/p2.c
--'  172  8  ~/Two/getword.c
--'  117  20  ~/Two/getword.c
--'  1  0  ~/Two/your.output50
--'  1  0  ~/Two/tse
--'  104  1  ~/Two/getword.c
--'  172  8  ~/Two/getword.c
--'  117  20  ~/Two/getword.c
--'  1  0  ~/Two/your.output50
--'  172  8  ~/Two/getword.c
--'  117  20  ~/Two/getword.c
--'  228  37  ~/Two/p2.c
+-'  551  1  ~/Two/p2.c
+-'  377  19  ~/Two/p2.c
+-'  340  47  ~/Two/p2.c
+-'  330  27  ~/Two/p2.c
+-'  734  2  ~/Two/p2.c
+-'  344  4  ~/Two/p2.c
+-'  67  0  ~/Two/p2.c
+-'  657  4  ~/Two/p2.c
+-'  501  5  ~/Two/p2.c
+-'  390  2  ~/Two/p2.c
+-'  313  4  ~/Two/p2.c
+-'  308  7  ~/Two/p2.c
+-'  158  9  ~/Two/p2.c
+-'  44  5  ~/Two/p2.c
+-'  669  3  ~/Two/p2.c
+-'  775  87  ~/Two/p2.c
+-'  350  0  ~/Two/p2.c
+-'  334  29  ~/Two/p2.c
+-'  328  0  ~/Two/p2.c
+-'  327  3  ~/Two/p2.c
+-'  335  5  ~/Two/p2.c
+-'  336  4  ~/Two/p2.c
+-'  352  80  ~/Two/p2.c
 -'  1  0  ~/Two/tes
--'  1  0  ~/Two/tset
+-'  508  4  ~/Two/p2.c
+-'  318  11  ~/Two/p2.c
+-'  364  25  ~/Two/p2.c
+-'  411  6  ~/Two/p2.c
+-'  88  2  ~/Two/p2.c
+-'  397  1  ~/Two/p2.c
+-'  338  0  ~/Two/p2.c
+-'  379  1  ~/Two/p2.c
+-'  1  0  ~/Two/your.output55
+-'  410  27  ~/Two/p2.c
+-'  209  4  ~/Two/p2.c
+-'  343  4  ~/Two/p2.c
+-'  21  0  ~/Two/p2.h
+-'  197  26  ~/Two/p2.h
+-'  11  11  /home/cs/faculty/cs570/Data4/input10
+-'  1  0  /home/cs/faculty/cs570/Data4/input77
+-'  1  0  /home/cs/faculty/cs570/Data4/input16
+-'  6  0  /home/cs/faculty/cs570/vertical.c
+-'  1  0  /home/cs/faculty/cs570/vertical.c
+-'  1  0  /home/cs/faculty/cs570/vertical
+-'  341  30  ~/Two/p2.c
+-'  203  0  ~/Two/p2.h
+-'  70  7  ~/Two/p2.h
+-'  1  0  ~/p2.h
+-'  1  0  ~/p2.c
+-'  11  0  ~/Two/p2.c
+-'  853  0  ~/Two/p2.c
+-'  25  17  ~/Two/gradernotes
+-'  50  61  ~/Two/gradernotes
 
 # History of marks within files (newest to oldest):
 
+> ~/One/p1
+	"	1	0
+
+> ~/One/program1
+	"	1	1
+
+> ~/One/getword.c
+	"	51	0
+
+> ~/One/p2.c
+	"	1	0
+
 > ~/Two/p2.c
-	"	233	18
-	^	239	7
-	.	207	0
-	+	457	3
-	+	464	3
-	+	41	3
-	+	45	3
-	+	47	0
+	"	11	0
+	.	853	0
+	+	379	0
+	+	397	0
+	+	335	14
+	+	310	13
+	+	397	0
+	+	345	0
+	+	345	7
+	+	345	0
+	+	345	0
+	+	345	28
+	+	345	0
+	+	388	0
+	+	388	0
+	+	394	36
+	+	333	36
+	+	335	35
+	+	335	24
+	+	335	0
+	+	335	0
+	+	335	22
+	+	335	0
+	+	327	2
+	+	335	0
+	+	335	0
+	+	330	3
+	+	772	0
+	+	772	36
+	+	774	0
+	+	773	27
+	+	775	0
+	+	332	58
+	+	774	2
+	+	774	0
+	+	775	0
+	+	775	87
+	+	775	0
+	+	44	0
+	+	52	0
+	+	53	0
+	+	580	0
+	+	583	0
+	+	551	14
+	+	331	3
+	+	344	4
+	+	327	0
+	+	551	0
+	+	331	0
+	+	345	0
+	+	345	0
+	+	345	0
+	+	345	0
+	+	331	34
+	+	388	0
+	+	387	0
+	+	396	25
+	+	404	0
+	+	395	0
+	+	386	0
+	+	386	11
+	+	386	0
+	+	381	25
+	+	386	0
+	+	380	42
+	+	331	0
+	+	345	0
+	+	345	0
+	+	344	3
+	+	345	3
+	+	382	22
+	+	386	0
+	+	396	0
+	+	386	0
+	+	384	26
+	+	386	0
+	+	383	26
+	+	385	36
+	+	332	32
+	+	335	0
+	+	772	0
+	+	158	0
+	+	160	0
+	+	223	0
+	+	261	0
+	+	245	0
+	+	255	0
+	+	340	0
+	+	349	0
+	+	345	0
+	+	397	0
+	+	445	0
+	+	456	0
+	+	493	0
+	+	445	0
+	+	456	0
+	+	493	0
+	+	501	0
+	+	528	0
+	+	529	0
+	+	541	0
+	+	853	0
+	a	333	6
+	b	335	6
+
+> ~/Two/gradernotes
+	"	25	17
+	^	20	65
+	.	20	60
+	+	17	0
+	+	16	263
+	+	20	60
+
+> ~/Two/p2.h
+	"	203	0
+	^	70	30
+	.	70	7
+	+	15	6
+	+	9	19
+	+	42	46
 	+	41	0
-	+	206	0
-	+	247	0
-	+	246	0
-	+	246	0
-	+	246	5
-	+	246	0
-	+	246	37
-	+	246	2
-	+	246	10
-	+	206	4
-	+	246	0
-	+	246	0
-	+	246	26
-	+	246	0
-	+	246	16
-	+	246	11
-	+	246	20
-	+	246	19
-	+	246	36
-	+	246	23
-	+	246	0
-	+	246	0
-	+	246	0
-	+	246	0
-	+	237	0
-	+	223	45
-	+	240	0
-	+	239	37
-	+	209	0
-	+	240	0
-	+	207	22
-	+	209	0
-	+	215	1
-	+	246	1
-	+	215	28
-	+	215	29
-	+	215	30
-	+	215	20
-	+	215	0
-	+	246	0
-	+	215	0
-	+	240	0
-	+	241	0
-	+	246	0
-	+	223	34
-	+	239	6
-	+	240	3
-	+	244	4
-	+	223	6
-	+	222	43
-	+	239	5
-	+	222	10
-	+	217	5
-	+	210	27
-	+	211	15
-	+	217	28
-	+	210	9
-	+	221	0
-	+	224	6
-	+	236	0
-	+	226	37
-	+	222	43
-	+	217	31
-	+	240	0
-	+	227	40
-	+	228	13
-	+	213	24
-	+	231	9
-	+	228	12
-	+	231	62
-	+	232	35
-	+	231	27
-	+	229	37
-	+	231	22
-	+	230	56
-	+	216	36
-	+	232	36
-	+	235	31
-	+	371	20
-	+	205	3
-	+	248	0
-	+	247	5
-	+	205	2
-	+	247	3
-	+	207	5
-	+	245	5
-	+	464	2
-	+	207	3
-	+	245	2
-	+	226	7
-	+	227	7
-	+	232	7
-	+	239	6
-	+	207	0
+	+	24	0
+	+	24	0
+	+	36	14
+	+	41	27
+	+	68	9
+	+	77	72
+	+	142	7
+	+	136	7
+	+	142	0
+	+	142	2
+	+	142	62
+	+	140	3
+	+	142	0
+	+	144	0
+	+	144	13
+	+	150	0
+	+	148	29
+	+	150	0
+	+	144	0
+	+	148	20
+	+	41	0
+	+	78	18
+	+	58	57
+	+	78	21
+	+	47	29
+	+	78	3
+	+	76	67
+	+	185	0
+	+	185	0
+	+	188	1
+	+	194	0
+	+	193	2
+	+	192	35
+	+	77	3
+	+	80	1
+	+	81	3
+	+	80	0
+	+	81	14
+	+	10	19
+	+	62	70
+	+	63	53
+	+	65	0
+	+	64	61
+	+	87	21
+	+	10	15
+	+	11	15
+	+	79	62
+	+	11	16
+	+	6	38
+	+	9	27
+	+	11	0
+	+	9	32
+	+	7	28
+	+	6	40
+	+	7	34
+	+	5	27
+	+	3	24
+	+	9	35
+	+	12	30
+	+	13	27
+	+	1	26
+	+	7	40
+	+	8	27
+	+	6	51
+	+	3	32
+	+	6	57
+	+	3	32
+	+	1	34
+	+	4	38
+	+	7	49
+	+	6	75
+	+	4	46
+	+	1	44
+	+	13	35
+	+	6	83
+	+	7	55
+	+	5	33
+	+	6	89
+	+	87	22
+	+	88	99
+	+	88	0
+	+	68	49
+	+	71	0
+	+	73	0
+	+	72	37
+	+	68	0
+	+	72	106
+	+	63	53
+	+	63	0
+	+	69	38
+	+	199	0
+	+	197	2
+	+	197	3
+	+	198	26
+	+	70	114
+	+	70	7
+
+> ~/p2.h
+	"	1	0
+
+> ~/p2.c
+	"	1	0
+
+> Data4/input53
+	"	1	0
+
+> /home/cs/faculty/cs570/Data4/input22
+	"	1	0
 
 > ~/Two/test
 	"	1	0
-	.	1	0
+	^	1	11
+	.	1	10
 	+	1	9
 	+	1	11
 	+	1	0
@@ -418,17 +559,123 @@ $\u\1\L\2
 	+	1	0
 	+	1	0
 	+	1	0
+	+	1	10
+	+	1	6
+	+	1	0
+	+	1	6
+	+	1	10
+
+> /home/cs/faculty/cs570/Data4/input10
+	"	6	11
+
+> /home/cs/faculty/cs570/Data4/input55
+	"	3	4
+
+> ~/Two/tes
+	"	1	0
+
+> ~/Two/your.output55
+	"	1	0
+
+> /usr/share/vim/vim74/doc/help.txt
+	"	1	0
+
+> ~/Two/your.outputE
+	"	1	2
+
+> /home/cs/faculty/cs570/Data4/input77
+	"	1	0
+
+> /home/cs/faculty/cs570/Data4/input16
+	"	1	0
+
+> /home/cs/faculty/cs570/vertical.c
+	"	6	0
+
+> /home/cs/faculty/cs570/vertical
+	"	1	0
+
+> ~/Two/etst
+	"	1	0
+
+> ~/Two/TMPFILE
+	"	1	0
+	^	3	6
+	.	1	0
+	+	3	0
 	+	1	0
 
-> ~/Two/tset
+> ~/Two/your.outpute
+	"	1	0
+
+> ~/Two/README
+	"	1	0
+	^	1	74
+	.	1	74
+	+	1	74
+
+> ~/Two/backupp2beforefixingData4Input4.c
+	"	1	0
+
+> ~/Two/backupNov28BeforeFixingInput53.c
+	"	1	0
+
+> ~/Two/backupNov2820187:15.c
+	"	1	0
+
+> ~/Two/backupNov2820187:15
+	"	27	0
+
+> /home/cs/faculty/cs570/Data4/input53
+	"	2	0
+
+> /home/cs/faculty/cs570/Data4/input51
+	"	8	0
+
+> ~/Two/.p2.c.swp
+	"	1	0
+
+> /home/cs/faculty/cs570/Data4/input33
+	"	6	0
+
+> ~/Two/GradeEarly
 	"	1	0
 
 > /home/cs/faculty/cs570/Data4/input50
-	"	4	15
+	"	4	16
 	.	4	15
 	+	4	15
 
-> ~/Two/tes
+> ~/Two/your.output50
+	"	1	0
+
+> ~/Two/working30pts.c
+	"	223	20
+
+> ~/Two/cssc0018
+	"	1	0
+
+> ~/Two/your.outputb
+	"	5	0
+	.	5	0
+	+	5	0
+
+> ~/Two/your.outputf
+	"	1	0
+
+> ~/Two/your.output53
+	"	1	0
+
+> ~/Two/working24.c
+	"	412	0
+
+> ~/Two/your.output51
+	"	1	0
+
+> /home/cs/faculty/cs570/Data4/input9
+	"	1	0
+
+> ~/Two/tset
 	"	1	0
 
 > ~/Two/getword.c
@@ -538,150 +785,19 @@ $\u\1\L\2
 	a	179	1
 	b	181	1
 
-> ~/Two/your.output50
-	"	1	0
-
 > ~/Two/tse
 	"	1	0
 
 > /etc/passwd
 	"	324	0
 
-> /home/cs/faculty/cs570/Data4/input51
-	"	8	0
-
-> ~/Two/p2.h
-	"	11	15
-	^	11	16
-	.	11	15
-	+	55	18
-	+	67	61
-	+	75	97
-	+	78	67
-	+	81	41
-	+	91	2
-	+	91	37
-	+	91	1
-	+	91	0
-	+	102	19
-	+	104	0
-	+	90	2
-	+	87	64
-	+	88	75
-	+	95	2
-	+	112	1
-	+	93	80
-	+	101	2
-	+	99	36
-	+	91	25
-	+	31	78
-	+	32	20
-	+	22	51
-	+	123	2
-	+	119	76
-	+	120	87
-	+	121	9
-	+	120	10
-	+	121	40
-	+	122	60
-	+	123	36
-	+	32	55
-	+	123	3
-	+	123	0
-	+	125	42
-	+	123	38
-	+	124	0
-	+	125	49
-	+	132	2
-	+	130	27
-	+	142	0
-	+	135	30
-	+	134	7
-	+	142	1
-	+	127	1
-	+	148	43
-	+	147	1
-	+	146	17
-	+	147	2
-	+	148	0
-	+	12	6
-	+	9	19
-	+	39	46
-	+	38	0
-	+	21	0
-	+	21	0
-	+	33	14
-	+	38	27
-	+	65	9
-	+	70	72
-	+	134	7
-	+	128	7
-	+	134	0
-	+	134	2
-	+	134	62
-	+	132	3
-	+	134	0
-	+	136	0
-	+	136	13
-	+	142	0
-	+	140	29
-	+	142	0
-	+	136	0
-	+	140	20
-	+	38	0
-	+	71	18
-	+	55	57
-	+	71	21
-	+	44	29
-	+	71	3
-	+	69	67
-	+	177	0
-	+	177	0
-	+	180	1
-	+	186	0
-	+	185	2
-	+	184	35
-	+	70	3
-	+	72	1
-	+	73	3
-	+	72	0
-	+	73	14
-	+	10	19
-	+	59	70
-	+	60	53
-	+	62	0
-	+	61	61
-	+	79	21
-	+	10	15
-	+	11	15
-
-> /home/cs/faculty/cs570/Data4/input10
-	"	11	11
-
 > ~/Two/8W¼—à ƒ)ÆŽwÅDc%EC
-	"	1	0
-
-> ~/Two/your.outputb
-	"	5	0
-	.	5	0
-	+	5	0
-
-> ~/Two/your.outputf
-	"	1	0
-
-> ~/Two/your.outpute
 	"	1	0
 
 > /home/cs/faculty/cs570/Data4/input3
 	"	1	0
 	.	1	0
 	+	1	0
-
-> /home/cs/faculty/cs570/Data4/input33
-	"	1	0
-
-> /usr/share/vim/vim74/doc/help.txt
-	"	1	0
 
 > Data4/input50
 	"	1	0
@@ -691,9 +807,6 @@ $\u\1\L\2
 
 > ~/Two/program4
 	"	133	76
-
-> ~/Two/cssc0018
-	"	1	0
 
 > ~/linux
 	"	1	0
@@ -710,12 +823,6 @@ $\u\1\L\2
 
 > /home/cs/carroll/p2.c
 	"	1	0
-
-> /home/cs/faculty/cs570/Data4/input22
-	"	1	0
-
-> ~/One/getword.c
-	"	118	0
 
 > /home/cs/faculty/cs570/Data4/input44
 	"	1	0
@@ -738,16 +845,10 @@ $\u\1\L\2
 > ~/Two/p2.x
 	"	1	0
 
-> /home/cs/faculty/cs570/Data4/input55
-	"	6	4
-
 > ~/Two/your.output33
 	"	1	0
 
 > ~/Sandbox/your.output50
-	"	1	0
-
-> /home/cs/faculty/cs570/Data4/input9
 	"	1	0
 
 > ~/Two/your.output8
@@ -755,25 +856,6 @@ $\u\1\L\2
 
 > ~/Two/your.outputef
 	"	1	0
-
-> ~/Two/your.output55
-	"	1	0
-
-> ~/p2.c
-	"	1	0
-
-> ~/Two/your.output53
-	"	1	0
-
-> ~/Two/TMPFILE
-	"	1	0
-	^	3	6
-	.	1	0
-	+	3	0
-	+	1	0
-
-> /home/cs/faculty/cs570/Data4/input53
-	"	2	0
 
 > ~/Two/foo
 	"	1	0
@@ -882,9 +964,6 @@ $\u\1\L\2
 > /home/cs/faculty/cs570/Data4/input8
 	"	1	0
 
-> /home/cs/faculty/cs570/Data4/input16
-	"	1	0
-
 > ~/Sandbox/your.outputf
 	"	1	0
 
@@ -950,196 +1029,3 @@ $\u\1\L\2
 	+	8	0
 	+	11	3
 	+	1	4
-
-> /home/cs/faculty/cs570/Data2/input11
-	"	1	0
-	.	1	0
-	+	1	0
-
-> /home/cs/faculty/cs570/Data2/input111
-	"	1	0
-
-> /home/cs/faculty/cs570/Data2/input16
-	"	1	0
-
-> /home/cs/faculty/cs570/Data2/input99
-	"	3	0
-
-> /home/cs/faculty/cs570/Data2/input88
-	"	1	0
-
-> ~/oldTwo/Two/program2
-	"	2	0
-	.	1	1
-	+	1	1
-
-> ~/Two/README
-	"	1	73
-	^	1	74
-	.	1	74
-	+	1	74
-
-> ~/oldTwo/Two/README
-	"	2	14
-	^	1	85
-	.	1	84
-	+	2	14
-	+	1	84
-
-> ~/Three/news
-	"	25	32
-
-> ~/Three/p3helper.c
-	"	81	0
-	.	99	0
-	+	47	30
-	+	47	24
-	+	54	0
-	+	54	29
-	+	84	29
-	+	83	14
-	+	47	0
-	+	46	29
-	+	54	0
-	+	54	24
-	+	56	0
-	+	63	0
-	+	65	0
-	+	57	0
-	+	62	25
-	+	65	24
-	+	91	4
-	+	88	24
-	+	91	5
-	+	46	24
-	+	54	0
-	+	53	24
-	+	56	25
-	+	65	0
-	+	65	16
-	+	56	16
-	+	65	24
-	+	51	32
-	+	62	32
-	+	70	14
-	+	79	24
-	+	95	24
-	+	92	32
-	+	88	29
-	+	90	6
-	+	73	31
-	+	74	15
-	+	77	32
-	+	46	3
-	+	53	0
-	+	53	3
-	+	56	4
-	+	64	3
-	+	70	2
-	+	71	3
-	+	80	3
-	+	84	3
-	+	96	4
-	+	83	14
-	+	33	81
-	+	29	78
-	+	33	40
-	+	32	3
-	+	31	31
-	+	42	0
-	+	42	0
-	+	46	2
-	+	53	2
-	+	56	2
-	+	64	2
-	+	72	6
-	+	84	2
-	+	96	2
-	+	80	2
-	+	71	2
-	+	96	2
-	+	29	0
-	+	42	0
-	+	42	0
-	+	46	0
-	+	53	0
-	+	56	0
-	+	65	0
-	+	71	0
-	+	80	0
-	+	84	0
-	+	96	0
-	+	35	3
-	+	32	0
-	+	39	3
-	+	36	32
-	+	39	0
-	+	22	13
-	+	23	25
-	+	64	0
-	+	38	14
-	+	21	60
-	+	22	56
-	+	19	80
-	+	23	26
-	+	86	12
-	+	65	0
-	+	42	0
-	+	54	0
-	+	55	0
-	+	57	0
-	+	65	0
-	+	68	0
-	+	80	0
-	+	99	0
-
-> ~/Three/CHK.h
-	"	35	1
-
-> ~/README
-	"	2	3
-	^	2	4
-	.	2	3
-	+	1	41
-	+	2	3
-
-> ~/Three/program3
-	"	1	1
-
-> ~/Two/program2
-	"	1	1
-
-> ~/Three/gradernotes
-	"	10	147
-	^	7	103
-	.	12	0
-	+	4	121
-	+	4	0
-	+	11	150
-	+	7	102
-	+	12	0
-
-> ~/Three/GradeEarly
-	"	2	0
-	^	2	0
-	.	1	10
-	+	1	10
-
-> ~/Three/p3main.c
-	"	218	10
-	.	1	18
-	+	1	18
-
-> ~/Three/p3.h
-	"	79	21
-
-> ~/Three/p3helper.
-	"	1	0
-
-> /home/cs/faculty/cs570/program3
-	"	62	22
-	.	88	39
-	+	88	39
-
-> ~/Three/p3.c
-	"	1	0
