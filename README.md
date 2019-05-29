@@ -8,7 +8,7 @@ in the README in class.
 - I pushed from SDSU's server eduoam which includes all of Dr. Carroll's files such as 
 .bash , .cshrc, .mailrc and etc files that are only seen by running the command `ls -la`.
 
--i The programs are in their corresponding directories *except* for program 2. 
+- The programs are in their corresponding directories *except* for program 2. 
  program 2 is actually program 2. This is because we used program 2 as a basic for 
  program 4. Program 2 is in the directory "oldTwo"
 
