@@ -1,18 +1,18 @@
-###CS570 Operating Systems by John Carroll Fall 2018 SDSU (GO AZTECS)
+### CS570 Operating Systems by John Carroll Fall 2018 SDSU (GO AZTECS)
 
--These are all the files used for the semester.
--There are five program starting with program zero. The prompt is found below as it was found
+- These are all the files used for the semester.
+-i There are five program starting with program zero. The prompt is found below as it was found
 in the README in class.
 
-###File Structure 
--I pushed from SDSU's server eduoam which includes all of Dr. Carroll's files such as 
+### File Structure 
+- I pushed from SDSU's server eduoam which includes all of Dr. Carroll's files such as 
 .bash , .cshrc, .mailrc and etc files that are only seen by running the command `ls -la`.
 
--The programs are in their corresponding directories *except* for program 2. 
+-i The programs are in their corresponding directories *except* for program 2. 
  program 2 is actually program 2. This is because we used program 2 as a basic for 
  program 4. Program 2 is in the directory "oldTwo"
 
-###Prompt for program zero:
+### Prompt for program zero:
 
 Change your password (passwd)
 and update your finger information (chfn)
