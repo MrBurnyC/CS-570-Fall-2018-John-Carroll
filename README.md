@@ -1,7 +1,7 @@
 ## CS570 Operating Systems by John Carroll Fall 2018 SDSU (GO AZTECS)
 
 - These are all the files used for the semester.
--i There are five program starting with program zero. The prompt is found below as it was found
+There are five program starting with program zero. The prompt is found below as it was found
 in the README in class.
 
 ## File Structure 

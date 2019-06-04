@@ -153,18 +153,19 @@ $\u\1\L\2
 	 
 
 # File marks:
-'0  43  0  ~/README.md
-'1  11  1  ~/README.md
-'2  1  0  ~/README.md
-'3  1  0  ~/README~
-'4  18  2  ~/README
-'5  45  3  ~/README
-'6  13  3  ~/README
-'7  3  0  ~/README
-'8  121  0  ~/.gitignore
-'9  1  0  ~/One/p1
+'0  4  0  ~/README.md
+'1  43  0  ~/README.md
+'2  11  1  ~/README.md
+'3  1  0  ~/README.md
+'4  1  0  ~/README~
+'5  18  2  ~/README
+'6  45  3  ~/README
+'7  13  3  ~/README
+'8  3  0  ~/README
+'9  121  0  ~/.gitignore
 
 # Jumplist (newest first):
+-'  4  0  ~/README.md
 -'  43  0  ~/README.md
 -'  11  1  ~/README.md
 -'  1  0  ~/README.md
@@ -266,10 +267,11 @@ $\u\1\L\2
 # History of marks within files (newest to oldest):
 
 > ~/README.md
-	"	43	0
+	"	4	0
 	^	11	1
-	.	11	0
+	.	4	0
 	+	11	0
+	+	4	0
 
 > ~/README~
 	"	1	0
